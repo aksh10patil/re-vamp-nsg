@@ -2,23 +2,24 @@
 
 import { motion } from "framer-motion";
 import { FaChartBar, FaShareAlt, FaTachometerAlt } from "react-icons/fa";
+import type { Variants } from "framer-motion";
 
-const cardVariants = {
+const cardVariants: Variants  = {
   initial: { scale: 1, y: 0, opacity: 1 },
   hover: {
     scale: 1.03,
     y: -6,
     boxShadow: "0 0 45px rgba(150, 90, 255, 0.22)",
-    transition: { duration: 0.35, ease: "easeOut" },
+    transition: { duration: 0.35, ease: [0, 0, 0.58, 1] },
   },
 };
 
-const iconVariants = {
+const iconVariants: Variants  = {
   initial: { scale: 1, opacity: 0.9 },
   hover: {
     scale: 1.14,
     opacity: 1,
-    transition: { duration: 0.36, ease: "easeOut" },
+    transition: { duration: 0.36, ease: [0, 0, 0.58, 1] },
   },
 };
 
