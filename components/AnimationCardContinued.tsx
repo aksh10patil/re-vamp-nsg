@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion, } from "framer-motion";
 import { useState, useEffect } from "react";
 import {
   FaSearch,
@@ -13,6 +13,10 @@ import {
   FaDatabase,
   FaCheckCircle,
 } from "react-icons/fa";
+
+import type { Variants } from "framer-motion";
+
+
 
 // --- Helper: Typewriter Effect for Code Block ---
 function useTypewriter(text: string, speed = 30) {
@@ -283,7 +287,7 @@ export default function AutomationGrid() {
             <motion.div
               initial={{ y: 0, opacity: 0, scale: 0 }}
               animate={{ y: 80, opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 1.8, ease: "backOut" }}
+              transition={{ duration: 0.8, delay: 1.8, ease: [0.34, 1.56, 0.64, 1] }}
               className="absolute z-10"
             >
               <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-500/20 border border-emerald-500/30 rounded-full backdrop-blur-md">

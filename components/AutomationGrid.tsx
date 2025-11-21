@@ -14,6 +14,10 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 
+import type { Variants } from "framer-motion";
+
+
+
 // --- Helper: Typewriter Effect for Code Block ---
 function useTypewriter(text: string, speed = 30) {
   const [output, setOutput] = useState("");
@@ -30,7 +34,7 @@ function useTypewriter(text: string, speed = 30) {
 }
 
 // --- Animation Variants ---
-const containerVariants = {
+const containerVariants: Variants  = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -38,12 +42,12 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants  = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.5, ease: [0, 0, 0.58, 1] },
   },
 };
 
@@ -205,7 +209,7 @@ export default function AutomationGrid() {
           {/* Background Glow */}
           <motion.div
             animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 4, repeat: Infinity, ease: [0.42, 0, 0.58, 1] }}
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-44 h-44 bg-[radial-gradient(circle,rgba(168,85,247,0.4),transparent)] blur-3xl pointer-events-none"
           />
 
@@ -230,7 +234,7 @@ export default function AutomationGrid() {
             <motion.div
               initial={{ x: -100, y: -80, opacity: 0, scale: 0.5 }}
               animate={{ x: 0, y: 0, opacity: 1, scale: 0.8 }}
-              transition={{ duration: 1.2, ease: "easeInOut" }}
+              transition={{ duration: 1.2, ease: [0.42, 0, 0.58, 1]}}
               className="absolute z-10"
             >
               <div className="p-2 bg-white/10 rounded-lg border border-white/20">
@@ -241,7 +245,7 @@ export default function AutomationGrid() {
             <motion.div
               initial={{ x: 100, y: -80, opacity: 0, scale: 0.5 }}
               animate={{ x: 0, y: 0, opacity: 1, scale: 0.8 }}
-              transition={{ duration: 1.2, delay: 0.2, ease: "easeInOut" }}
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.42, 0, 0.58, 1] }}
               className="absolute z-10"
             >
               <div className="p-2 bg-white/10 rounded-lg border border-white/20">
@@ -252,7 +256,7 @@ export default function AutomationGrid() {
             <motion.div
               initial={{ x: 0, y: -100, opacity: 0, scale: 0.5 }}
               animate={{ x: 0, y: 0, opacity: 1, scale: 0.8 }}
-              transition={{ duration: 1.2, delay: 0.4, ease: "easeInOut" }}
+              transition={{ duration: 1.2, delay: 0.4, ease: [0.42, 0, 0.58, 1]}}
               className="absolute z-10"
             >
               <div className="p-2 bg-white/10 rounded-lg border border-white/20">
@@ -283,7 +287,7 @@ export default function AutomationGrid() {
             <motion.div
               initial={{ y: 0, opacity: 0, scale: 0 }}
               animate={{ y: 80, opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 1.8, ease: "backOut" }}
+              transition={{ duration: 0.8, delay: 1.8, ease: [0.34, 1.56, 0.64, 1] }}
               className="absolute z-10"
             >
               <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-500/20 border border-emerald-500/30 rounded-full backdrop-blur-md">
