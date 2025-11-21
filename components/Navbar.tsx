@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 /**
  * Top-right expanding yellow overlay menu
@@ -32,7 +33,7 @@ export default function Navbar() {
 }, [open]);
 
   // Panel animation variants: start as small pill at button location, expand to panel
-  const containerVariants = {
+  const containerVariants : Variants = {
     hidden: { opacity: 0, scale: 0.88, y: -6, borderRadius: 999, boxShadow: "0 4px 18px rgba(0,0,0,0.12)" },
     show: {
       opacity: 1,
@@ -46,16 +47,16 @@ export default function Navbar() {
       opacity: 0,
       scale: 0.94,
       y: -4,
-      transition: { duration: 0.32, ease: "easeInOut" }
+      transition: { duration: 0.32, ease: [0.42, 0, 0.58, 1]}
     }
   };
 
-  const linkVariants = {
+  const linkVariants : Variants  = {
     hidden: { opacity: 0, y: 8 },
     show: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: 0.06 * i + 0.08, duration: 0.36, ease: "easeOut" }
+      transition: { delay: 0.06 * i + 0.08, duration: 0.36, ease: [0, 0, 0.58, 1]}
     })
   };
 

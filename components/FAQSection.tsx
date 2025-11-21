@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaQuestion, FaArrowRight } from "react-icons/fa";
+import type { Variants } from "framer-motion";
+
+
 
 // --- FAQ Data ---
 const faqs = [
@@ -44,12 +47,15 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: {
+      duration: 0.5,
+      ease: "easeOut", // Now VALID
+    },
   },
 };
 
@@ -175,7 +181,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              transition={{ duration: 0.3, ease: [0.42, 0, 0.58, 1] }}
               className="overflow-hidden"
             >
               <p className="px-5 pb-6 md:px-6 md:pb-6 text-neutral-400 text-sm leading-relaxed">
