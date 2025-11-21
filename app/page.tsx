@@ -3,6 +3,8 @@ import DashboardPreview from "@/components/DashboardPreview";
 import Navbar from "@/components/Navbar";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import AnimationCard from "@/components/AnimationCard";
+import TestimonialSection from "@/components/TestimonialSection";
+import FAQSection from "@/components/FAQSection";
 
 
 export default function Page() {
@@ -17,6 +19,8 @@ export default function Page() {
         <DashboardPreview />
         <WhyChooseUs />
         <AnimationCard/>
+        <TestimonialSection />
+        <FAQSection/>
       </section>
     </main>
   );
