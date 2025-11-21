@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useState, useEffect } from "react";
 import {
   FaSearch,
@@ -30,7 +30,7 @@ function useTypewriter(text: string, speed = 30) {
 }
 
 // --- Animation Variants ---
-const containerVariants = {
+const containerVariants : Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -38,12 +38,12 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants : Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.5, ease: [0, 0, 0.58, 1] },
   },
 };
 
@@ -230,7 +230,7 @@ export default function AutomationGrid() {
             <motion.div
               initial={{ x: -100, y: -80, opacity: 0, scale: 0.5 }}
               animate={{ x: 0, y: 0, opacity: 1, scale: 0.8 }}
-              transition={{ duration: 1.2, ease: "easeInOut" }}
+              transition={{ duration: 1.2, ease: [0.42, 0, 0.58, 1]}}
               className="absolute z-10"
             >
               <div className="p-2 bg-white/10 rounded-lg border border-white/20">
@@ -241,7 +241,7 @@ export default function AutomationGrid() {
             <motion.div
               initial={{ x: 100, y: -80, opacity: 0, scale: 0.5 }}
               animate={{ x: 0, y: 0, opacity: 1, scale: 0.8 }}
-              transition={{ duration: 1.2, delay: 0.2, ease: "easeInOut" }}
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.42, 0, 0.58, 1] }}
               className="absolute z-10"
             >
               <div className="p-2 bg-white/10 rounded-lg border border-white/20">
@@ -252,7 +252,7 @@ export default function AutomationGrid() {
             <motion.div
               initial={{ x: 0, y: -100, opacity: 0, scale: 0.5 }}
               animate={{ x: 0, y: 0, opacity: 1, scale: 0.8 }}
-              transition={{ duration: 1.2, delay: 0.4, ease: "easeInOut" }}
+              transition={{ duration: 1.2, delay: 0.4, ease: [0.42, 0, 0.58, 1] }}
               className="absolute z-10"
             >
               <div className="p-2 bg-white/10 rounded-lg border border-white/20">
