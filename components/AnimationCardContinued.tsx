@@ -209,7 +209,7 @@ export default function AutomationGrid() {
           {/* Background Glow */}
           <motion.div
             animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 4, repeat: Infinity, ease: [0.42, 0, 0.58, 1]}}
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-44 h-44 bg-[radial-gradient(circle,rgba(168,85,247,0.4),transparent)] blur-3xl pointer-events-none"
           />
 

@@ -166,7 +166,7 @@ const AnimatedBeam = ({ d, delay }: { d: string, delay: number }) => {
           repeat: Infinity,
           repeatDelay: 1, // Wait before sending next packet
           delay: delay,
-          ease: "easeInOut"
+          ease: [0.42, 0, 0.58, 1]
         }}
       />
       
