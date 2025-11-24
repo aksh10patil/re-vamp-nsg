@@ -5,6 +5,9 @@ import dynamic from "next/dynamic";
 // --- Standard Imports (Load immediately for SEO & LCP) ---
 import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
+import Footer from "@/components/landing/FooterCTA";
+import FooterCTA from "@/components/landing/FooterCTA";
+// import AnimatedFooter from "@/components/landing/AnimatedFooter";
 
 // --- Dynamic Imports (Load on client side only to fix 'window' error) ---
 
@@ -47,6 +50,11 @@ export default function Page() {
         <AnimationCard />
         <TestimonialSection />
         <FAQSection />
+      </section>
+
+      <section>
+        <FooterCTA />
+        {/* <AnimatedFooter /> */}
       </section>
     </main>
   );

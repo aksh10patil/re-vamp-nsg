@@ -37,8 +37,6 @@ export default function AnimationCard() {
   >
     {/* LEFT CARD */}
    <AutomatedTasksCard />
-
-    {/* RIGHT CARD */}
         <WorkflowCard />
   </div>
 </section>
