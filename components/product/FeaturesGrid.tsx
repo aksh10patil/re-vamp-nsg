@@ -52,7 +52,7 @@ export default function FeaturesGrid() {
           </span>
           {/* Removed tracking-tight to preserve your font's natural look */}
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Smart tools for <br className="hidden md:block" />
+            Smart AI tools for <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">
               growing your business
             </span>
@@ -254,9 +254,6 @@ export default function FeaturesGrid() {
           transition={{ delay: 0.6 }}
           className="mt-16 text-center"
         >
-          <button className="px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-neutral-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-            View All Documentation
-          </button>
         </motion.div>
 
       </div>

@@ -190,7 +190,7 @@
 //         className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-sm text-gray-500 relative z-10"
 //       >
 //         <p className="mb-4 md:mb-0">
-//           © {currentYear} North Star Group. All rights reserved.
+//           © {currentYear} northstargroup. All rights reserved.
 //         </p>
 //         <ul className="flex flex-wrap justify-center gap-6 lg:gap-8">
 //             {legalLinks.map((link, index) => (

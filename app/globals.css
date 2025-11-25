@@ -8,6 +8,9 @@
   }
 }
 
+/* html {
+  scroll-behavior: smooth;
+} */
 
 @keyframes spin-slow {
   from {

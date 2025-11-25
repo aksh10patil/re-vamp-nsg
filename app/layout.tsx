@@ -11,8 +11,6 @@ const raleway = Raleway({
 });
 
 
-
-
 export const metadata = {
   title: "re-vamp nsg",
   description: "North Star Group Site"

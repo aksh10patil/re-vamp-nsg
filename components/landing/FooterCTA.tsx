@@ -65,35 +65,60 @@ export default function FooterCTA() {
         </motion.p>
 
         {/* Buttons Container */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+
+        <div> 
+            <motion.button
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+        className="
+          magnetic-btn
+          relative
+          z-10 
+          mt-6 
+          px-8 
+          py-3 
+          rounded-full 
+          bg-[#a797f7] 
+          text-black 
+          font-semibold 
+          text-base 
+          md:text-lg 
+          flex 
+          items-center 
+          gap-3 
+          transition 
+          hover:brightness-110
+        "
+      >
+        {/* PARTICLE FIELD */}
+        <div
+          className="magnetic-field"
+          style={{ "--radius": "160px" } as React.CSSProperties}
         >
-          
-          {/* Primary Button */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative px-8 py-4 rounded-full bg-gradient-to-b from-[#6366f1] to-[#4f46e5] text-white font-semibold shadow-[0px_0px_20px_0px_rgba(99,102,241,0.5)] hover:shadow-[0px_0px_40px_0px_rgba(99,102,241,0.7)] transition-shadow duration-300"
-          >
-            <span className="relative z-10">START FOR FREE</span>
-            {/* Inner Shine */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-50" />
-          </motion.button>
+          {[...Array(14)].map((_, i) => (
+            <span
+              key={i}
+              className="particle"
+              style={{
+                "--x": `${Math.random() * 160 - 80}px`,
+                "--y": `${Math.random() * 160 - 80}px`,
+                animationDelay: `${Math.random() * 1.2}s`,
+              } as React.CSSProperties}
+            />
+          ))}
+        </div>
 
-          {/* Secondary Button */}
-          <motion.button
-            whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 rounded-full border border-white/10 bg-white/5 text-white font-medium hover:border-white/20 transition-colors backdrop-blur-sm"
-          >
-            GET A PLAN
-          </motion.button>
+        Start 14-day trial
 
-        </motion.div>
+        <span className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-black flex items-center justify-center text-white">
+          →
+        </span>
+            </motion.button>
+        </div>
+ 
+
+     
       </div>
     </footer>
   );

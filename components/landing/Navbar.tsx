@@ -1,16 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link"; // 1. Import Link
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Variants } from "framer-motion";
+
+// You might need to install lucide-react if you haven't: npm install lucide-react
+import { ChevronDown } from "lucide-react"; 
 
 const PANEL_BG =
   "linear-gradient(180deg, rgba(202, 165, 255, 1), rgba(165, 130, 235, 1))";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  
+  // New state to track if we are hovering the Services section
+  const [ServicesHover, setServicesHover] = useState(false);
+  
   const btnRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
@@ -62,13 +69,22 @@ export default function Navbar() {
     }),
   };
 
-  // Helper to keep code clean
+  // Updated Menu Links Structure
   const menuLinks = [
-    { name: "Home", href: "/home" }, // For ID scrolling
-    { name: "Product", href: "/product" }, // Example of real page route
-    { name: "Pricing", href: "/pricing" },
-    { name: "Blog", href: "/blog" },
+    { name: "Home", href: "/home" },
+    { 
+      name: "Services", 
+      href: "/services", 
+      // Added sub-services here
+      subItems: [
+        { name: "AI Solutions", href: "/services/ai" },
+        { name: "Web Development", href: "/services/web" },
+        { name: "App Development", href: "/services/app" },
+        { name: "Social Media", href: "/services/social" },
+      ]
+    },
     { name: "Contact", href: "/contact" },
+     { name: "About Us", href: "/about" },
   ];
 
   return (
@@ -134,6 +150,7 @@ export default function Navbar() {
                       boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08)",
                     }}
                   >
+                    {/* Simple Menu Icon */}
                     <svg
                       width="18"
                       height="18"
@@ -171,23 +188,77 @@ export default function Navbar() {
 
               {/* Links Loop */}
               <div className="mt-4 flex flex-col gap-3">
-                {menuLinks.map((link, i) => (
-                  <motion.div
-                    key={link.name}
-                    variants={linkVariants}
-                    initial="hidden"
-                    animate="show"
-                    custom={i + 1}
-                  >
-                    <Link
-                      href={link.href}
-                      onClick={() => setOpen(false)} // Close menu on click
-                      className="block text-black font-semibold text-lg md:text-xl hover:opacity-90 transition"
+                {menuLinks.map((link, i) => {
+                  const isServices = link.name === "Services";
+
+                  return (
+                    <motion.div
+                      key={link.name}
+                      variants={linkVariants}
+                      initial="hidden"
+                      animate="show"
+                      custom={i + 1}
+                      // Handle Hover Events if it is Services
+                      onMouseEnter={() => isServices && setServicesHover(true)}
+                      onMouseLeave={() => isServices && setServicesHover(false)}
+                      // Also handle click for mobile users
+                      onClick={() => isServices && setServicesHover(!ServicesHover)}
                     >
-                      {link.name}
-                    </Link>
-                  </motion.div>
-                ))}
+                      {/* Top Level Link */}
+                      <div className="flex items-center justify-between cursor-pointer group">
+                        <Link
+                          href={link.href}
+                          // Only close menu if it's NOT the Services dropdown
+                          onClick={(e) => {
+                            if (isServices) e.preventDefault();
+                            else setOpen(false);
+                          }} 
+                          className="block text-black font-semibold text-lg md:text-xl group-hover:opacity-70 transition flex-1"
+                        >
+                          {link.name}
+                        </Link>
+                        
+                        {/* Show Arrow for Services */}
+                        {isServices && (
+                          <motion.div
+                            animate={{ rotate: ServicesHover ? 180 : 0 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                             <ChevronDown size={20} className="text-black/60" />
+                          </motion.div>
+                        )}
+                      </div>
+
+                      {/* Dropdown / Accordion */}
+                      {isServices && link.subItems && (
+                        <AnimatePresence>
+                          {ServicesHover && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3, ease: "easeInOut" }}
+                              className="overflow-hidden"
+                            >
+                              <div className="flex flex-col gap-2 pl-4 pt-2 pb-1 border-l-2 border-black/10 mt-1 ml-1">
+                                {link.subItems.map((sub) => (
+                                  <Link
+                                    key={sub.name}
+                                    href={sub.href}
+                                    onClick={() => setOpen(false)}
+                                    className="text-sm font-medium text-black/70 hover:text-black hover:translate-x-1 transition-all"
+                                  >
+                                    {sub.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      )}
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           </motion.div>
