@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 // --- Standard Imports (Load immediately for SEO & LCP) ---
 import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
-import Footer from "@/components/landing/FooterCTA";
+import Footer from "@/components/contact/Footer";
 import FooterCTA from "@/components/landing/FooterCTA";
 // import AnimatedFooter from "@/components/landing/AnimatedFooter";
 
@@ -54,7 +54,7 @@ export default function Page() {
 
       <section>
         <FooterCTA />
-        {/* <AnimatedFooter /> */}
+        <Footer />
       </section>
     </main>
   );

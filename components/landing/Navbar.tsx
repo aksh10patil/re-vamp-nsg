@@ -187,79 +187,84 @@ export default function Navbar() {
               <div className="mt-4 h-px bg-black/6" />
 
               {/* Links Loop */}
-              <div className="mt-4 flex flex-col gap-3">
-                {menuLinks.map((link, i) => {
-                  const isServices = link.name === "Services";
+                    {/* Links Loop */}
+<div className="mt-4 flex flex-col gap-3">
+  {menuLinks.map((link, i) => {
+    const isServices = link.name === "Services";
 
-                  return (
-                    <motion.div
-                      key={link.name}
-                      variants={linkVariants}
-                      initial="hidden"
-                      animate="show"
-                      custom={i + 1}
-                      // Handle Hover Events if it is Services
-                      onMouseEnter={() => isServices && setServicesHover(true)}
-                      onMouseLeave={() => isServices && setServicesHover(false)}
-                      // Also handle click for mobile users
-                      onClick={() => isServices && setServicesHover(!ServicesHover)}
+    return (
+      <motion.div
+        key={link.name}
+        variants={linkVariants}
+        initial="hidden"
+        animate="show"
+        custom={i + 1}
+        // DESKTOP: Keep hover behavior for the whole block
+        onMouseEnter={() => isServices && setServicesHover(true)}
+        onMouseLeave={() => isServices && setServicesHover(false)}
+      >
+        <div className="flex items-center justify-between group">
+          
+          {/* 1. THE MAIN LINK - Now always navigates */}
+          <Link
+            href={link.href}
+            onClick={() => setOpen(false)} // Always close main menu on click
+            className="block text-black font-semibold text-lg md:text-xl group-hover:opacity-70 transition flex-1 py-1"
+          >
+            {link.name}
+          </Link>
+
+          {/* 2. THE TOGGLE BUTTON - Handles the Dropdown */}
+          {isServices && (
+            <button
+              onClick={(e) => {
+                e.preventDefault(); // Prevent Link click if nested (safety)
+                e.stopPropagation(); // Prevent bubbling
+                setServicesHover(!ServicesHover);
+              }}
+              className="p-2 -mr-2 text-black/60 hover:text-black transition-colors"
+            >
+              <motion.div
+                animate={{ rotate: ServicesHover ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ChevronDown size={20} />
+              </motion.div>
+            </button>
+          )}
+        </div>
+
+        {/* Dropdown / Accordion */}
+        {isServices && link.subItems && (
+          <AnimatePresence>
+            {ServicesHover && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <div className="flex flex-col gap-2 pl-4 pt-2 pb-1 border-l-2 border-black/10 mt-1 ml-1">
+                  {link.subItems.map((sub) => (
+                    <Link
+                      key={sub.name}
+                      href={sub.href}
+                      onClick={() => setOpen(false)}
+                      className="text-sm font-medium text-black/70 hover:text-black hover:translate-x-1 transition-all"
                     >
-                      {/* Top Level Link */}
-                      <div className="flex items-center justify-between cursor-pointer group">
-                        <Link
-                          href={link.href}
-                          // Only close menu if it's NOT the Services dropdown
-                          onClick={(e) => {
-                            if (isServices) e.preventDefault();
-                            else setOpen(false);
-                          }} 
-                          className="block text-black font-semibold text-lg md:text-xl group-hover:opacity-70 transition flex-1"
-                        >
-                          {link.name}
-                        </Link>
-                        
-                        {/* Show Arrow for Services */}
-                        {isServices && (
-                          <motion.div
-                            animate={{ rotate: ServicesHover ? 180 : 0 }}
-                            transition={{ duration: 0.2 }}
-                          >
-                             <ChevronDown size={20} className="text-black/60" />
-                          </motion.div>
-                        )}
-                      </div>
-
-                      {/* Dropdown / Accordion */}
-                      {isServices && link.subItems && (
-                        <AnimatePresence>
-                          {ServicesHover && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: "auto", opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.3, ease: "easeInOut" }}
-                              className="overflow-hidden"
-                            >
-                              <div className="flex flex-col gap-2 pl-4 pt-2 pb-1 border-l-2 border-black/10 mt-1 ml-1">
-                                {link.subItems.map((sub) => (
-                                  <Link
-                                    key={sub.name}
-                                    href={sub.href}
-                                    onClick={() => setOpen(false)}
-                                    className="text-sm font-medium text-black/70 hover:text-black hover:translate-x-1 transition-all"
-                                  >
-                                    {sub.name}
-                                  </Link>
-                                ))}
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      )}
-                    </motion.div>
-                  );
-                })}
-              </div>
+                      {sub.name}
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        )}
+      </motion.div>
+    );
+  })}
+</div>
             </div>
           </motion.div>
         )}

@@ -40,13 +40,6 @@ export default function AnimationCard() {
         <WorkflowCard />
   </div>
 </section>
-
-
-
-     
-
-    
-
     
     <AnimationCardContinued />
 

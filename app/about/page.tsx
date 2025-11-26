@@ -1,3 +1,4 @@
+import Footer from "@/components/contact/Footer";
 import Navbar from "@/components/landing/Navbar";
 import TestimonialSection from "@/components/landing/TestimonialSection";
 import FeaturesGrid from "@/components/product/FeaturesGrid";
@@ -12,6 +13,7 @@ export default function Page() {
                 <FeaturesGrid />
                 <ShowcaseScroll />
                 <TestimonialSection />
+                <Footer/>
             </section>
         </main>
     )
