@@ -3,6 +3,8 @@ import Navbar from "@/components/landing/Navbar";
 import TestimonialSection from "@/components/landing/TestimonialSection";
 import FeaturesGrid from "@/components/product/FeaturesGrid";
 import ShowcaseScroll from "@/components/product/ScrollingShowcase";
+import SocialMediaFeatures from "@/components/social/SocialMediaFeatures";
+import SocialMediaWorkflow from "@/components/social/Workflow";
 
 export default function Page() {
     return (
@@ -10,8 +12,8 @@ export default function Page() {
             <Navbar />
 
             <section>
-                <FeaturesGrid />
-                <ShowcaseScroll />
+                <SocialMediaFeatures />
+                <SocialMediaWorkflow />
                 <TestimonialSection />
                 <Footer />
             </section>

@@ -8,7 +8,7 @@ import { twMerge } from "tailwind-merge";
 
 // --- 🎨 THEME CONFIG ---
 const THEME = {
-  accent: "#6366f1", // Your Indigo
+  accent: "#A797F7", // Your Indigo
   accentGlow: "rgba(99, 102, 241, 0.4)",
   bgDark: "#0a0a0a",
   cardBg: "#121212",

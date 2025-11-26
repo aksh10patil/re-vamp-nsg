@@ -12,27 +12,27 @@ function cn(...inputs: ClassValue[]) {
 
 
 const row1 = [
-  "images/showcase/item-1.png",
-  "images/showcase/item-2.png",
-  "images/showcase/item-3.png",
- "images/showcase/item-4.png",
-  "images/showcase/item-5.png",
+  "/images/showcase/item-1.png",
+  "/images/showcase/item-2.png",
+  "/images/showcase/item-3.png",
+  "/images/showcase/item-4.png",
+  "/images/showcase/item-2.png",
 ];
 
 const row2 = [
-  "images/showcase/item-1.png",
-  "images/showcase/item-2.png",
-  "images/showcase/item-3.png",
- "images/showcase/item-4.png",
-  "images/showcase/item-5.png",
+  "/images/showcase/item-1.png",
+  "/images/showcase/item-2.png",
+  "/images/showcase/item-3.png",
+  "/images/showcase/item-4.png",
+  "/images/showcase/item-2.png",
 ];
 
 const row3 = [
-  "images/showcase/item-1.png",
-  "images/showcase/item-2.png",
-  "images/showcase/item-3.png",
- "images/showcase/item-4.png",
-  "images/showcase/item-5.png",
+  "/images/showcase/item-1.png",
+  "/images/showcase/item-2.png",
+  "/images/showcase/item-3.png",
+  "/images/showcase/item-4.png",
+  "/images/showcase/item-2.png",
 ];
 
 // --- Sub-component: The Marquee Row ---

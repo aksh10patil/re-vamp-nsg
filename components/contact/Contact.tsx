@@ -6,7 +6,7 @@ import { Mail, Phone, Headset, ArrowRight, User, MessageCircle, Send } from "luc
 
 // --- 🎨 THEME CONFIGURATION ---
 const THEME = {
-  accent: "#6366f1", 
+  accent: "#A797F7", 
   accentGlow: "rgba(99, 102, 241, 0.4)", 
   bgDark: "#0a0a0a", 
   cardBg: "#121212", 

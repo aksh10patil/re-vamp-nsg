@@ -6,7 +6,7 @@ import { FileText, Zap, Box, Rocket, CheckCircle2 } from "lucide-react";
 
 // --- 🎨 THEME CONFIG ---
 const THEME = {
-  accent: "#6366f1", // Your Indigo
+  accent: "#A797F7", // Your Indigo
   accentGlow: "rgba(99, 102, 241, 0.5)",
   bgDark: "#050505", // Deep dark bg
   cardBg: "#0F0F0F",

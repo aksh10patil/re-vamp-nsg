@@ -1,3 +1,5 @@
+import AppDevFeatures from "@/components/app/AppDevFeatures";
+import AppDevelopmentWorkflow from "@/components/app/AppWorkflow";
 import Footer from "@/components/contact/Footer";
 import Navbar from "@/components/landing/Navbar";
 import TestimonialSection from "@/components/landing/TestimonialSection";
@@ -10,8 +12,8 @@ export default function Page() {
             <Navbar />
 
             <section>
-                <FeaturesGrid />
-                <ShowcaseScroll />
+                <AppDevFeatures />
+                <AppDevelopmentWorkflow />
                 <TestimonialSection />
                 <Footer />
             </section>
