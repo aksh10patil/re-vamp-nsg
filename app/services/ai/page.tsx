@@ -10,7 +10,7 @@ export default function Page() {
         <main className=" font-raleway">
             <Navbar />
 
-            <section>
+           <section className="bg-black">
                 <FeaturesGridAI/>
                 <FeaturesCard />
                 <ProcessWorkflow />

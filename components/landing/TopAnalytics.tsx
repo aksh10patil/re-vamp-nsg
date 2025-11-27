@@ -7,7 +7,8 @@ function StatCard({ title, value, change }: { title: string; value: string; chan
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="card p-4 glow text-white/95"
+      // Added background and border for better visibility on dark backgrounds if needed
+      className="p-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md text-white/95"
     >
       <div className="text-xs text-neutral-300">{title}</div>
       <div className="text-2xl font-semibold mt-2">{value}</div>
@@ -21,9 +22,8 @@ export default function TopAnalytics() {
     <div
       className="
         grid
-        grid-cols-3          /* MOBILE: 3 in a row */
-        sm:grid-cols-1       /* SMALL SCREENS: 1 per row */
-        lg:grid-cols-3       /* LARGE SCREENS: 3 per row */
+        grid-cols-2          /* MOBILE: 2 in a row (adjusted for better fit) */
+        sm:grid-cols-3       /* SMALL SCREENS: 3 per row */
         gap-4 w-full
       "
     >

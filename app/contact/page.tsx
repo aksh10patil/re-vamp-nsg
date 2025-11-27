@@ -10,7 +10,11 @@ export default function Page() {
 
             <section>
                 <ContactSection />
+                
+            <section className="bg-black">
                 <Footer />
+            </section>
+                
             </section>
         </main>
     )

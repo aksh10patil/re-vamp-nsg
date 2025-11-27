@@ -8,6 +8,21 @@ const thisYear = [20, 18, 22, 18, 17, 22, 24, 28];
 export default function ProductSalesCard() {
   const [mode, setMode] = useState<"last" | "this">("this");
   const data = mode === "this" ? thisYear : lastYear;
+  
+  // Hydration Fix: Start with a default multiplier and update on client
+  const [heightMultiplier, setHeightMultiplier] = useState(3.6);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setHeightMultiplier(window.innerWidth < 640 ? 2.4 : 3.6);
+    };
+    
+    // Set initial value
+    handleResize();
+    
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const total = data.reduce((a, b) => a + b, 0);
 
@@ -19,26 +34,26 @@ export default function ProductSalesCard() {
     mv.set(total);
     const unsub = spring.on("change", (v) => setDisplayTotal(Math.round(v)));
     return () => unsub();
-  }, [total]);
+  }, [total, mv, spring]);
 
   return (
-    <div className="card p-6 glow rounded-[22px] w-full">
+    <div className="p-6 rounded-[22px] border border-white/10 bg-white/5 backdrop-blur-md w-full">
       <div className="flex flex-col sm:flex-row justify-between gap-4 sm:items-center">
         <div>
           <div className="text-sm text-neutral-300">Product sales</div>
           <div className="text-3xl font-semibold text-white">{displayTotal}</div>
         </div>
 
-        <div className="rounded-full bg-white/10 p-[6px] flex items-center w-fit">
+        <div className="rounded-full bg-white/10 p-[4px] flex items-center w-fit">
           <button
             onClick={() => setMode("last")}
-            className={`px-3 py-1 rounded-full text-sm transition ${mode === "last" ? "bg-white/20 text-white" : "text-neutral-300"}`}
+            className={`px-3 py-1.5 rounded-full text-xs font-medium transition ${mode === "last" ? "bg-white/20 text-white" : "text-neutral-400 hover:text-white"}`}
           >
             Last year
           </button>
           <button
             onClick={() => setMode("this")}
-            className={`px-3 py-1 rounded-full text-sm transition ${mode === "this" ? "bg-white/20 text-white" : "text-neutral-300"}`}
+            className={`px-3 py-1.5 rounded-full text-xs font-medium transition ${mode === "this" ? "bg-white/20 text-white" : "text-neutral-400 hover:text-white"}`}
           >
             This year
           </button>
@@ -46,29 +61,32 @@ export default function ProductSalesCard() {
       </div>
 
       {/* CHART */}
-      <div className="mt-6 flex flex-col sm:flex-row gap-6">
+      <div className="mt-8 flex flex-col sm:flex-row gap-6">
 
         {/* Bars */}
-        <div className="h-48 flex items-end gap-3 flex-1">
+        <div className="h-48 flex items-end gap-2 sm:gap-3 flex-1">
           {data.map((val, i) => (
             <motion.div
               key={i}
               initial={{ height: 0 }}
-              animate={{ height: val * (window.innerWidth < 640 ? 2.4 : 3.6) }}
+              animate={{ height: val * heightMultiplier }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.05 }}
-              className="rounded-md bg-gradient-to-b from-purple-300 to-purple-600 shadow-[0_10px_30px_rgba(255,200,80,0.12)]"
+              className="rounded-t-sm bg-gradient-to-b from-purple-300 to-purple-600 shadow-[0_10px_30px_rgba(255,200,80,0.12)]"
               style={{
-                width: window.innerWidth < 640 ? "10px" : "24px",
+                width: "100%", // Fluid width within flex container
+                maxWidth: "24px",
+                minWidth: "8px"
               }}
             />
           ))}
         </div>
 
         {/* Right side text */}
-        <div className="flex flex-col justify-between flex-1">
-          <div className="text-sm text-neutral-300">Notes</div>
-          <div className="text-sm text-neutral-400">
-            View the comparison between last year and this year. Bars animate smoothly when toggled.
+        <div className="flex flex-col justify-between flex-1 min-w-[120px]">
+          <div className="text-sm text-neutral-300 font-medium">Insights</div>
+          <div className="text-xs text-neutral-400 leading-relaxed mt-2">
+            Comparison between <span className="text-purple-300">2023</span> and <span className="text-purple-300">2024</span>. 
+            Growth has been consistent across Q3 and Q4.
           </div>
         </div>
       </div>

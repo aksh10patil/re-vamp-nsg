@@ -45,10 +45,10 @@ export default function Footer() {
   const legalLinks = ["Privacy Policy", "Terms of Service", "Cookie Policy"];
 
   return (
-    <footer className="relative bg-zinc-950 text-white overflow-hidden pt-20 pb-10 border-t border-white/5">
+    <footer className="relative  text-white overflow-hidden pt-20 pb-10 border-t border-white/5">
       
       {/* --- Ambient Background Effects --- */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#A797F7]/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] rounded-full pointer-events-none" />
       <div
         className="absolute inset-0 z-0 pointer-events-none opacity-20"
         style={{

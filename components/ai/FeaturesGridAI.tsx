@@ -111,7 +111,7 @@ const TOOLS = [
 
 export default function FeaturesGridAI() {
   return (
-    <section className="relative w-full py-24 px-6 bg-[#050505] overflow-hidden font-raleway min-h-[60vh] flex flex-col items-center justify-center">
+    <section className="relative w-full py-24 px-6  overflow-hidden font-raleway min-h-[60vh] flex flex-col items-center justify-center">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-purple-600/20 blur-[120px] rounded-full pointer-events-none" />

@@ -15,7 +15,7 @@ import {
 // --- 🎨 THEME CONFIG ---
 const THEME = {
   accent: "#A797F7", // Your Indigo/Purple
-  bgDark: "#050505", 
+  bgDark: "#000000", 
   cardBg: "#0F0F0F",
   textMuted: "#a1a1aa",
 };
@@ -72,31 +72,7 @@ export default function SocialMediaWorkflow() {
       className="relative w-full py-24 px-4 overflow-hidden min-h-[120vh] flex flex-col items-center"
       style={{ backgroundColor: THEME.bgDark, color: "white" }}
     >
-      {/* BACKGROUND: Floating Hearts/Sparkles */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-         {[...Array(15)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute text-[#A797F7] opacity-10"
-              initial={{
-                x: Math.random() * 100 + "%",
-                y: Math.random() * 100 + "%",
-                scale: 0.5,
-              }}
-              animate={{
-                y: [null, Math.random() * -100],
-                opacity: [0.1, 0.3, 0],
-              }}
-              transition={{
-                duration: Math.random() * 15 + 10,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            >
-                {i % 2 === 0 ? <Heart size={Math.random() * 30 + 10} /> : <Sparkles size={Math.random() * 20 + 10} />}
-            </motion.div>
-         ))}
-      </div>
+
 
       {/* HEADER */}
       <div className="relative z-10 text-center max-w-2xl mx-auto mb-24">

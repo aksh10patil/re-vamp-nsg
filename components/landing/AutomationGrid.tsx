@@ -72,7 +72,7 @@ export default function AutomationGrid() {
   }, []);
 
   return (
-    <section className="w-full py-10 px-6 flex flex-col items-center bg-neutral-950 min-h-screen justify-center">
+    <section className="w-full py-10 px-6 flex flex-col items-center min-h-screen justify-center">
       <motion.div
         variants={containerVariants}
         initial="hidden"

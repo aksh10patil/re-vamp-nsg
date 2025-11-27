@@ -125,7 +125,7 @@ const HostingCard = () => {
 
         {/* Content */}
         <div className="mt-auto relative z-20 max-w-md">
-           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#A797F7]/10 text-[#A797F7] text-xs font-medium mb-4 border border-[#A797F7]/20">
+           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[#A797F7] text-xs font-medium mb-4 border border-[#A797F7]/20">
             <Cpu size={14} />
             <span>Edge Network</span>
           </div>
@@ -381,7 +381,7 @@ const ProjectCard = ({
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-white p-4 md:p-8 lg:p-12">
+    <div className="min-h-screen  text-white p-4 md:p-8 lg:p-12">
       
       {/* Dynamic Styles for Animations */}
       <style>{`
@@ -426,8 +426,6 @@ export default function App() {
         
 
         
-
-
       </div>
     </div>
   );

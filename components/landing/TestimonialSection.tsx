@@ -71,7 +71,7 @@ const testimonialCardVariants : Variants  = {
 
 export default function TestimonialSection() {
   return (
-    <section className="w-full py-16 px-6 bg-neutral-950 text-white flex flex-col items-center">
+    <section className="w-full py-16 px-6 text-white flex flex-col items-center">
       <div className="text-center mb-12 max-w-2xl">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}

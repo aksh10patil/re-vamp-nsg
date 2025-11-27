@@ -8,7 +8,7 @@ import { FileText, Zap, Box, Rocket, CheckCircle2 } from "lucide-react";
 const THEME = {
   accent: "#A797F7", // Your Indigo
   accentGlow: "rgba(99, 102, 241, 0.5)",
-  bgDark: "#050505", // Deep dark bg
+  bgDark: "#000000", // Deep dark bg
   cardBg: "#0F0F0F",
   textMuted: "#a1a1aa",
 };

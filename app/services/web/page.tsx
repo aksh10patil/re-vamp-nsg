@@ -11,7 +11,7 @@ export default function Page() {
         <main className="font-raleway">
             <Navbar />
 
-            <section>
+            <section className="bg-black">
                 <FeaturesGridWeb />
                 <ScrollingShowcase />
                 <CarouselCard />

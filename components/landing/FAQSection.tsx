@@ -61,7 +61,7 @@ const itemVariants: Variants = {
 
 export default function FAQSection() {
   return (
-    <section className="w-full py-20 px-6 bg-neutral-950 flex justify-center">
+    <section className="w-full py-20 px-6 flex justify-center">
       <div className="w-full max-w-6xl">
         
         {/* HEADER */}

@@ -135,7 +135,7 @@ const ScoreCircle = ({ score, label, index }: { score: number, label: string, in
 
 export default function WebDevFeatures() {
   return (
-    <section className="relative w-full py-24 px-6 bg-[#050505] overflow-hidden">
+    <section className="relative w-full py-24 px-6  overflow-hidden">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-[#A797F7]/20 blur-[120px] rounded-full pointer-events-none" />

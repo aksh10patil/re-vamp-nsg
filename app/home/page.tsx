@@ -6,8 +6,6 @@ import dynamic from "next/dynamic";
 import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
 import Footer from "@/components/contact/Footer";
-import FooterCTA from "@/components/landing/FooterCTA";
-// import AnimatedFooter from "@/components/landing/AnimatedFooter";
 
 // --- Dynamic Imports (Load on client side only to fix 'window' error) ---
 
@@ -40,21 +38,17 @@ export default function Page() {
     <main className="min-h-screen font-raleway">
       <Navbar />
       
-      <section className="relative z-10 mt-30">
+      <section className="relative z-10 ">
         <Hero />
       </section>
 
-      <section className="px-6 md:px-12 lg:px-24 mt-16">
-        <DashboardPreview />
-        <WhyChooseUs />
-        <AnimationCard />
-        <TestimonialSection />
-        <FAQSection />
-      </section>
-
-      <section>
-        <FooterCTA />
-        <Footer />
+      <section className="w-full bg-black">
+          <DashboardPreview />
+          <WhyChooseUs />
+          <AnimationCard />
+          <TestimonialSection />
+          <FAQSection />
+          <Footer />
       </section>
     </main>
   );

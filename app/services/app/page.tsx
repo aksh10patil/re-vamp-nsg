@@ -13,7 +13,7 @@ export default function Page() {
         <main className=" font-raleway">
             <Navbar />
 
-            <section>
+            <section className="bg-black">
                 <AppDevFeatures />
                 <AppDevelopmentWorkflow />
                 <TailouredSolutionsApp />

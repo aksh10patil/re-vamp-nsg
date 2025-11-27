@@ -5,8 +5,6 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-
-// You might need to install lucide-react if you haven't: npm install lucide-react
 import { ChevronDown } from "lucide-react"; 
 
 const PANEL_BG =
@@ -14,10 +12,7 @@ const PANEL_BG =
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  
-  // New state to track if we are hovering the Services section
   const [ServicesHover, setServicesHover] = useState(false);
-  
   const btnRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
@@ -69,13 +64,11 @@ export default function Navbar() {
     }),
   };
 
-  // Updated Menu Links Structure
   const menuLinks = [
     { name: "Home", href: "/home" },
     { 
       name: "Services", 
       href: "/services", 
-      // Added sub-services here
       subItems: [
         { name: "AI Solutions", href: "/services/ai" },
         { name: "Web Development", href: "/services/web" },
@@ -89,9 +82,12 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-5 pointer-events-none">
+      {/* 1. Removed 'border-2' to remove the line.
+        2. Kept 'fixed' so it floats over the hero. 
+        3. Added 'w-full' to ensure it stretches.
+      */}
+      <nav className="fixed top-0 left-0 right-0 z-50 w-full px-6 py-5 pointer-events-none">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* LOGO */}
           <Link href="/" className="pointer-events-auto">
             <div className="text-white font-semibold text-lg tracking-tight">
               <Image
@@ -104,7 +100,6 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* MENU BUTTON */}
           <button
             ref={btnRef}
             onClick={() => setOpen(true)}
@@ -116,7 +111,7 @@ export default function Navbar() {
               <span className="block w-3.5 h-[2px] bg-white/85 rounded"></span>
               <span className="block w-2.5 h-[2px] bg-white/85 rounded"></span>
             </span>
-            <span>menu</span>
+            <span>Menu</span>
           </button>
         </div>
       </nav>
@@ -150,7 +145,6 @@ export default function Navbar() {
                       boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08)",
                     }}
                   >
-                    {/* Simple Menu Icon */}
                     <svg
                       width="18"
                       height="18"
@@ -167,11 +161,8 @@ export default function Navbar() {
                       />
                     </svg>
                   </div>
-
                   <div>
-                    <div className="text-sm font-semibold leading-none">
-                      Menu
-                    </div>
+                    <div className="text-sm font-semibold leading-none">Menu</div>
                     <div className="text-xs text-black/60">Quick links</div>
                   </div>
                 </div>
@@ -186,85 +177,75 @@ export default function Navbar() {
 
               <div className="mt-4 h-px bg-black/6" />
 
-              {/* Links Loop */}
-                    {/* Links Loop */}
-<div className="mt-4 flex flex-col gap-3">
-  {menuLinks.map((link, i) => {
-    const isServices = link.name === "Services";
-
-    return (
-      <motion.div
-        key={link.name}
-        variants={linkVariants}
-        initial="hidden"
-        animate="show"
-        custom={i + 1}
-        // DESKTOP: Keep hover behavior for the whole block
-        onMouseEnter={() => isServices && setServicesHover(true)}
-        onMouseLeave={() => isServices && setServicesHover(false)}
-      >
-        <div className="flex items-center justify-between group">
-          
-          {/* 1. THE MAIN LINK - Now always navigates */}
-          <Link
-            href={link.href}
-            onClick={() => setOpen(false)} // Always close main menu on click
-            className="block text-black font-semibold text-lg md:text-xl group-hover:opacity-70 transition flex-1 py-1"
-          >
-            {link.name}
-          </Link>
-
-          {/* 2. THE TOGGLE BUTTON - Handles the Dropdown */}
-          {isServices && (
-            <button
-              onClick={(e) => {
-                e.preventDefault(); // Prevent Link click if nested (safety)
-                e.stopPropagation(); // Prevent bubbling
-                setServicesHover(!ServicesHover);
-              }}
-              className="p-2 -mr-2 text-black/60 hover:text-black transition-colors"
-            >
-              <motion.div
-                animate={{ rotate: ServicesHover ? 180 : 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <ChevronDown size={20} />
-              </motion.div>
-            </button>
-          )}
-        </div>
-
-        {/* Dropdown / Accordion */}
-        {isServices && link.subItems && (
-          <AnimatePresence>
-            {ServicesHover && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="overflow-hidden"
-              >
-                <div className="flex flex-col gap-2 pl-4 pt-2 pb-1 border-l-2 border-black/10 mt-1 ml-1">
-                  {link.subItems.map((sub) => (
-                    <Link
-                      key={sub.name}
-                      href={sub.href}
-                      onClick={() => setOpen(false)}
-                      className="text-sm font-medium text-black/70 hover:text-black hover:translate-x-1 transition-all"
+              <div className="mt-4 flex flex-col gap-3">
+                {menuLinks.map((link, i) => {
+                  const isServices = link.name === "Services";
+                  return (
+                    <motion.div
+                      key={link.name}
+                      variants={linkVariants}
+                      initial="hidden"
+                      animate="show"
+                      custom={i + 1}
+                      onMouseEnter={() => isServices && setServicesHover(true)}
+                      onMouseLeave={() => isServices && setServicesHover(false)}
                     >
-                      {sub.name}
-                    </Link>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        )}
-      </motion.div>
-    );
-  })}
-</div>
+                      <div className="flex items-center justify-between group">
+                        <Link
+                          href={link.href}
+                          onClick={() => setOpen(false)}
+                          className="block text-black font-semibold text-lg md:text-xl group-hover:opacity-70 transition flex-1 py-1"
+                        >
+                          {link.name}
+                        </Link>
+                        {isServices && (
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              setServicesHover(!ServicesHover);
+                            }}
+                            className="p-2 -mr-2 text-black/60 hover:text-black transition-colors"
+                          >
+                            <motion.div
+                              animate={{ rotate: ServicesHover ? 180 : 0 }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              <ChevronDown size={20} />
+                            </motion.div>
+                          </button>
+                        )}
+                      </div>
+                      {isServices && link.subItems && (
+                        <AnimatePresence>
+                          {ServicesHover && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3, ease: "easeInOut" }}
+                              className="overflow-hidden"
+                            >
+                              <div className="flex flex-col gap-2 pl-4 pt-2 pb-1 border-l-2 border-black/10 mt-1 ml-1">
+                                {link.subItems.map((sub) => (
+                                  <Link
+                                    key={sub.name}
+                                    href={sub.href}
+                                    onClick={() => setOpen(false)}
+                                    className="text-sm font-medium text-black/70 hover:text-black hover:translate-x-1 transition-all"
+                                  >
+                                    {sub.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      )}
+                    </motion.div>
+                  );
+                })}
+              </div>
             </div>
           </motion.div>
         )}

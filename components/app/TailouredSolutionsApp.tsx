@@ -142,7 +142,7 @@ const Card = ({ item, index }: { item: ServiceCardProps; index: number }) => {
 // --- Main Section Component ---
 export default function TailouredSolutionsApp() {
   return (
-    <section className="bg-neutral-950 py-24 min-h-screen flex items-center">
+    <section className="py-24 min-h-screen flex items-center">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between">
