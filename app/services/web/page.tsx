@@ -4,6 +4,7 @@ import TestimonialSection from "@/components/landing/TestimonialSection";
 import ScrollingShowcase from "@/components/product/ScrollingShowcase";
 import CarouselCard from "@/components/web/CarouselCard";
 import FeaturesGridWeb from "@/components/web/FeaturesGridWeb";
+import TailoredSolutions from "@/components/web/TailoredSolutions";
 
 export default function Page() {
     return (
@@ -14,6 +15,7 @@ export default function Page() {
                 <FeaturesGridWeb />
                 <ScrollingShowcase />
                 <CarouselCard />
+                <TailoredSolutions />
                 <TestimonialSection />
                 <Footer />
             </section>

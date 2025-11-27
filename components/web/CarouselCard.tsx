@@ -287,17 +287,19 @@ const TestimonialCard = () => {
          <div className="relative bg-zinc-950 border border-zinc-800 p-5 rounded-2xl shadow-xl hover:border-[#A797F7]/30 transition-colors cursor-default">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center overflow-hidden">
-                <img src="https://i.pravatar.cc/150?u=60" alt="Elon" className="w-full h-full object-cover" />
+                <img src="https://i.pravatar.cc/150?u=60" alt="Elijah" className="w-full h-full object-cover" />
               </div>
               <div>
-                <div className="text-white font-semibold text-sm">Elon Musk</div>
-                <div className="text-zinc-500 text-xs">@elonmusk</div>
+                <div className="text-white font-semibold text-sm">Elijah Wireman</div>
+                <div className="text-zinc-500 text-xs">@elijahw</div>
               </div>
               <Twitter className="ml-auto text-zinc-600" size={16} />
             </div>
-            <p className="text-zinc-300 text-sm leading-relaxed">
-              I dont like this Twitter thing, <span className="bg-[#A797F7]/20 text-[#A797F7] px-1 rounded">deleting it right away</span> because yolo. Instead, I would like to call it <span className="text-[#A797F7] font-semibold hover:underline cursor-pointer">X.com</span> so that it can easily be confused with adult sites.
-            </p>
+                  <p className="text-zinc-300 text-sm leading-relaxed">
+          Absolutely phenomenal team — <span className="bg-[#A797F7]/20 text-[#A797F7] px-1 rounded">outstanding work!</span> 
+          Honestly, no one around here comes close to the quality they delivered. 
+          <span className="text-[#A797F7] font-semibold hover:underline cursor-pointer"> Thank You NorthStarGroup</span>.
+        </p>
          </div>
        </div>
     </Card>
@@ -422,49 +424,10 @@ export default function App() {
           <TestimonialCard />
         </div>
         
-        {/* Projects / Expertise Section */}
-        <div className="mb-24">
-           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-              <div>
-                <h2 className="text-3xl font-bold text-white mb-2">Tailored Solutions</h2>
-                <p className="text-zinc-400">Specialized infrastructure for every industry vertical.</p>
-              </div>
-              <button className="flex items-center gap-2 text-sm font-medium text-[#A797F7] hover:text-white transition-colors">
-                View all integrations <ArrowUpRight size={16} />
-              </button>
-           </div>
-           
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <ProjectCard 
-                title="E-Commerce" 
-                subtitle="High-performance storefronts with sub-second page loads and secure checkout flows."
-                icon={ShoppingBag}
-                color="#10B981" // Emerald
-                features={["Stripe & PayPal", "Inventory Sync", "Fraud Protection"]}
-              />
-              <ProjectCard 
-                title="Real Estate" 
-                subtitle="Immersive property listings with virtual tours and high-res image optimization."
-                icon={Home}
-                color="#F97316" // Orange
-                features={["3D Virtual Tours", "Lead Gen Forms", "Map Integration"]}
-              />
-              <ProjectCard 
-                title="Trust & Legal" 
-                subtitle="Secure document handling and client portals with enterprise-grade encryption."
-                icon={FileText}
-                color="#F59E0B" // Amber
-                features={["AES-256 Crypto", "Audit Logging", "E-Signatures"]}
-              />
-               <ProjectCard 
-                title="Hospitality" 
-                subtitle="Real-time reservation systems and dynamic digital menus for bars & restaurants."
-                icon={Utensils}
-                color="#E11D48" // Rose
-                features={["Live Reservations", "QR Menus", "POS Connect"]}
-              />
-           </div>
-        </div>
+
+        
+
+
       </div>
     </div>
   );

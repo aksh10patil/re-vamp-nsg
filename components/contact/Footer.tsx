@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react';
+
 import { motion, type Variants } from "framer-motion";
 import { 
   Twitter, 
@@ -67,13 +67,13 @@ export default function Footer() {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center text-center mb-16"
         >
-          <motion.div
-            animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.1, 1] }}
-            transition={{ duration: 5, repeat: Infinity, ease: [0.42, 0, 0.58, 1] }}
-            className="mb-6 p-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
-          >
-            <Sparkles className="w-8 h-8 text-[#A797F7] fill-[#A797F7]/20" />
-          </motion.div>
+          <div className="mb-6 p-3 rounded-2xl backdrop-blur-sm flex justify-center">
+            <img 
+              src="/images/main/NorthStarLogo.webp"
+              alt="NorthStar Logo"
+              className="w-16 h-auto object-contain"
+            />
+          </div>
 
           <h2 className="text-2xl md:text-3xl font-light text-neutral-200 max-w-2xl leading-relaxed">
             We transform ideas into innovative{" "}
@@ -194,7 +194,7 @@ export default function Footer() {
           className="pt-8 border-t border-white/10 flex flex-col-reverse md:flex-row justify-between items-center gap-6"
         >
           <div className="text-neutral-500 text-sm">
-            © {currentYear} Your Company. All rights reserved.
+            © {currentYear} NorthStarGroup. All rights reserved.
           </div>
 
           <div className="flex gap-6">
