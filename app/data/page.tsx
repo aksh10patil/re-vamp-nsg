@@ -1,7 +1,8 @@
 import Footer from "@/components/contact/Footer";
+import DataProcessors from "@/components/data/Data";
 
 import Navbar from "@/components/landing/Navbar";
-import TermsAndConditions from "@/components/terms/TermsConditions";
+import PrivacyPolicy from "@/components/privacy/PrivacyPolicy";
 
 
 export default function Page() {
@@ -10,8 +11,7 @@ export default function Page() {
             <Navbar />
 
             <section className="bg-black">
-                <TermsAndConditions />
-               
+                <DataProcessors />
                 <Footer />
             </section>
         </main>
