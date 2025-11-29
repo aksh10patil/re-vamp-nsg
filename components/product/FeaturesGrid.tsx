@@ -33,7 +33,7 @@ const itemVariants = {
 
 export default function FeaturesGrid() {
   return (
-    <section className="relative w-full py-24 px-6 overflow-hidden font-raleway">
+    <section className="relative w-full pt-25 pb-0 px-6 overflow-hidden font-raleway">
       
       {/* Background Ambient Glow (Purple) */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-purple-600/20 blur-[120px] rounded-full pointer-events-none" />

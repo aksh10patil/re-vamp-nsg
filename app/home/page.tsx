@@ -11,8 +11,6 @@ import ServingIndustries from "@/components/landing/ServingIndustries";
 
 // --- Dynamic Imports (Load on client side only to fix 'window' error) ---
 
-// If DashboardPreview uses 3D or heavy motion, lazy load it. 
-// If it's just an image, you can switch this back to a standard import.
 const DashboardPreview = dynamic(() => import("@/components/landing/DashboardPreview"), { 
   ssr: false 
 });

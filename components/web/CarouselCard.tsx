@@ -250,12 +250,16 @@ const PerspectiveCard = () => {
          {/* Main Card */}
          <div className="relative bg-zinc-950 border border-zinc-800 p-5 rounded-2xl shadow-xl hover:border-[#A797F7]/30 transition-colors cursor-default">
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#A797F7] to-purple-900 flex items-center justify-center text-white font-bold text-xs">
-                GZ
-              </div>
+             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#A797F7] to-purple-900 flex items-center justify-center overflow-hidden">
+              <img 
+                src="/images/people/arya_pfp.png" 
+                alt="icon"
+                className="w-full h-full object-cover"
+              />
+          </div>
               <div>
-                <div className="text-white font-semibold text-sm">Gen Z Built</div>
-                <div className="text-zinc-500 text-xs">@future_ready</div>
+                <div className="text-white font-semibold text-sm">Arya</div>
+                <div className="text-zinc-500 text-xs">@aryaaxx</div>
               </div>
             </div>
             <p className="text-zinc-300 text-sm leading-relaxed">

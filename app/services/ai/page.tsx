@@ -16,7 +16,6 @@ export default function Page() {
            <section className="bg-black">
                 <FeaturesGridAI/>
                 <ChallengeAi />
-                <FeaturesCard />
                 <FutureAi />
                 <ProcessWorkflow />
                 <TestimonialSection />

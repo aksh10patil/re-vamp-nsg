@@ -51,7 +51,7 @@ const cardVariants : Variants = {
   },
 };
 
-export default function AutomationGrid() {
+export default function AnimationCardContinued() {
   // 1. Typewriter Text
   const codeText = useTypewriter(
     `class DataProcessor:
@@ -72,7 +72,9 @@ export default function AutomationGrid() {
   }, []);
 
   return (
-    <section className="w-full py-10 px-6 flex flex-col items-center min-h-screen justify-center">
+    
+    
+    <section className="w-full px-6 flex flex-col items-center justify-center">
       <motion.div
         variants={containerVariants}
         initial="hidden"

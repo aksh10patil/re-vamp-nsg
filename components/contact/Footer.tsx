@@ -40,9 +40,27 @@ const itemVariants: Variants = {
 const currentYear = new Date().getFullYear();
 
 export default function Footer() {
-  const servicesLinks = ["Web Development", "Artificial Intelligence", "Mobile App Development", "Social Media Marketing"];
-  const menuLinks = ["Home", "Portfolio", "Use Cases", "Pricing"];
-  const legalLinks = ["Privacy Policy", "Terms of Service", "Cookie Policy"];
+
+const servicesLinks = [
+  { label: "Web Development", href: "/services/web" },
+  { label: "App Development", href: "/services/app" },
+  { label: "AI development", href: "/services/ai" },
+  { label: "Social Media", href: "/services/social" },
+];
+
+const menuLinks = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Use Cases", href: "/services/ai" },
+  { label: "Pricing", href: "/contact" },
+];
+
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Cookie Policy", href: "/cookies" },
+];
+
 
   return (
     <footer className="relative  text-white overflow-hidden pt-20 pb-10 border-t border-white/5">
@@ -93,13 +111,16 @@ export default function Footer() {
           {/* Column 1: Services */}
           <motion.div variants={itemVariants} className="lg:col-span-3">
             <h3 className="text-lg font-semibold text-white mb-6">Services</h3>
-            <ul className="space-y-4">
-              {servicesLinks.map((link) => (
-                <li key={link}>
-                  <a href="#" className="group flex items-center gap-2 text-neutral-400 hover:text-[#A797F7] transition-colors">
+                      <ul className="space-y-4">
+              {servicesLinks.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    className="group flex items-center gap-2 text-neutral-400 hover:text-[#A797F7] transition-colors"
+                  >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#A797F7]/0 group-hover:bg-[#A797F7] transition-all duration-300" />
                     <span className="group-hover:translate-x-1 transition-transform duration-300">
-                      {link}
+                      {item.label}
                     </span>
                   </a>
                 </li>
@@ -110,16 +131,19 @@ export default function Footer() {
           {/* Column 2: Menu */}
           <motion.div variants={itemVariants} className="lg:col-span-3">
             <h3 className="text-lg font-semibold text-white mb-6">Menu</h3>
-            <ul className="space-y-4 mb-8">
-              {menuLinks.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-neutral-400 hover:text-white transition-colors relative inline-block group">
-                    {link}
-                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#A797F7] transition-all duration-300 group-hover:w-full" />
-                  </a>
-                </li>
-              ))}
-            </ul>
+                        <ul className="space-y-4 mb-8">
+                {menuLinks.map((item) => (
+                  <li key={item.label}>
+                    <a
+                      href={item.href}
+                      className="text-neutral-400 hover:text-white transition-colors relative inline-block group"
+                    >
+                      {item.label}
+                      <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#A797F7] transition-all duration-300 group-hover:w-full" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
             <button className="flex items-center justify-between w-full max-w-[200px] px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-[#A797F7]/50 hover:bg-white/10 transition-all text-sm text-neutral-300 group">
               <span>More Instruments</span>
               <ChevronDown className="w-4 h-4 text-neutral-500 group-hover:text-[#A797F7] transition-colors" />
@@ -135,9 +159,9 @@ export default function Footer() {
                   <MapPin className="w-5 h-5 text-[#A797F7]" />
                 </div>
                 <span className="text-sm leading-relaxed group-hover:text-white transition-colors">
-                  123 Innovation Dr,
+                  Via alla Chiesa 40
                   <br />
-                  Tech Valley, CA 94043
+                  6595 Riazzino
                 </span>
               </li>
               <li className="flex items-center gap-4 text-neutral-400 group">
@@ -145,7 +169,7 @@ export default function Footer() {
                   <Phone className="w-5 h-5 text-[#A797F7]" />
                 </div>
                 <span className="text-sm group-hover:text-white transition-colors">
-                  +1 (555) 000-0000
+                  +41 79 945 33 73
                 </span>
               </li>
               <li className="flex items-center gap-4 text-neutral-400 group">
@@ -153,7 +177,7 @@ export default function Footer() {
                   <Mail className="w-5 h-5 text-[#A797F7]" />
                 </div>
                 <span className="text-sm group-hover:text-white transition-colors">
-                  hello@yourcompany.com
+                 info@northstargroup.ch
                 </span>
               </li>
             </ul>
@@ -210,15 +234,15 @@ export default function Footer() {
           </div>
 
           <div className="flex gap-6 text-sm font-medium text-neutral-400">
-            {legalLinks.map((link) => (
-              <a
-                key={link}
-                href="#"
-                className="hover:text-white transition-colors"
-              >
-                {link}
-              </a>
-            ))}
+          {legalLinks.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="hover:text-white transition-colors"
+                >
+                  {item.label}
+                </a>
+              ))}
           </div>
         </motion.div>
       </div>

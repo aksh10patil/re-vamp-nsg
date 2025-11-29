@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { FaCheck, FaCube, FaUsers, FaClock, FaEnvelope, FaDatabase, FaStar, FaSearch, FaUserFriends, FaChartLine, FaCode } from "react-icons/fa";
-import AnimationCardContinued from "./AnimationCardContinued";
+
+import {  FaUsers, FaClock, FaEnvelope, FaDatabase, FaStar, } from "react-icons/fa";
+
 import WorkflowCard from "./WorkflowCard";
 import AutomatedTasksCard from "./AutomatedTasksCard";
 
@@ -36,13 +36,11 @@ export default function AnimationCard() {
     "
   >
     {/* LEFT CARD */}
-   <AutomatedTasksCard />
-        <WorkflowCard />
-  </div>
-</section>
+      <AutomatedTasksCard />
+            <WorkflowCard />
+        </div>
+      </section>
     
-    <AnimationCardContinued />
-
        </div>
   );
 }

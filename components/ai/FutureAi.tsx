@@ -341,51 +341,7 @@ export default function FutureAi() {
           </motion.div>
         </div>
       </section>
-
-      {/* SECTION 2: ADAPTATION */}
-      <section className="py-32 px-6 bg-gradient-to-b from-black via-neutral-950 to-black relative overflow-hidden">
-        {/* Ambient Background Glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#A797F7]/5 rounded-full blur-[120px] pointer-events-none" />
-
-        <div className="max-w-6xl mx-auto w-full relative z-10">
-          
-          <div className="text-center mb-20 space-y-6">
-            <motion.div
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-            >
-               <Badge className="bg-[#A797F7]/10 border-[#A797F7]/20 text-[#A797F7]">
-                 How we work together
-               </Badge>
-            </motion.div>
-            
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-bold tracking-tighter"
-            >
-              AI that <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-[#A797F7] to-purple-400">adapts to you</span>
-            </motion.h2>
-            
-            <motion.p 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-neutral-400 text-lg max-w-2xl mx-auto"
-            >
-              Not another tool to learn, but a natural extension of the way you work.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {adaptationFeatures.map((feature) => (
-              <AdaptationCard key={feature.id} item={feature} />
-            ))}
-          </div>
-        </div>
-      </section>
-
+      
       {/* SECTION 3: TRANSFORMATIONS (New) */}
       <section className="py-32 px-6 border-t border-white/5 relative">
         <div className="max-w-7xl mx-auto w-full relative z-10">
