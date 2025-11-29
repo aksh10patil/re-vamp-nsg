@@ -24,7 +24,7 @@ function cn(...inputs: ClassValue[]) {
 export default function FeaturesCard() {
   return (
     <section
-      className="w-full py-20 px-4 flex justify-center items-center"
+      className="w-full px-4 flex justify-center items-center"
       style={{ backgroundColor: THEME.bgDark, color: "white" }}
     >
       <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-6">

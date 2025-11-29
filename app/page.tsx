@@ -6,6 +6,8 @@ import dynamic from "next/dynamic";
 import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
 import Footer from "@/components/contact/Footer";
+import FeaturesNew from "@/components/landing/FeaturesNew";
+import ServingIndustries from "@/components/landing/ServingIndustries";
 
 // --- Dynamic Imports (Load on client side only to fix 'window' error) ---
 
@@ -44,6 +46,8 @@ export default function Page() {
 
       <section className="w-full bg-black">
           <DashboardPreview />
+          <FeaturesNew />
+          <ServingIndustries />
           <WhyChooseUs />
           <AnimationCard />
           <TestimonialSection />
