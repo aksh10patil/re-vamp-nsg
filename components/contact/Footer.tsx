@@ -14,8 +14,11 @@ import {
   ChevronDown, 
   ArrowRight
 } from 'lucide-react';
+import { useState } from "react";
 
 // --- Animation Variants ---
+
+
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -40,6 +43,8 @@ const itemVariants: Variants = {
 const currentYear = new Date().getFullYear();
 
 export default function Footer() {
+
+   const [open, setOpen] = useState(false);
 
 const servicesLinks = [
   { label: "Web Development", href: "/services/web" },
@@ -145,10 +150,33 @@ const legalLinks = [
                   </li>
                 ))}
               </ul>
-            <button className="flex items-center justify-between w-full max-w-[200px] px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-[#A797F7]/50 hover:bg-white/10 transition-all text-sm text-neutral-300 group">
-              <span>More Instruments</span>
-              <ChevronDown className="w-4 h-4 text-neutral-500 group-hover:text-[#A797F7] transition-colors" />
-            </button>
+             <div className="relative">
+                    <button
+                      onClick={() => setOpen(!open)}
+                      className="flex items-center justify-between w-full max-w-[200px] px-4 py-3 rounded-lg bg-white/5 border border-white/10 
+                                hover:border-[#A797F7]/50 hover:bg-white/10 transition-all text-sm text-neutral-300 group"
+                    >
+                      <span>More Instruments</span>
+                      <ChevronDown
+                        className={`w-4 h-4 text-neutral-500 group-hover:text-[#A797F7] transition-transform duration-300 ${
+                          open ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    {open && (
+                      <div className="absolute left-0 mt-2 w-[200px] rounded-lg bg-neutral-900/90 backdrop-blur-xl border border-white/10 shadow-xl p-1">
+                       <a
+                          href="https://www.nebulino.ch/"   // 👈 change this to your route
+                          className="block w-full text-left px-4 py-2 rounded-md text-sm text-neutral-300 
+                                    hover:bg-white/10 hover:text-[#A797F7] transition"
+                        >
+                          Nebula
+                        </a>
+
+                      </div>
+                    )}
+            </div>
           </motion.div>
 
           {/* Column 3: Contacts */}

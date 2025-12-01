@@ -96,7 +96,7 @@ export default function ContactSection() {
                 delay={0.4}
                 theme={THEME}
                 footer={
-                  <a href="#" 
+                  <a href="https://cal.northstargroup.ch/nsg/book" 
                      className="inline-flex items-center gap-2 text-sm font-medium transition-opacity underline decoration-white/20 underline-offset-4 hover:decoration-[#A797F7]"
                      style={{ color: THEME.accent }}
                   >
@@ -115,15 +115,15 @@ export default function ContactSection() {
                 footer={
                   <div className="flex flex-col gap-3">
                      {/* WhatsApp */}
-                     <a href="https://wa.me/1234567890" className="flex items-center gap-3 text-sm font-medium text-white/70 hover:text-white transition-colors group/link">
+                    <a href="https://wa.me/41799453373" className="flex items-center gap-3 text-sm font-medium text-white/70 hover:text-white transition-colors group/link">
                         <div className="p-1.5 rounded-full bg-[#25D366]/10 text-[#25D366] group-hover/link:bg-[#25D366] group-hover/link:text-white transition-all">
                            <MessageCircle size={14} />
                         </div>
-                        <span>+1 (555) 000-0000</span>
+                        <span>+41 079 945 33 73</span>
                      </a>
                      
                      {/* Telegram */}
-                     <a href="https://t.me/username" className="flex items-center gap-3 text-sm font-medium text-white/70 hover:text-white transition-colors group/link">
+                     <a href="https://t.me/northstargroup" className="flex items-center gap-3 text-sm font-medium text-white/70 hover:text-white transition-colors group/link">
                         <div className="p-1.5 rounded-full bg-[#0088cc]/10 text-[#0088cc] group-hover/link:bg-[#0088cc] group-hover/link:text-white transition-all">
                            <Send size={14} />
                         </div>

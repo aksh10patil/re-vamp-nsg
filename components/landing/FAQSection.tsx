@@ -78,8 +78,12 @@ export default function FAQSection() {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-            Frequently Asked <span className="font-serif italic font-light text-purple-400">Questions</span>
-          </h2>
+              Frequently Asked{" "}
+              
+              <span className="font-serif italic font-light" style={{ color: "#A797F7" }}>
+              Questions
+              </span>
+            </h2>
           <p className="text-neutral-400 mt-4 text-lg">
             Find quick answers to the most common support questions.
           </p>
@@ -102,7 +106,7 @@ export default function FAQSection() {
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <div className="w-14 h-14 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center mb-6 relative z-10 shadow-lg">
-                <FaQuestion className="text-purple-400 text-xl" />
+                <FaQuestion className="text-nsg text-xl" />
               </div>
               
               <h3 className="text-xl font-semibold text-white mb-3 relative z-10">
@@ -112,22 +116,24 @@ export default function FAQSection() {
                 Can't find the answer you're looking for? Please chat to our friendly team.
               </p>
               
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="
-                  relative z-10
-                  flex items-center gap-2
-                  px-6 py-3 
-                  rounded-xl 
-                  bg-white/10 border border-white/10 
-                  text-white font-medium text-sm
-                  hover:bg-purple-600 hover:border-purple-500 
-                  transition-all duration-300
-                "
-              >
-                Ask A Question <FaArrowRight className="text-xs" />
-              </motion.button>
+                <motion.a
+                  href="https://cal.northstargroup.ch/nsg/book"   // ← change this to your URL
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="
+                    relative z-10
+                    flex items-center gap-2
+                    px-6 py-3 
+                    rounded-xl 
+                    bg-white/10 border border-white/10 
+                    text-white font-medium text-sm
+                    hover:bg-purple-600 hover:border-purple-500 
+                    transition-all duration-300
+                  "
+                >
+                  Ask A Question <FaArrowRight className="text-xs" />
+                </motion.a>
+
             </div>
           </motion.div>
 

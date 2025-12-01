@@ -80,7 +80,7 @@ export default function TestimonialSection() {
           viewport={{ once: true }}
           className="text-4xl font-bold tracking-tight text-white mb-3"
         >
-          Trusted by <span className="text-purple-400">Visionaries</span>
+          Trusted by <span className="text-nsg">Visionaries</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: -10 }}

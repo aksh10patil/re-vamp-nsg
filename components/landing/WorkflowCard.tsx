@@ -72,7 +72,7 @@ const WorkflowCard = () => {
             transition={{ duration: 2, repeat: Infinity, delay: 0.8 }}
             className="w-16 h-16 bg-black/40 border border-purple-500/50 rounded-2xl flex items-center justify-center backdrop-blur-sm"
           >
-            <FaBrain className="text-purple-400 text-2xl" />
+            <FaBrain className="text-nsg text-2xl" />
           </motion.div>
           <span className="text-xs text-neutral-400 mt-2 font-medium tracking-wide">AI Agent</span>
         </motion.div>

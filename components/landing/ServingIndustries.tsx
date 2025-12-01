@@ -199,9 +199,13 @@ export default function ServingIndustries() {
         <div className="mt-20 text-center">
             <div className="inline-flex items-center gap-2 text-neutral-400 text-sm">
                 <span>Don't see your industry?</span>
-                <button className="text-[#A797F7] font-semibold hover:text-white transition-colors border-b border-[#A797F7] hover:border-white pb-0.5">
-                    Let's talk custom solutions
-                </button>
+                                <a
+                  href="https://cal.northstargroup.ch/nsg/book"  // ← change to your route
+                  className="text-[#A797F7] font-semibold hover:text-white transition-colors 
+                            border-b border-[#A797F7] hover:border-white pb-0.5"
+                >
+                  Let's talk custom solutions
+                </a>
             </div>
         </div>
 

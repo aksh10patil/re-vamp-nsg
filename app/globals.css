@@ -12,6 +12,8 @@
   scroll-behavior: smooth;
 } */
 
+
+
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
@@ -26,6 +28,7 @@
 }
 
 
+
 /* Tailwind v4 uses @theme for design tokens */
 @theme {
   --font-sans: "Inter", system-ui, sans-serif;
@@ -34,6 +37,8 @@
   --color-card: rgba(255,255,255,0.04);
   --color-muted: rgba(255,255,255,0.6);
   --color-gold: #ffd24d;
+
+  --color-nsg: #A797F7;   /* ← Correct name + value */
 
   --radius-card: 14px;
 }

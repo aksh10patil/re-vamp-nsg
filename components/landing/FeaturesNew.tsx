@@ -350,12 +350,16 @@ export default function App() {
 
         {/* CTA Section */}
         <div className="flex justify-center pt-8">
-           <button className="group relative px-8 py-4 bg-white text-black font-semibold rounded-full flex items-center gap-2 hover:bg-[#A797F7] hover:text-white transition-all hover:pr-10 hover:shadow-[0_0_40px_rgba(167,151,247,0.4)]">
-              Start Your Project
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-           </button>
+                            <a 
+                href="https://cal.northstargroup.ch/nsg/book"   // ← change to your URL
+                className="group relative px-8 py-4 bg-white text-black font-semibold rounded-full 
+                          flex items-center gap-2 hover:bg-[#A797F7] hover:text-white transition-all 
+                          hover:pr-10 hover:shadow-[0_0_40px_rgba(167,151,247,0.4)]"
+              >
+                Start Your Project
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
         </div>
-
       </div>
     </div>
   );

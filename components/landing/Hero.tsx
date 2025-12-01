@@ -126,7 +126,8 @@ export default function Hero() {
             </div>
           )}
 
-          <span>Start 14-day trial</span>
+          <a href="https://cal.northstargroup.ch/nsg/book">Start 14-day trial</a>
+
 
           <span className="w-8 h-8 rounded-full bg-black/90 text-white flex items-center justify-center transition-transform group-hover:translate-x-1">
             <ArrowRightIcon />

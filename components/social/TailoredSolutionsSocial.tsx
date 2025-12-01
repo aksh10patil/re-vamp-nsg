@@ -219,7 +219,7 @@ export default function TailoredSolutionsSocial() {
           
           <div className="mt-6 flex flex-col gap-4 md:mt-0 md:items-end">
              <a
-                href="#"
+                href="https://cal.northstargroup.ch/nsg/book"
                 className="group flex items-center gap-2 text-sm font-semibold text-pink-400 transition-colors hover:text-pink-300"
             >
                 Start your campaign
