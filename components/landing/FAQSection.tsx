@@ -6,33 +6,32 @@ import { FaPlus, FaQuestion, FaArrowRight } from "react-icons/fa";
 import type { Variants } from "framer-motion";
 
 
-
 // --- FAQ Data ---
 const faqs = [
   {
-    question: "What types of processes can you automate?",
+    question: "Quali tipi di processi potete automatizzare?",
     answer:
-      "We specialize in automating repetitive digital tasks, data entry, cross-platform syncing, and complex multi-step workflows involving AI agents. If it involves data moving between apps, we can likely automate it.",
+      "Siamo specializzati nell'automazione di attività digitali ripetitive, inserimento dati, sincronizzazione multipiattaforma e workflow complessi a più step che coinvolgono agenti AI. Se si tratta di dati che si spostano tra app, molto probabilmente possiamo automatizzarlo.",
   },
   {
-    question: "Do I need technical knowledge to use your service?",
+    question: "Devo avere conoscenze tecniche per usare il vostro servizio?",
     answer:
-      "Not at all. Our platform is designed to be user-friendly. We handle the complex logic in the background while giving you a simple dashboard to monitor and control your agents.",
+      "Assolutamente no. La nostra piattaforma è progettata per essere facile da usare. Noi gestiamo tutta la logica complessa in background mentre ti forniamo una dashboard semplice per monitorare e controllare i tuoi agenti.",
   },
   {
-    question: "Can you integrate with our existing tools?",
+    question: "Potete integrarvi con i nostri strumenti esistenti?",
     answer:
-      "Yes, we support integrations with over 2,000 popular business apps including Slack, Notion, Salesforce, HubSpot, and Google Workspace via standard APIs.",
+      "Sì, supportiamo integrazioni con oltre 2.000 applicazioni business popolari tra cui Slack, Notion, Salesforce, HubSpot e Google Workspace tramite API standard.",
   },
   {
-    question: "How long does implementation take?",
+    question: "Quanto tempo richiede l’implementazione?",
     answer:
-      "Simple workflows can be live in 24 hours. More complex, custom AI agent deployments typically take 1-2 weeks to fully test and integrate into your production environment.",
+      "I workflow semplici possono essere operativi in 24 ore. Le implementazioni personalizzate con agenti AI complessi richiedono in genere 1–2 settimane per essere completamente testate e integrate nel vostro ambiente di produzione.",
   },
   {
-    question: "Is your AI secure and compliant?",
+    question: "La vostra AI è sicura e conforme alle normative?",
     answer:
-      "Security is our top priority. We are SOC2 compliant, use end-to-end encryption for all data processing, and never train our public models on your private data.",
+      "La sicurezza è la nostra massima priorità. Siamo conformi a SOC2, utilizziamo crittografia end-to-end per tutta l’elaborazione dei dati e non utilizziamo mai i vostri dati privati per addestrare modelli pubblici.",
   },
 ];
 
@@ -41,9 +40,7 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -52,10 +49,7 @@ const itemVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut", // Now VALID
-    },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
@@ -74,22 +68,22 @@ export default function FAQSection() {
         >
           <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-4">
             <span className="text-purple-300 text-xs font-medium tracking-wider uppercase flex items-center gap-2">
-              <FaQuestion className="text-[10px]" /> FAQ's
+              <FaQuestion className="text-[10px]" /> FAQ
             </span>
           </div>
+
           <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-              Frequently Asked{" "}
-              
-              <span className="font-serif italic font-light" style={{ color: "#A797F7" }}>
-              Questions
-              </span>
-            </h2>
+            Domande{" "}
+            <span className="font-serif italic font-light" style={{ color: "#A797F7" }}>
+              Frequenti
+            </span>
+          </h2>
           <p className="text-neutral-400 mt-4 text-lg">
-            Find quick answers to the most common support questions.
+            Trova risposte rapide alle domande più comuni.
           </p>
         </motion.div>
 
-        {/* GRID LAYOUT */}
+        {/* GRID */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -98,11 +92,11 @@ export default function FAQSection() {
           className="grid grid-cols-1 lg:grid-cols-3 gap-8"
         >
           
-          {/* LEFT COLUMN: CTA CARD */}
+          {/* LEFT COLUMN - CTA */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <div className="h-full p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl flex flex-col items-center justify-center text-center relative overflow-hidden group">
               
-              {/* Background Gradient Hover Effect */}
+              {/* Hover BG */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <div className="w-14 h-14 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center mb-6 relative z-10 shadow-lg">
@@ -110,34 +104,33 @@ export default function FAQSection() {
               </div>
               
               <h3 className="text-xl font-semibold text-white mb-3 relative z-10">
-                Still Have Questions?
+                Hai ancora domande?
               </h3>
               <p className="text-neutral-400 text-sm mb-8 leading-relaxed relative z-10">
-                Can't find the answer you're looking for? Please chat to our friendly team.
+                Non trovi la risposta che cerchi? Parla con il nostro team.
               </p>
               
-                <motion.a
-                  href="https://cal.northstargroup.ch/nsg/book"   // ← change this to your URL
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="
-                    relative z-10
-                    flex items-center gap-2
-                    px-6 py-3 
-                    rounded-xl 
-                    bg-white/10 border border-white/10 
-                    text-white font-medium text-sm
-                    hover:bg-purple-600 hover:border-purple-500 
-                    transition-all duration-300
-                  "
-                >
-                  Ask A Question <FaArrowRight className="text-xs" />
-                </motion.a>
+              <motion.a
+                href="https://cal.northstargroup.ch/nsg/book"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="
+                  relative z-10
+                  flex items-center gap-2
+                  px-6 py-3 rounded-xl 
+                  bg-white/10 border border-white/10 
+                  text-white font-medium text-sm
+                  hover:bg-purple-600 hover:border-purple-500 
+                  transition-all duration-300
+                "
+              >
+                Fai una domanda <FaArrowRight className="text-xs" />
+              </motion.a>
 
             </div>
           </motion.div>
 
-          {/* RIGHT COLUMN: ACCORDION */}
+          {/* RIGHT COLUMN - FAQ ACCORDION */}
           <div className="lg:col-span-2 flex flex-col gap-4">
             {faqs.map((faq, index) => (
               <FAQItem key={index} question={faq.question} answer={faq.answer} />
@@ -150,7 +143,8 @@ export default function FAQSection() {
   );
 }
 
-// --- Helper Component: Individual Accordion Item ---
+
+// --- FAQ Item Component ---
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -159,9 +153,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
       <div
         onClick={() => setIsOpen(!isOpen)}
         className={`
-          group cursor-pointer
-          rounded-2xl border 
-          transition-all duration-300
+          group cursor-pointer rounded-2xl border transition-all duration-300
           ${isOpen 
             ? "bg-white/10 border-purple-500/30" 
             : "bg-white/5 border-white/10 hover:bg-white/8 hover:border-white/20"
@@ -172,11 +164,11 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
           <h3 className={`font-medium text-base md:text-lg transition-colors ${isOpen ? "text-white" : "text-neutral-200"}`}>
             {question}
           </h3>
+
           <div className={`
             flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-300
             ${isOpen ? "bg-purple-500 border-purple-500 rotate-45" : "bg-transparent border-white/20 group-hover:border-white/40"}
           `}>
-            {/* Note: Rotation is handled by CSS rotate-45 above which turns Plus to X */}
             <FaPlus className={`text-xs transition-colors ${isOpen ? "text-white" : "text-neutral-400"}`} />
           </div>
         </div>

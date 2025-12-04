@@ -71,12 +71,15 @@ const Card = ({ children, className = "", noPadding = false, accentColor = "#A79
   </div>
 );
 
+// -----------------------------------------------
 // 1. Professional Hosting Card
+// -----------------------------------------------
 const HostingCard = () => {
   return (
     <Card className="col-span-1 md:col-span-1 lg:col-span-4 min-h-[400px]">
       <div className="h-full flex flex-col justify-between relative overflow-hidden">
-        {/* Orbit Animation Container */}
+
+        {/* Orbit Animation */}
         <div className="absolute -top-20 -right-20 w-[500px] h-[500px] pointer-events-none opacity-50 md:opacity-100">
           <div className="absolute inset-0 border border-zinc-800 rounded-full" />
           <div className="absolute inset-[15%] border border-zinc-800 rounded-full" />
@@ -99,14 +102,16 @@ const HostingCard = () => {
         <div className="mt-auto relative z-20 max-w-md">
            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[#A797F7] text-xs font-medium mb-4 border border-[#A797F7]/20">
             <Cpu size={14} />
-            <span>99.9% Uptime</span>
+            <span>99.9% Disponibilità</span>
           </div>
           <h3 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-            Professional <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-500">Hosting</span>
+            Hosting <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-500">
+              Professionale
+            </span>
           </h3>
           <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
-            Your business deserves a home that is secure, fast, and always online. We provide professional-grade infrastructure that scales with you.
+            Il tuo business merita una casa sicura, veloce e sempre online. Offriamo un'infrastruttura professionale che cresce insieme a te.
           </p>
         </div>
       </div>
@@ -114,10 +119,12 @@ const HostingCard = () => {
   );
 };
 
+// -----------------------------------------------
 // 2. Ecommerce Opportunity Card
+// -----------------------------------------------
 const OpportunityCard = () => {
-  const count = useCounter(24, 3000); // 24/7
-  
+  const count = useCounter(24, 3000);
+
   const dots = Array.from({ length: 40 }).map((_, i) => ({
     id: i,
     active: Math.random() > 0.8,
@@ -127,17 +134,18 @@ const OpportunityCard = () => {
   return (
     <Card className="col-span-1 md:col-span-1 lg:col-span-5 min-h-[400px]">
       <div className="h-full flex flex-col relative">
+
         <div className="relative z-10">
           <h3 className="text-3xl font-bold text-white mb-2">
-            People shop online, <br />
-            <span className="text-[#A797F7]">don't miss the opportunity</span>
+            Le persone acquistano online, <br />
+            <span className="text-[#A797F7]">non perdere l’occasione</span>
           </h3>
           <p className="text-zinc-400 text-sm max-w-xs mb-8">
-            The digital market never sleeps. Ensure your products are visible to the world every single second.
+            Il mercato digitale non dorme mai. Assicurati che i tuoi prodotti siano visibili al mondo ogni secondo.
           </p>
         </div>
 
-        {/* Abstract Map Visualization */}
+        {/* Abstract Map */}
         <div className="absolute inset-0 top-20 opacity-40 mask-image-linear-gradient">
            <div className="grid grid-cols-8 gap-4 transform rotate-12 scale-110 translate-x-10">
               {dots.map((dot) => (
@@ -153,7 +161,7 @@ const OpportunityCard = () => {
               ))}
            </div>
         </div>
-        
+
         {/* Bottom Stats */}
         <div className="mt-auto pt-10 relative z-10">
           <div className="flex items-baseline gap-1">
@@ -161,8 +169,8 @@ const OpportunityCard = () => {
               {count}/7
             </span>
           </div>
-          <span className="text-xl text-zinc-500 font-medium">Always Open</span>
-          
+          <span className="text-xl text-zinc-500 font-medium">Sempre Aperto</span>
+
           <div className="absolute bottom-0 right-0 p-4 bg-[#A797F7]/10 rounded-full animate-bounce-slow">
              <ShoppingBag className="text-[#A797F7]" size={32} />
           </div>
@@ -172,10 +180,12 @@ const OpportunityCard = () => {
   );
 };
 
+// -----------------------------------------------
 // 3. User Friendly / Editable Card
+// -----------------------------------------------
 const UserFriendlyCard = () => {
   const editCount = useCounter(100);
-  
+
   const icons = [
     { Icon: Edit, color: "text-blue-400" },
     { Icon: Layout, color: "text-amber-500" },
@@ -185,7 +195,8 @@ const UserFriendlyCard = () => {
 
   return (
     <Card className="col-span-1 md:col-span-1 lg:col-span-5 min-h-[350px]">
-       {/* Top Row Icons */}
+
+       {/* Icons */}
        <div className="flex gap-3 mb-12">
           {icons.map((item, idx) => (
             <div key={idx} className="w-12 h-12 bg-zinc-800/50 rounded-xl flex items-center justify-center border border-zinc-700/50 hover:scale-110 hover:bg-zinc-800 transition-all duration-300 cursor-pointer group/icon">
@@ -196,27 +207,28 @@ const UserFriendlyCard = () => {
 
        <div className="flex justify-between items-end">
          <div>
-            <div className="text-5xl font-bold text-white mb-2 tabular-nums">
+            <div className="text-5xl font-bold text-white mb-2">
               {editCount}%
-              <span className="block text-3xl text-zinc-500 font-normal mt-1">Editable</span>
+              <span className="block text-3xl text-zinc-500 font-normal mt-1">Modificabile</span>
             </div>
             
             <div className="mt-8">
-              <h4 className="text-xl font-semibold text-white mb-2">Sites Easily <br/> Editable & Friendly</h4>
+              <h4 className="text-xl font-semibold text-white mb-2">
+                Siti Facili da<br /> Modificare & Intuitivi
+              </h4>
               <p className="text-zinc-500 text-xs max-w-[200px]">
-                No coding required. We build sites that you can easily update, manage, and grow on your own terms.
+                Nessuna programmazione necessaria. Realizziamo siti che puoi aggiornare, gestire e far crescere in autonomia.
               </p>
             </div>
          </div>
 
-         {/* Visual representation of ease */}
+         {/* Visual */}
          <div className="w-32 h-32 bg-zinc-800/50 rounded-2xl border border-zinc-700/50 flex flex-col p-3 relative overflow-hidden group hover:border-[#A797F7] transition-colors">
             <div className="h-2 w-1/2 bg-zinc-600 rounded mb-2" />
             <div className="h-2 w-3/4 bg-zinc-700 rounded mb-2" />
             <div className="h-16 w-full bg-zinc-900 rounded border border-zinc-700/50 flex items-center justify-center text-xs text-zinc-500">
                Drag & Drop
             </div>
-            {/* Cursor */}
             <div className="absolute bottom-2 right-2 text-[#A797F7] animate-bounce">
                <MousePointerClick size={20} fill="#A797F7" />
             </div>
@@ -226,29 +238,34 @@ const UserFriendlyCard = () => {
   );
 };
 
+// -----------------------------------------------
 // 4. New Age Perspective Card
+// -----------------------------------------------
 const PerspectiveCard = () => {
   return (
     <Card className="col-span-1 md:col-span-1 lg:col-span-4 min-h-[350px] overflow-visible">
+
        <div className="flex items-center gap-2 mb-2">
          <Sparkles className="text-[#A797F7]" size={20} />
-         <span className="text-[#A797F7] text-xs font-bold uppercase tracking-wider">New Age Vision</span>
+         <span className="text-[#A797F7] text-xs font-bold uppercase tracking-wider">
+           Visione Moderna
+         </span>
        </div>
+
        <h3 className="text-3xl font-bold text-white mb-2">
-         A young <br />
-         <span className="text-zinc-500">point of view</span>
+         Un punto di vista <br />
+         <span className="text-zinc-500">giovane</span>
        </h3>
+
        <p className="text-zinc-400 text-sm mb-8">
-         We've grown in the new age of tech. We don't just follow trends; we understand the native language of the modern web.
+         Siamo cresciuti nella nuova era della tecnologia. Non seguiamo solo le tendenze: comprendiamo il linguaggio nativo del web moderno.
        </p>
 
        <div className="relative mt-8">
-         {/* Stacked Cards Effect */}
          <div className="absolute top-0 left-0 right-0 h-32 bg-zinc-800 rounded-2xl transform scale-90 -translate-y-6 opacity-30" />
          <div className="absolute top-0 left-0 right-0 h-32 bg-zinc-800 rounded-2xl transform scale-95 -translate-y-3 opacity-60" />
-         
-         {/* Main Card */}
-         <div className="relative bg-zinc-950 border border-zinc-800 p-5 rounded-2xl shadow-xl hover:border-[#A797F7]/30 transition-colors cursor-default">
+
+         <div className="relative bg-zinc-950 border border-zinc-800 p-5 rounded-2xl shadow-xl hover:border-[#A797F7]/30 transition-colors">
             <div className="flex items-center gap-3 mb-3">
              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#A797F7] to-purple-900 flex items-center justify-center overflow-hidden">
               <img 
@@ -256,14 +273,14 @@ const PerspectiveCard = () => {
                 alt="icon"
                 className="w-full h-full object-cover"
               />
-          </div>
+             </div>
               <div>
                 <div className="text-white font-semibold text-sm">Arya</div>
                 <div className="text-zinc-500 text-xs">@aryaaxx</div>
               </div>
             </div>
             <p className="text-zinc-300 text-sm leading-relaxed">
-              "Finally, a team that understands <span className="text-[#A797F7]">modern aesthetics</span> and speed. They bring a fresh energy that old agencies just lack."
+              "Finalmente un team che comprende <span className="text-[#A797F7]">l’estetica moderna</span> e la velocità. Portano un’energia fresca che le vecchie agenzie non hanno."
             </p>
          </div>
        </div>
@@ -271,11 +288,13 @@ const PerspectiveCard = () => {
   );
 };
 
+// -----------------------------------------------
+// MAIN PAGE
+// -----------------------------------------------
 export default function App() {
   return (
     <div className="min-h-screen bg-black text-white p-4 md:p-8 lg:p-12 selection:bg-[#A797F7]/30">
-      
-      {/* Dynamic Styles for Animations */}
+
       <style>{`
         @keyframes spin-slow {
           from { transform: rotate(0deg); }
@@ -285,37 +304,34 @@ export default function App() {
           from { transform: rotate(360deg); }
           to { transform: rotate(0deg); }
         }
-        .animate-spin-slow {
-          animation: spin-slow 20s linear infinite;
-        }
-        .animate-spin-reverse-slower {
-          animation: spin-reverse-slower 30s linear infinite;
-        }
-        .animate-bounce-slow {
-          animation: bounce 3s infinite;
-        }
+        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
+        .animate-spin-reverse-slower { animation: spin-reverse-slower 30s linear infinite; }
+        .animate-bounce-slow { animation: bounce 3s infinite; }
       `}</style>
 
       <div className="max-w-7xl mx-auto">
         <header className="mb-12">
           <div className="flex items-center gap-2 mb-4">
              <div className="w-3 h-3 rounded-full bg-[#A797F7] animate-pulse" />
-             <span className="text-[#A797F7] font-mono text-sm tracking-widest uppercase">System Operational</span>
+             <span className="text-[#A797F7] font-mono text-sm tracking-widest uppercase">
+               Sistema Operativo
+             </span>
           </div>
+
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            Infrastructure for <br/>
-            <span className="text-[#A797F7]">modern applications</span>
+            Infrastruttura per <br/>
+            <span className="text-[#A797F7]">applicazioni moderne</span>
           </h1>
         </header>
 
-        {/* Main Grid */}
+        {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-9 gap-6 mb-24">
           <HostingCard />
           <OpportunityCard />
           <UserFriendlyCard />
           <PerspectiveCard />
         </div>
-        
+
       </div>
     </div>
   );

@@ -12,10 +12,10 @@ import {
 } from "react-icons/fa";
 
 const tasks = [
-  { icon: <FaCalendarAlt />, text: "Schedule follow-up meeting" },
-  { icon: <FaEnvelopeOpenText />, text: "Send personalized email" },
-  { icon: <FaBell />, text: "Notify team on Slack" },
-  { icon: <FaFileInvoiceDollar />, text: "Generate weekly report" },
+  { icon: <FaCalendarAlt />, text: "Pianifica riunione di follow-up" },
+  { icon: <FaEnvelopeOpenText />, text: "Invia email personalizzata" },
+  { icon: <FaBell />, text: "Notifica il team su Slack" },
+  { icon: <FaFileInvoiceDollar />, text: "Genera report settimanale" },
 ];
 
 const AutomatedTasksCard = () => {
@@ -23,9 +23,6 @@ const AutomatedTasksCard = () => {
   const [replayKey, setReplayKey] = useState(0);
 
   useEffect(() => {
-    // Total animation time is roughly:
-    // Start Delay (0) + Staggered Delay (0.6s) + Check Delay (1.2s) + Duration (0.5s) = ~2.3s
-    // We set the interval to 4.5s to allow a pause at the end before restarting
     const interval = setInterval(() => {
       setReplayKey((prev) => prev + 1);
     }, 4500);
@@ -53,9 +50,6 @@ const AutomatedTasksCard = () => {
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-purple-500/20 blur-[80px] rounded-full pointer-events-none" />
 
-      {/* By changing the `key` here, React destroys this div and its children 
-         and rebuilds them, triggering the 'initial' animation again.
-      */}
       <div key={replayKey} className="flex flex-col gap-4 relative z-10">
         {tasks.map((task, index) => (
           <motion.div
@@ -63,9 +57,9 @@ const AutomatedTasksCard = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{
-              delay: index * 0.2, // Stagger the slide in
+              delay: index * 0.2,
               duration: 0.5,
-              ease: [0.25, 0.1, 0.25, 1.0], // Ease-out cubic
+              ease: [0.25, 0.1, 0.25, 1.0],
             }}
             className="
               w-full 
@@ -83,7 +77,6 @@ const AutomatedTasksCard = () => {
               <span className="text-sm">{task.text}</span>
             </div>
 
-            {/* Animated Checkmark/Processing Icon */}
             <div className="w-6 h-6 relative flex items-center justify-center">
               <TaskStatusIcon delay={0.8 + index * 0.2} />
             </div>
@@ -94,10 +87,10 @@ const AutomatedTasksCard = () => {
       {/* Text Bottom */}
       <div className="mt-10 z-10 relative">
         <h3 className="text-white text-2xl font-semibold">
-          Automate repetitive tasks
+          Automatizza le attività ripetitive
         </h3>
         <p className="text-neutral-400 mt-2 leading-relaxed">
-          We help you streamline internal operations by automating manual workflows.
+          Ti aiutiamo a ottimizzare le operazioni interne automatizzando i flussi di lavoro manuali.
         </p>
       </div>
     </div>
@@ -112,14 +105,14 @@ const TaskStatusIcon = ({ delay }: { delay: number }) => {
       <motion.div
         initial={{ opacity: 0, scale: 0, rotate: 0 }}
         animate={{ 
-            opacity: [0, 1, 1, 0], // Fade in, stay, fade out
+            opacity: [0, 1, 1, 0],
             scale: [0.5, 1, 1, 0.5],
             rotate: 360 
         }}
         transition={{ 
             duration: 1.5,
             delay: delay,
-            times: [0, 0.2, 0.8, 1] // Controls timing of opacity changes
+            times: [0, 0.2, 0.8, 1]
         }}
         className="absolute inset-0 flex items-center justify-center"
       >
@@ -131,7 +124,7 @@ const TaskStatusIcon = ({ delay }: { delay: number }) => {
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ 
-            delay: delay + 1.2, // Wait for processing to finish
+            delay: delay + 1.2,
             type: "spring", 
             stiffness: 200, 
             damping: 15 

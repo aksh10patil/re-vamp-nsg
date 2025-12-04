@@ -56,14 +56,14 @@ export default function AppDevFeatures() {
             Mobile Engineering
           </span>
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Revolutionary apps for <br className="hidden md:block" />
+            App rivoluzionarie per <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A797F7] to-indigo-400">
-              iOS and Android
+              iOS e Android
             </span>
           </h2>
           <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-            We build native-grade mobile experiences using cutting-edge cross-platform tech. 
-            From seamless UI to robust offline capabilities, we ensure your app stands out on the Store.
+            Creiamo esperienze mobile di livello nativo utilizzando tecnologie cross-platform all’avanguardia.
+            Dall’UI fluida alle solide capacità offline, garantiamo che la tua app si distingua sugli Store.
           </p>
         </motion.div>
 
@@ -76,7 +76,7 @@ export default function AppDevFeatures() {
           className="grid grid-cols-1 md:grid-cols-6 auto-rows-[minmax(200px,auto)] gap-6"
         >
 
-          {/* 1. LARGE DASHBOARD CARD (Rows 1 & 2) - App Analytics Context */}
+          {/* 1. LARGE DASHBOARD CARD */}
           <motion.div 
             variants={itemVariants}
             className="col-span-1 md:col-span-4 row-span-2 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 flex flex-col justify-between min-h-[500px]"
@@ -88,14 +88,15 @@ export default function AppDevFeatures() {
                 <div className="p-2 bg-[#A797F7]/20 rounded-lg">
                    <BarChart3 className="text-[#A797F7] w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-semibold text-white">User Growth & Retention</h3>
+                <h3 className="text-2xl font-semibold text-white">Crescita & Retention degli Utenti</h3>
               </div>
               <p className="text-neutral-400 max-w-md">
-                We implement advanced analytics to track user journeys. Optimize your funnel and keep users coming back with data-driven insights.
+                Implementiamo analitiche avanzate per tracciare i percorsi degli utenti.
+                Ottimizza il tuo funnel e mantieni alta la retention grazie a insight basati sui dati.
               </p>
             </div>
 
-            {/* Simulated Mobile Dashboard UI */}
+            {/* Mobile Dashboard Simulation */}
             <div className="relative mt-8 w-full h-64 bg-neutral-900/50 border border-white/10 rounded-xl p-6 overflow-hidden">
                {/* Chart Lines */}
                <div className="flex items-end justify-between h-32 gap-2 mt-8 opacity-70">
@@ -110,14 +111,14 @@ export default function AppDevFeatures() {
                   ))}
                </div>
 
-               {/* Floating Info Cards - App Specific */}
+               {/* Floating Cards */}
                <motion.div 
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute top-4 right-4 bg-neutral-800/90 border border-white/10 p-4 rounded-xl shadow-xl backdrop-blur-md"
                >
-                  <p className="text-xs text-neutral-400">Retention Rate</p>
-                  <p className="text-xl font-bold text-white mt-1">Day 30: 42%</p>
+                  <p className="text-xs text-neutral-400">Tasso di Retention</p>
+                  <p className="text-xl font-bold text-white mt-1">Giorno 30: 42%</p>
                </motion.div>
 
                <motion.div 
@@ -132,14 +133,14 @@ export default function AppDevFeatures() {
                      <Star size={12} className="text-yellow-400 fill-yellow-400" />
                      <Star size={12} className="text-yellow-400 fill-yellow-400" />
                   </div>
-                  <p className="text-xs text-neutral-400">App Store Rating</p>
-                  <p className="text-xl font-bold text-white mt-1">4.9 Stars</p>
+                  <p className="text-xs text-neutral-400">Valutazione App Store</p>
+                  <p className="text-xl font-bold text-white mt-1">4.9 Stelle</p>
                </motion.div>
             </div>
           </motion.div>
 
 
-          {/* 2. CROSS PLATFORM (Row 1 Right) */}
+          {/* 2. CROSS PLATFORM */}
           <motion.div 
             variants={itemVariants}
             className="col-span-1 md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-[#A797F7]/30 transition-colors"
@@ -152,16 +153,16 @@ export default function AppDevFeatures() {
             </div>
             <h3 className="text-xl font-semibold text-white mb-2">Cross-Platform</h3>
             <p className="text-sm text-neutral-400">
-              One codebase for iOS & Android using React Native or Flutter.
+              Un unico codebase per iOS & Android con React Native o Flutter.
             </p>
-            {/* Abstract Visual */}
+
             <div className="absolute right-[-20px] bottom-[-20px] opacity-20 group-hover:opacity-40 transition-opacity">
               <Tablet size={120} />
             </div>
           </motion.div>
 
 
-          {/* 3. NATIVE PERFORMANCE (Row 2 Right) */}
+          {/* 3. NATIVE PERFORMANCE */}
           <motion.div 
             variants={itemVariants}
             className="col-span-1 md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-pink-500/30 transition-colors"
@@ -175,24 +176,24 @@ export default function AppDevFeatures() {
                  <ArrowRight className="text-neutral-600 group-hover:text-white transition-colors" size={20} />
               </div>
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Native Speed</h3>
+            <h3 className="text-xl font-semibold text-white mb-2">Velocità Nativa</h3>
             <p className="text-sm text-neutral-400">
-              Direct access to device hardware: Camera, GPS, Haptics & Biometrics.
+              Accesso diretto all’hardware del dispositivo: Fotocamera, GPS, Haptics & Biometria.
             </p>
-             {/* Visual Decoration */}
-             <motion.div 
+
+            <motion.div 
                className="mt-4 flex gap-1"
                initial="hidden"
                whileInView="visible"
-             >
+            >
                <span className="w-2 h-2 rounded-full bg-red-500/50" />
                <span className="w-2 h-2 rounded-full bg-yellow-500/50" />
                <span className="w-2 h-2 rounded-full bg-green-500/50" />
-             </motion.div>
+            </motion.div>
           </motion.div>
 
 
-          {/* 4. CLOUD BACKEND (Row 3 Left) */}
+          {/* 4. CLOUD BACKEND */}
           <motion.div 
             variants={itemVariants}
             className="col-span-1 md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-yellow-500/30 transition-colors"
@@ -202,11 +203,11 @@ export default function AppDevFeatures() {
               </div>
             <h3 className="text-lg font-semibold text-white mb-1">Cloud Sync</h3>
             <p className="text-sm text-neutral-400">
-              Offline-first architecture with seamless Firebase or AWS sync.
+              Architettura offline-first con sincronizzazione Firebase o AWS senza interruzioni.
             </p>
           </motion.div>
 
-          {/* 5. ENGAGEMENT / PUSH (Row 3 Middle) */}
+          {/* 5. PUSH NOTIFICATIONS */}
           <motion.div 
             variants={itemVariants}
             className="col-span-1 md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-green-500/30 transition-colors"
@@ -216,16 +217,15 @@ export default function AppDevFeatures() {
               </div>
             <h3 className="text-lg font-semibold text-white mb-1">Smart Push</h3>
             <p className="text-sm text-neutral-400">
-              Targeted notifications to re-engage users at the right time.
+              Notifiche mirate per riattivare gli utenti nel momento giusto.
             </p>
           </motion.div>
 
-          {/* 6. ASO / MONETIZATION (Row 3 Right) */}
+          {/* 6. ASO / MONETIZATION */}
           <motion.div 
             variants={itemVariants}
             className="col-span-1 md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center hover:border-[#A797F7]/30 transition-colors"
           >
-             {/* Animated Gradient Background */}
              <motion.div
                animate={{ 
                  backgroundPosition: ["0% 0%", "100% 100%"],
@@ -248,16 +248,16 @@ export default function AppDevFeatures() {
                 >
                   <Search className="text-[#A797F7] w-6 h-6" />
                 </motion.div>
-                <h3 className="text-lg font-semibold text-white mb-1">ASO Ready</h3>
+                <h3 className="text-lg font-semibold text-white mb-1">Pronta per l’ASO</h3>
                 <p className="text-sm text-neutral-400">
-                  Built to rank high on App Store & Google Play.
+                  Progettata per posizionarsi in alto su App Store & Google Play.
                 </p>
              </div>
           </motion.div>
 
         </motion.div>
 
-        {/* CTA Button at bottom */}
+        {/* CTA Button Placeholder */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

@@ -58,7 +58,7 @@ export default function AnimationCardContinued() {
   def optimize(self, data):
     self.clean(data)
     self.categorize(data)
-    return "Optimized"`,
+    return "Ottimizzato"`,
     40
   );
 
@@ -67,13 +67,11 @@ export default function AnimationCardContinued() {
   useEffect(() => {
     const interval = setInterval(() => {
       setReplayKey((prev) => prev + 1);
-    }, 4000); // Restart animation every 4 seconds
+    }, 4000); 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    
-    
     <section className="w-full px-6 flex flex-col items-center justify-center">
       <motion.div
         variants={containerVariants}
@@ -82,9 +80,7 @@ export default function AnimationCardContinued() {
         viewport={{ once: true }}
         className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl"
       >
-        {/* ========================================== */}
-        {/* LEFT CARD: Research & Interactive List     */}
-        {/* ========================================== */}
+        {/* LEFT CARD */}
         <motion.div
           variants={cardVariants}
           whileHover={{ y: -5 }}
@@ -100,7 +96,7 @@ export default function AnimationCardContinued() {
             <div className="flex items-center gap-2 opacity-80">
               <FaSearch className="text-sm text-purple-300" />
               <span className="text-sm text-neutral-400">
-                Find trends...
+                Trova tendenze...
               </span>
             </div>
             <motion.button
@@ -108,7 +104,7 @@ export default function AnimationCardContinued() {
               whileTap={{ scale: 0.95 }}
               className="px-3 py-1 rounded-full bg-purple-600/30 border border-purple-400/30 text-[10px] font-medium text-purple-200 transition-colors"
             >
-              SEARCH
+              CERCA
             </motion.button>
           </div>
 
@@ -116,7 +112,7 @@ export default function AnimationCardContinued() {
           <div className="mt-6 flex flex-col gap-3">
             {[
               "Software & SaaS",
-              "UI/UX Design Trends",
+              "Tendenze UI/UX",
               "Customer Retention",
             ].map((item, idx) => (
               <motion.div
@@ -142,17 +138,15 @@ export default function AnimationCardContinued() {
 
           <div className="mt-10">
             <h3 className="text-white text-xl font-semibold">
-              Real-Time Insights
+              Analisi in Tempo Reale
             </h3>
             <p className="text-neutral-400 text-sm mt-2 leading-relaxed">
-              Track industry trends and make data-backed decisions instantly.
+              Monitora le tendenze del settore e prendi decisioni basate sui dati in un istante.
             </p>
           </div>
         </motion.div>
 
-        {/* ========================================== */}
-        {/* MIDDLE CARD: Code & Typewriter Effect      */}
-        {/* ========================================== */}
+        {/* MIDDLE CARD */}
         <motion.div
           variants={cardVariants}
           whileHover={{ y: -5 }}
@@ -171,7 +165,7 @@ export default function AnimationCardContinued() {
           </div>
 
           {/* Code Window */}
-          <div className="mt-6 bg-black/40 border border-white/10 rounded-xl p-5 h-[220px] overflow-hidden relative shadow-inner">
+          <div className="mt-6 bg-black/40 border border-white/10 rounded-xl p-5 h=[220px] overflow-hidden relative shadow-inner">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent opacity-20 pointer-events-none" />
             <pre className="text-purple-200 text-[11px] font-mono leading-loose whitespace-pre-wrap break-words">
               <span className="text-pink-400">import</span> openai{"\n"}
@@ -186,17 +180,15 @@ export default function AnimationCardContinued() {
 
           <div className="mt-auto pt-6">
             <h3 className="text-white text-xl font-semibold">
-              Custom AI Agents
+              Agenti AI Personalizzati
             </h3>
             <p className="text-neutral-400 text-sm mt-2 leading-relaxed">
-              Deploy autonomous code that works while you sleep.
+              Distribuisci codice autonomo che lavora mentre dormi.
             </p>
           </div>
         </motion.div>
 
-        {/* ========================================== */}
-        {/* RIGHT CARD: AI Organizing Flow (Animated)  */}
-        {/* ========================================== */}
+        {/* RIGHT CARD */}
         <motion.div
           variants={cardVariants}
           whileHover={{ y: -5 }}
@@ -208,35 +200,33 @@ export default function AnimationCardContinued() {
             min-h-[480px]
           "
         >
-          {/* Background Glow */}
+          {/* Glow */}
           <motion.div
             animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
             transition={{ duration: 4, repeat: Infinity, ease: [0.42, 0, 0.58, 1]}}
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-44 h-44 bg-[radial-gradient(circle,rgba(168,85,247,0.4),transparent)] blur-3xl pointer-events-none"
           />
 
-          {/* --- ANIMATION CONTAINER --- */}
+          {/* Animation Container */}
           <div
-            key={replayKey} // Forces React to rebuild div & restart animations
+            key={replayKey}
             className="relative w-full h-[240px] flex items-center justify-center"
           >
-            {/* SVG Lines Layer */}
+            {/* SVG Lines */}
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none opacity-20"
               viewBox="0 0 300 240"
             >
-              {/* Input Lines */}
               <path d="M 40 40 Q 150 40 150 120" fill="none" stroke="white" strokeWidth="2" strokeDasharray="4 4" />
               <path d="M 260 40 Q 150 40 150 120" fill="none" stroke="white" strokeWidth="2" strokeDasharray="4 4" />
-              {/* Output Line */}
               <path d="M 150 120 Q 150 200 150 240" fill="none" stroke="white" strokeWidth="2" strokeDasharray="4 4" />
             </svg>
 
-            {/* 1. INCOMING CHAOS (Files/Data) */}
+            {/* Incoming Items */}
             <motion.div
               initial={{ x: -100, y: -80, opacity: 0, scale: 0.5 }}
               animate={{ x: 0, y: 0, opacity: 1, scale: 0.8 }}
-              transition={{ duration: 1.2, ease: [0.42, 0, 0.58, 1]}}
+              transition={{ duration: 1.2 }}
               className="absolute z-10"
             >
               <div className="p-2 bg-white/10 rounded-lg border border-white/20">
@@ -247,7 +237,7 @@ export default function AnimationCardContinued() {
             <motion.div
               initial={{ x: 100, y: -80, opacity: 0, scale: 0.5 }}
               animate={{ x: 0, y: 0, opacity: 1, scale: 0.8 }}
-              transition={{ duration: 1.2, delay: 0.2, ease: [0.42, 0, 0.58, 1] }}
+              transition={{ duration: 1.2, delay: 0.2 }}
               className="absolute z-10"
             >
               <div className="p-2 bg-white/10 rounded-lg border border-white/20">
@@ -258,7 +248,7 @@ export default function AnimationCardContinued() {
             <motion.div
               initial={{ x: 0, y: -100, opacity: 0, scale: 0.5 }}
               animate={{ x: 0, y: 0, opacity: 1, scale: 0.8 }}
-              transition={{ duration: 1.2, delay: 0.4, ease: [0.42, 0, 0.58, 1] }}
+              transition={{ duration: 1.2, delay: 0.4 }}
               className="absolute z-10"
             >
               <div className="p-2 bg-white/10 rounded-lg border border-white/20">
@@ -266,7 +256,7 @@ export default function AnimationCardContinued() {
               </div>
             </motion.div>
 
-            {/* 2. CENTER AI BRAIN */}
+            {/* AI Brain */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -275,39 +265,35 @@ export default function AnimationCardContinued() {
             >
               <motion.div
                 animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.1, 1] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: 1.2, // Start pulsing after inputs arrive
-                }}
+                transition={{ duration: 2, repeat: Infinity, delay: 1.2 }}
               >
                 <FaRobot className="text-purple-300 text-2xl" />
               </motion.div>
             </motion.div>
 
-            {/* 3. OUTGOING ORDER (Checkmarks) */}
+            {/* Outgoing */}
             <motion.div
               initial={{ y: 0, opacity: 0, scale: 0 }}
               animate={{ y: 80, opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 1.8, ease: [0.34, 1.56, 0.64, 1] }}
+              transition={{ duration: 0.8, delay: 1.8 }}
               className="absolute z-10"
             >
               <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-500/20 border border-emerald-500/30 rounded-full backdrop-blur-md">
                 <FaCheckCircle className="text-emerald-400 text-xs" />
                 <span className="text-[10px] font-bold text-emerald-200 uppercase tracking-wider">
-                  Organized
+                  Organizzato
                 </span>
               </div>
             </motion.div>
           </div>
 
-          {/* Text Bottom */}
+          {/* Bottom Text */}
           <div className="mt-auto z-20 relative">
             <h3 className="text-white text-xl font-semibold">
-              Intelligent Sort
+              Ordinamento Intelligente
             </h3>
             <p className="text-neutral-400 text-sm mt-2 leading-relaxed">
-              AI automatically categorizes, processes, and files your data.
+              L'AI categorizza, processa e archivia i tuoi dati automaticamente.
             </p>
           </div>
         </motion.div>

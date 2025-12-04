@@ -34,40 +34,40 @@ interface ServiceCardProps {
 // --- Data: Mobile & iOS Development Services ---
 const mobileServices: ServiceCardProps[] = [
   {
-    title: "Native iOS",
-    description: "Premium experiences crafted specifically for the Apple ecosystem with pixel-perfect design.",
-    icon: Smartphone, // Represents iPhone
+    title: "iOS Nativo",
+    description: "Esperienze premium progettate specificamente per l’ecosistema Apple, con un design pixel-perfect.",
+    icon: Smartphone,
     gradient: "from-blue-500/20 to-indigo-500/20 hover:from-blue-500/30 hover:to-indigo-500/30",
     textGradient: "from-blue-400 to-indigo-300",
     borderColor: "group-hover:border-blue-500/50",
-    features: ["Swift & SwiftUI", "App Clips", "CoreML Integration"],
+    features: ["Swift & SwiftUI", "App Clips", "Integrazione CoreML"],
   },
   {
-    title: "Native Android",
-    description: "Robust and scalable applications tailored for the diverse landscape of Android devices.",
-    icon: Bot, // Represents the Android Robot
+    title: "Android Nativo",
+    description: "Applicazioni robuste e scalabili pensate per la vasta varietà di dispositivi Android.",
+    icon: Bot,
     gradient: "from-emerald-500/20 to-green-500/20 hover:from-emerald-500/30 hover:to-green-500/30",
     textGradient: "from-emerald-400 to-green-300",
     borderColor: "group-hover:border-emerald-500/50",
-    features: ["Kotlin & Jetpack", "Material Design 3", "Hardware Access"],
+    features: ["Kotlin & Jetpack", "Material Design 3", "Accesso all’Hardware"],
   },
   {
     title: "Cross-Platform",
-    description: "Deploy to both iOS and Android from a single codebase without compromising performance.",
-    icon: Layers, // Represents the stack/layers of cross-platform
+    description: "Distribuisci su iOS e Android da una singola codebase senza sacrificare le prestazioni.",
+    icon: Layers,
     gradient: "from-violet-500/20 to-purple-500/20 hover:from-violet-500/30 hover:to-purple-500/30",
     textGradient: "from-violet-400 to-purple-300",
     borderColor: "group-hover:border-violet-500/50",
-    features: ["React Native / Flutter", "Shared Logic", "Hot Reloading"],
+    features: ["React Native / Flutter", "Logica Condivisa", "Hot Reloading"],
   },
   {
     title: "Wearables & IoT",
-    description: "Extend your mobile presence to wrists, homes, and connected industrial devices.",
+    description: "Espandi la tua presenza mobile su smartwatch, case intelligenti e dispositivi industriali connessi.",
     icon: Watch,
     gradient: "from-orange-500/20 to-amber-500/20 hover:from-orange-500/30 hover:to-amber-500/30",
     textGradient: "from-orange-400 to-amber-300",
     borderColor: "group-hover:border-orange-500/50",
-    features: ["WatchOS & WearOS", "Bluetooth LE", "HealthKit Data"],
+    features: ["WatchOS & WearOS", "Bluetooth LE", "Dati HealthKit"],
   },
 ];
 
@@ -84,7 +84,6 @@ const Card = ({ item, index }: { item: ServiceCardProps; index: number }) => {
         item.borderColor
       )}
     >
-      {/* Background Gradient Blob Effect */}
       <div
         className={cn(
           "absolute -right-20 -top-20 h-64 w-64 rounded-full blur-3xl transition-all duration-500 group-hover:opacity-100 opacity-0 bg-gradient-to-br",
@@ -106,7 +105,7 @@ const Card = ({ item, index }: { item: ServiceCardProps; index: number }) => {
           </motion.div>
         </div>
 
-        {/* Title with Gradient Text */}
+        {/* Title */}
         <h3 className="mb-3 text-2xl font-bold text-white">
           <span className={cn("bg-gradient-to-r bg-clip-text text-transparent", item.textGradient)}>
             {item.title}
@@ -118,7 +117,7 @@ const Card = ({ item, index }: { item: ServiceCardProps; index: number }) => {
         </p>
       </div>
 
-      {/* Detailed Features Section */}
+      {/* Features */}
       <div className="relative z-10 mt-8">
         <div className="space-y-3 border-t border-white/5 pt-6">
             <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500">Tech Stack</p>
@@ -144,6 +143,7 @@ export default function TailouredSolutionsApp() {
   return (
     <section className="py-24 min-h-screen flex items-center">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
         {/* Section Header */}
         <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
@@ -153,11 +153,13 @@ export default function TailouredSolutionsApp() {
                   Engineering
                 </span>
             </div>
+
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Mobile App Development
+              Sviluppo di App Mobile
             </h2>
+
             <p className="mt-4 text-lg text-neutral-400">
-              From native iOS & Android to complex cross-platform ecosystems, we build apps that dominate the App Store.
+              Da app iOS e Android native a complessi ecosistemi cross-platform, sviluppiamo applicazioni che dominano gli App Store.
             </p>
           </div>
           
@@ -166,7 +168,7 @@ export default function TailouredSolutionsApp() {
                 href="https://cal.northstargroup.ch/nsg/book"
                 className="group flex items-center gap-2 text-sm font-semibold text-blue-400 transition-colors hover:text-blue-300"
             >
-                Start your project
+                Avvia il tuo progetto
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
           </div>
@@ -178,6 +180,7 @@ export default function TailouredSolutionsApp() {
             <Card key={service.title} item={service} index={index} />
           ))}
         </div>
+
       </div>
     </section>
   );

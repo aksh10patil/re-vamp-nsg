@@ -16,9 +16,6 @@ export default function Hero() {
   }, []);
 
   return (
-    // 1. Removed 'border-2'
-    // 2. Kept pt-32/pt-48 so text is pushed down BELOW the navbar area
-    // 3. Added w-full
     <section className="relative w-full flex flex-col items-center justify-start pt-32 md:pt-48 text-center min-h-screen px-4 md:px-6 overflow-hidden bg-black">
       
       {/* --- BACKGROUND LAYERS --- */}
@@ -48,11 +45,11 @@ export default function Hero() {
         className="relative z-10 text-white font-semibold leading-[1.1] text-[40px] md:text-[72px] lg:text-[86px] flex flex-col items-center gap-2"
       >
         <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
-          More Time 
+          Più Tempo
         </span>
 
         <span className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
-          <span className="text-white">for</span>
+          <span className="text-white">per ciò che</span>
           <span className="
             px-5 md:px-7 py-2 md:py-3 
             rounded-full 
@@ -63,7 +60,7 @@ export default function Hero() {
             font-semibold
             shadow-[0_0_30px_-5px_rgba(167,151,247,0.3)]
           ">
-            Matters 
+            Conta
           </span>
         </span>
       </motion.h1>
@@ -75,7 +72,7 @@ export default function Hero() {
         transition={{ delay: 0.2, duration: 0.8 }}
         className="relative z-10 max-w-xl text-neutral-400 mt-6 text-lg md:text-xl font-light tracking-wide"
       >
-        Powerful analytics and reporting that empowers your team to make smarter business choices.
+        Analisi e reportistica potenti che permettono al tuo team di prendere decisioni più intelligenti.
       </motion.p>
 
       {/* CTA BUTTON */}
@@ -126,8 +123,7 @@ export default function Hero() {
             </div>
           )}
 
-          <a href="https://cal.northstargroup.ch/nsg/book">Start 14-day trial</a>
-
+          <a href="https://cal.northstargroup.ch/nsg/book">Inizia la prova di 14 giorni</a>
 
           <span className="w-8 h-8 rounded-full bg-black/90 text-white flex items-center justify-center transition-transform group-hover:translate-x-1">
             <ArrowRightIcon />

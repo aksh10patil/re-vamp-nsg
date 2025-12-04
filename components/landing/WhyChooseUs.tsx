@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FaChartBar, FaShareAlt, FaTachometerAlt } from "react-icons/fa";
 import type { Variants } from "framer-motion";
 
-const cardVariants: Variants  = {
+const cardVariants: Variants = {
   initial: { scale: 1, y: 0, opacity: 1 },
   hover: {
     scale: 1.03,
@@ -14,7 +14,7 @@ const cardVariants: Variants  = {
   },
 };
 
-const iconVariants: Variants  = {
+const iconVariants: Variants = {
   initial: { scale: 1, opacity: 0.9 },
   hover: {
     scale: 1.14,
@@ -26,18 +26,18 @@ const iconVariants: Variants  = {
 export default function WhyChooseUs() {
   const features = [
     {
-      title: "Real-Time Intelligence",
-      desc: "Access accurate, real-time data to drive smarter decisions",
+      title: "Intelligenza in Tempo Reale",
+      desc: "Accedi a dati accurati e aggiornati in tempo reale per prendere decisioni più intelligenti",
       icon: <FaTachometerAlt className="text-[#cdb6ff] text-5xl" />,
     },
     {
-      title: "Measurable Impact",
-      desc: "Track performance, uncover insights, and achieve data-backed growth",
+      title: "Impatto Misurabile",
+      desc: "Monitora le prestazioni, individua insight e ottieni crescita basata sui dati",
       icon: <FaChartBar className="text-[#cdb6ff] text-5xl" />,
     },
     {
-      title: "Seamless Integration",
-      desc: "Connect tools, teams, and workflows with intelligent automation",
+      title: "Integrazione Senza Interruzioni",
+      desc: "Collega strumenti, team e workflow attraverso automazioni intelligenti",
       icon: <FaShareAlt className="text-[#cdb6ff] text-5xl" />,
     },
   ];
@@ -45,15 +45,15 @@ export default function WhyChooseUs() {
   return (
     <section className="w-full py-10 px-6 flex flex-col items-center">
       <div className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-xs mb-4">
-        BENEFITS
+        BENEFICI
       </div>
 
       <h2 className="text-white text-4xl md:text-5xl font-semibold tracking-tight">
-        Why Choose <span className="italic text-[#d8c7ff]">Us?</span>
+        Perché Scegliere <span className="italic text-[#d8c7ff]">Noi?</span>
       </h2>
 
       <p className="text-neutral-400 text-center max-w-xl mt-4">
-        Everything you need to automate, optimize, and scale
+        Tutto ciò di cui hai bisogno per automatizzare, ottimizzare e scalare
       </p>
 
       <div
@@ -80,7 +80,7 @@ export default function WhyChooseUs() {
               flex flex-col
             "
           >
-            {/* Hover glow (absolute) */}
+            {/* Hover glow */}
             <motion.div
               variants={iconVariants}
               className="absolute inset-0 pointer-events-none"

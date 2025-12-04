@@ -1,16 +1,15 @@
 "use client";
 
-
-import {  FaUsers, FaClock, FaEnvelope, FaDatabase, FaStar, } from "react-icons/fa";
+import { FaUsers, FaClock, FaEnvelope, FaDatabase, FaStar } from "react-icons/fa";
 
 import WorkflowCard from "./WorkflowCard";
 import AutomatedTasksCard from "./AutomatedTasksCard";
 
 export default function AnimationCard() {
   const tasks = [
-    { icon: <FaEnvelope />, text: "Social media post" },
-    { icon: <FaUsers />, text: "Employee Tracking" },
-    { icon: <FaClock />, text: "Payment reminder" },
+    { icon: <FaEnvelope />, text: "Post sui social media" },
+    { icon: <FaUsers />, text: "Monitoraggio dipendenti" },
+    { icon: <FaClock />, text: "Promemoria di pagamento" },
   ];
 
   const orbitIcons = [
@@ -21,26 +20,24 @@ export default function AnimationCard() {
   ];
 
   return (
-
-        <div>
-<section className="w-full px-6">
-  <div
-    className="
-      max-w-7xl 
-      mx-auto 
-      grid 
-      grid-cols-1 
-      lg:grid-cols-2 
-      gap-10 
-      items-stretch
-    "
-  >
-    {/* LEFT CARD */}
-      <AutomatedTasksCard />
-            <WorkflowCard />
+    <div>
+      <section className="w-full px-6">
+        <div
+          className="
+            max-w-7xl 
+            mx-auto 
+            grid 
+            grid-cols-1 
+            lg:grid-cols-2 
+            gap-10 
+            items-stretch
+          "
+        >
+          {/* LEFT CARD */}
+          <AutomatedTasksCard />
+          <WorkflowCard />
         </div>
       </section>
-    
-       </div>
+    </div>
   );
 }

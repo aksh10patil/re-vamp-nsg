@@ -13,7 +13,6 @@ import {
   Sparkles
 } from "lucide-react";
 
-// --- Animation Variants ---
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -34,8 +33,7 @@ const itemVariants = {
 export default function FeaturesGrid() {
   return (
     <section className="relative w-full pt-25 pb-0 px-6 overflow-hidden font-raleway">
-      
-      {/* Background Ambient Glow (Purple) */}
+
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-purple-600/20 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto z-10">
@@ -48,18 +46,19 @@ export default function FeaturesGrid() {
           className="text-center mb-20"
         >
           <span className="inline-block px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm font-medium mb-6">
-            Our Expertise
+            La Nostra Competenza
           </span>
-          {/* Removed tracking-tight to preserve your font's natural look */}
+
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Smart AI tools for <br className="hidden md:block" />
+            Strumenti di IA intelligenti per <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">
-              growing your business
+              far crescere il tuo business
             </span>
           </h2>
+
           <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-            We don't just build software; we build growth engines. From AI agents to 
-            cloud infrastructure, we provide the full stack of digital dominance.
+            Non creiamo solo software; creiamo motori di crescita.  
+            Dagli agenti IA alle infrastrutture cloud, offriamo l’intera tecnologia per una dominanza digitale.
           </p>
         </motion.div>
 
@@ -69,11 +68,10 @@ export default function FeaturesGrid() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          // Using auto-rows to let the grid expand naturally to 3 rows
           className="grid grid-cols-1 md:grid-cols-6 auto-rows-[minmax(200px,auto)] gap-6"
         >
 
-          {/* 1. LARGE DASHBOARD CARD (Rows 1 & 2) */}
+          {/* 1. DATA-DRIVEN GROWTH */}
           <motion.div 
             variants={itemVariants}
             className="col-span-1 md:col-span-4 row-span-2 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 flex flex-col justify-between min-h-[500px]"
@@ -85,16 +83,16 @@ export default function FeaturesGrid() {
                 <div className="p-2 bg-purple-500/20 rounded-lg">
                    <BarChart3 className="text-purple-300 w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-semibold text-white">Data-Driven Growth</h3>
+                <h3 className="text-2xl font-semibold text-white">Crescita Guidata dai Dati</h3>
               </div>
               <p className="text-neutral-400 max-w-md">
-                Our solutions provide real-time analytics. Whether it's app performance or AI efficiency, you see the impact instantly.
+                Le nostre soluzioni offrono analytics in tempo reale.  
+                Che si tratti delle prestazioni dell’app o dell’efficienza dell’IA, vedi subito l’impatto.
               </p>
             </div>
 
-            {/* Simulated Dashboard UI */}
+            {/* Simulated Dashboard */}
             <div className="relative mt-8 w-full h-64 bg-neutral-900/50 border border-white/10 rounded-xl p-6 overflow-hidden">
-               {/* Chart Lines */}
                <div className="flex items-end justify-between h-32 gap-2 mt-8 opacity-70">
                   {[40, 65, 45, 80, 55, 90, 70, 95].map((height, i) => (
                     <motion.div 
@@ -107,13 +105,12 @@ export default function FeaturesGrid() {
                   ))}
                </div>
 
-               {/* Floating Info Cards */}
                <motion.div 
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute top-4 right-4 bg-neutral-800/90 border border-white/10 p-4 rounded-xl shadow-xl backdrop-blur-md"
                >
-                  <p className="text-xs text-neutral-400">Total Engagement</p>
+                  <p className="text-xs text-neutral-400">Engagement Totale</p>
                   <p className="text-xl font-bold text-white mt-1">86.5% <span className="text-green-400 text-xs">↑</span></p>
                </motion.div>
 
@@ -122,14 +119,13 @@ export default function FeaturesGrid() {
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                   className="absolute bottom-4 left-4 bg-neutral-800/90 border border-white/10 p-4 rounded-xl shadow-xl backdrop-blur-md"
                >
-                  <p className="text-xs text-neutral-400">Active Users</p>
+                  <p className="text-xs text-neutral-400">Utenti Attivi</p>
                   <p className="text-xl font-bold text-white mt-1">2.45M</p>
                </motion.div>
             </div>
           </motion.div>
 
-
-          {/* 2. AI AUTOMATION (Row 1 Right) */}
+          {/* 2. AI AUTOMATION */}
           <motion.div 
             variants={itemVariants}
             className="col-span-1 md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-purple-500/30 transition-colors"
@@ -140,18 +136,17 @@ export default function FeaturesGrid() {
               </div>
               <ArrowRight className="text-neutral-600 group-hover:text-white transition-colors" size={20} />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">AI Automation</h3>
+            <h3 className="text-xl font-semibold text-white mb-2">Automazione IA</h3>
             <p className="text-sm text-neutral-400">
-              Custom agents that handle support, lead gen, and workflows 24/7.
+              Agenti personalizzati che gestiscono supporto, generazione lead e workflow 24/7.
             </p>
-            {/* Abstract Node Visual */}
+
             <div className="absolute right-[-20px] bottom-[-20px] opacity-20 group-hover:opacity-40 transition-opacity">
               <Bot size={120} />
             </div>
           </motion.div>
 
-
-          {/* 3. WEB & APP DEVELOPMENT (Row 2 Right) */}
+          {/* 3. WEB & APP DEV */}
           <motion.div 
             variants={itemVariants}
             className="col-span-1 md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-pink-500/30 transition-colors"
@@ -165,12 +160,12 @@ export default function FeaturesGrid() {
                  <ArrowRight className="text-neutral-600 group-hover:text-white transition-colors" size={20} />
               </div>
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Web & App Dev</h3>
+            <h3 className="text-xl font-semibold text-white mb-2">Web & App Development</h3>
             <p className="text-sm text-neutral-400">
-              Blazing fast Next.js sites and native mobile apps built for scale.
+              Siti Next.js ultra-veloci e app mobile native progettate per scalare.
             </p>
-             {/* Visual Decoration */}
-             <motion.div 
+
+            <motion.div 
                className="mt-4 flex gap-1"
                initial="hidden"
                whileInView="visible"
@@ -181,8 +176,7 @@ export default function FeaturesGrid() {
              </motion.div>
           </motion.div>
 
-
-          {/* 4. HOSTING & CLOUD (Row 3 Left - Expanded) */}
+          {/* 4. CLOUD HOSTING */}
           <motion.div 
             variants={itemVariants}
             className="col-span-1 md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-yellow-500/30 transition-colors"
@@ -192,11 +186,11 @@ export default function FeaturesGrid() {
               </div>
             <h3 className="text-lg font-semibold text-white mb-1">Cloud Hosting</h3>
             <p className="text-sm text-neutral-400">
-              99.9% Uptime, AWS & Vercel managed infrastructure.
+              99.9% uptime su infrastruttura AWS & Vercel gestita.
             </p>
           </motion.div>
 
-          {/* 5. SOCIAL MEDIA SERVICES (Row 3 Middle - Expanded) */}
+          {/* 5. SOCIAL GROWTH */}
           <motion.div 
             variants={itemVariants}
             className="col-span-1 md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-green-500/30 transition-colors"
@@ -206,16 +200,15 @@ export default function FeaturesGrid() {
               </div>
             <h3 className="text-lg font-semibold text-white mb-1">Social Growth</h3>
             <p className="text-sm text-neutral-400">
-              Organic strategy, content creation & automated posting.
+              Strategia organica, creazione contenuti e pubblicazione automatizzata.
             </p>
           </motion.div>
 
-          {/* 6. FUTURE-PROOF STRATEGY (Row 3 Right - New Animated Card) */}
+          {/* 6. FUTURE-PROOF STRATEGY */}
           <motion.div 
             variants={itemVariants}
             className="col-span-1 md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center hover:border-indigo-500/30 transition-colors"
           >
-             {/* Animated Gradient Background */}
              <motion.div
                animate={{ 
                  backgroundPosition: ["0% 0%", "100% 100%"],
@@ -238,16 +231,15 @@ export default function FeaturesGrid() {
                 >
                   <Sparkles className="text-indigo-300 w-6 h-6" />
                 </motion.div>
-                <h3 className="text-lg font-semibold text-white mb-1">Future-Proof Strategy</h3>
+                <h3 className="text-lg font-semibold text-white mb-1">Strategia a Prova di Futuro</h3>
                 <p className="text-sm text-neutral-400">
-                  We stay ahead of the curve so you don't have to.
+                  Rimaniamo sempre un passo avanti, così non devi farlo tu.
                 </p>
              </div>
           </motion.div>
 
         </motion.div>
 
-        {/* CTA Button at bottom */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

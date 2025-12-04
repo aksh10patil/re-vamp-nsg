@@ -15,10 +15,8 @@ import {
   Sparkles
 } from "lucide-react";
 
-// --- Configuration ---
 const BRAND_COLOR = "#A797F7";
 
-// --- Animation Variants ---
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -38,9 +36,8 @@ const itemVariants = {
 
 export default function SocialMediaFeatures() {
   return (
-    <section className="relative w-full py-24 px-6  overflow-hidden">
+    <section className="relative w-full py-24 px-6 overflow-hidden">
       
-      {/* Background Ambient Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-[#A797F7]/20 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto z-10">
@@ -53,21 +50,24 @@ export default function SocialMediaFeatures() {
           className="text-center mb-20"
         >
           <span className="inline-block px-4 py-1.5 rounded-full border border-[#A797F7]/30 bg-[#A797F7]/10 text-[#A797F7] text-sm font-medium mb-6">
-            Social Growth
+            Crescita Social
           </span>
+
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Amplify your brand <br className="hidden md:block" />
+            Amplifica il tuo brand <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A797F7] to-indigo-400">
-              across every channel
+              su ogni canale
             </span>
           </h2>
+
           <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-            We don't just post content; we build communities. From viral strategy to 
-            data-driven ad campaigns, we turn your audience into loyal advocates.
+            Non ci limitiamo a pubblicare contenuti: costruiamo comunità.  
+            Dalle strategie virali alle campagne pubblicitarie basate sui dati,  
+            trasformiamo il tuo pubblico in sostenitori fedeli.
           </p>
         </motion.div>
 
-        {/* --- Bento Grid Layout --- */}
+        {/* --- Bento Grid --- */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -76,7 +76,7 @@ export default function SocialMediaFeatures() {
           className="grid grid-cols-1 md:grid-cols-6 auto-rows-[minmax(200px,auto)] gap-6"
         >
 
-          {/* 1. LARGE DASHBOARD CARD (Rows 1 & 2) - Analytics Context */}
+          {/* Dashboard Analytics */}
           <motion.div 
             variants={itemVariants}
             className="col-span-1 md:col-span-4 row-span-2 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 flex flex-col justify-between min-h-[500px]"
@@ -88,16 +88,21 @@ export default function SocialMediaFeatures() {
                 <div className="p-2 bg-[#A797F7]/20 rounded-lg">
                    <TrendingUp className="text-[#A797F7] w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-semibold text-white">Audience & Reach Analytics</h3>
+                <h3 className="text-2xl font-semibold text-white">
+                  Analytics di Pubblico & Copertura
+                </h3>
               </div>
+
               <p className="text-neutral-400 max-w-md">
-                Real-time insights into what's working. We track engagement, click-through rates, and audience sentiment to refine your strategy instantly.
+                Insight in tempo reale su ciò che funziona.
+                Monitoriamo engagement, click-through e sentiment del pubblico  
+                per ottimizzare la tua strategia all’istante.
               </p>
             </div>
 
-            {/* Simulated Social Dashboard UI */}
+            {/* Dashboard UI */}
             <div className="relative mt-8 w-full h-64 bg-neutral-900/50 border border-white/10 rounded-xl p-6 overflow-hidden">
-               {/* Chart Lines */}
+
                <div className="flex items-end justify-between h-32 gap-2 mt-8 opacity-70">
                   {[20, 45, 30, 80, 50, 95, 65, 100].map((height, i) => (
                     <motion.div 
@@ -110,14 +115,15 @@ export default function SocialMediaFeatures() {
                   ))}
                </div>
 
-               {/* Floating Info Cards - Social Specific */}
                <motion.div 
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute top-4 right-4 bg-neutral-800/90 border border-white/10 p-4 rounded-xl shadow-xl backdrop-blur-md"
                >
-                  <p className="text-xs text-neutral-400">Total Reach</p>
-                  <p className="text-xl font-bold text-white mt-1">2.4M <span className="text-green-400 text-xs">↑ 12%</span></p>
+                  <p className="text-xs text-neutral-400">Copertura Totale</p>
+                  <p className="text-xl font-bold text-white mt-1">
+                    2.4M <span className="text-green-400 text-xs">↑ 12%</span>
+                  </p>
                </motion.div>
 
                <motion.div 
@@ -127,19 +133,18 @@ export default function SocialMediaFeatures() {
                >
                   <div className="flex items-center gap-2 mb-1">
                      <Heart size={12} className="text-red-400 fill-red-400" />
-                     <span className="text-xs text-neutral-300">Top Post</span>
+                     <span className="text-xs text-neutral-300">Post Migliore</span>
                   </div>
-                  <p className="text-xs text-neutral-400">Viral Engagement</p>
+                  <p className="text-xs text-neutral-400">Engagement Virale</p>
                   <p className="text-xl font-bold text-white mt-1">45.2K Likes</p>
                </motion.div>
             </div>
           </motion.div>
 
-
-          {/* 2. MULTI-CHANNEL (Row 1 Right) */}
+          {/* Multi-Channel */}
           <motion.div 
             variants={itemVariants}
-            className="col-span-1 md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-[#A797F7]/30 transition-colors"
+            className="col-span-1 md:col-span-2 row-span-1 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 relative group hover:border-[#A797F7]/30 transition-colors"
           >
             <div className="flex justify-between items-start mb-4">
               <div className="p-2 bg-blue-500/20 rounded-lg text-blue-300">
@@ -147,21 +152,21 @@ export default function SocialMediaFeatures() {
               </div>
               <ArrowRight className="text-neutral-600 group-hover:text-white transition-colors" size={20} />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Multi-Channel</h3>
+
+            <h3 className="text-xl font-semibold text-white mb-2">Multi-Canale</h3>
             <p className="text-sm text-neutral-400">
-              Unified presence on Instagram, TikTok, LinkedIn & X from one dashboard.
+              Presenza unificata su Instagram, TikTok, LinkedIn e X da un’unica dashboard.
             </p>
-            {/* Abstract Visual */}
+
             <div className="absolute right-[-20px] bottom-[-20px] opacity-20 group-hover:opacity-40 transition-opacity">
               <Users size={120} />
             </div>
           </motion.div>
 
-
-          {/* 3. AI CONTENT (Row 2 Right) */}
+          {/* AI Content */}
           <motion.div 
             variants={itemVariants}
-            className="col-span-1 md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-pink-500/30 transition-colors"
+            className="col-span-1 md:col-span-2 row-span-1 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 relative group hover:border-pink-500/30 transition-colors"
           >
             <div className="flex justify-between items-start mb-4">
               <div className="p-2 bg-pink-500/20 rounded-lg text-pink-300">
@@ -172,12 +177,13 @@ export default function SocialMediaFeatures() {
                  <ArrowRight className="text-neutral-600 group-hover:text-white transition-colors" size={20} />
               </div>
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">AI Content</h3>
+
+            <h3 className="text-xl font-semibold text-white mb-2">Contenuti con IA</h3>
             <p className="text-sm text-neutral-400">
-              Generate captions, hashtags, and visual assets instantly with AI.
+              Genera in pochi secondi caption, hashtag e contenuti visivi grazie all’IA.
             </p>
-             {/* Visual Decoration */}
-             <motion.div 
+
+            <motion.div 
                className="mt-4 flex gap-1"
                initial="hidden"
                whileInView="visible"
@@ -188,41 +194,41 @@ export default function SocialMediaFeatures() {
              </motion.div>
           </motion.div>
 
-
-          {/* 4. SMART SCHEDULING (Row 3 Left) */}
+          {/* Smart Schedule */}
           <motion.div 
             variants={itemVariants}
-            className="col-span-1 md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-yellow-500/30 transition-colors"
+            className="col-span-1 md:col-span-2 row-span-1 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-yellow-500/30 transition-colors"
           >
              <div className="p-2 w-fit bg-yellow-500/20 rounded-lg text-yellow-300 mb-4">
                 <Calendar size={24} />
               </div>
-            <h3 className="text-lg font-semibold text-white mb-1">Smart Schedule</h3>
+
+            <h3 className="text-lg font-semibold text-white mb-1">Pianificazione Smart</h3>
             <p className="text-sm text-neutral-400">
-              Auto-post at peak engagement times for maximum visibility.
+              Pubblica automaticamente nei momenti di massimo engagement.
             </p>
           </motion.div>
 
-          {/* 5. COMMUNITY / INBOX (Row 3 Middle) */}
+          {/* Unified Inbox */}
           <motion.div 
             variants={itemVariants}
-            className="col-span-1 md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-green-500/30 transition-colors"
+            className="col-span-1 md:col-span-2 row-span-1 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-green-500/30 transition-colors"
           >
              <div className="p-2 w-fit bg-green-500/20 rounded-lg text-green-300 mb-4">
                 <MessageCircle size={24} />
               </div>
-            <h3 className="text-lg font-semibold text-white mb-1">Unified Inbox</h3>
+
+            <h3 className="text-lg font-semibold text-white mb-1">Inbox Unificata</h3>
             <p className="text-sm text-neutral-400">
-              Manage DMs, comments, and replies for all platforms in one feed.
+              Gestisci messaggi, commenti e risposte di tutte le piattaforme in un unico feed.
             </p>
           </motion.div>
 
-          {/* 6. VIRAL TRENDS (Row 3 Right) */}
+          {/* Trend Watch */}
           <motion.div 
             variants={itemVariants}
-            className="col-span-1 md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center hover:border-[#A797F7]/30 transition-colors"
+            className="col-span-1 md:col-span-2 row-span-1 relative group rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center hover:border-[#A797F7]/30 transition-colors"
           >
-             {/* Animated Gradient Background */}
              <motion.div
                animate={{ 
                  backgroundPosition: ["0% 0%", "100% 100%"],
@@ -245,24 +251,18 @@ export default function SocialMediaFeatures() {
                 >
                   <Megaphone className="text-[#A797F7] w-6 h-6" />
                 </motion.div>
-                <h3 className="text-lg font-semibold text-white mb-1">Trend Watch</h3>
+
+                <h3 className="text-lg font-semibold text-white mb-1">
+                  Trend Watch
+                </h3>
+
                 <p className="text-sm text-neutral-400">
-                  Identify viral audio & topics before they peak.
+                  Scopri audio virali e trend prima che esplodano.
                 </p>
              </div>
           </motion.div>
 
         </motion.div>
-
-        {/* CTA Button at bottom */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="mt-16 text-center"
-        >
-        </motion.div>
-
       </div>
     </section>
   );

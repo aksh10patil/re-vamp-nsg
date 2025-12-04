@@ -76,7 +76,7 @@ const Card = ({ title, description, icon: Icon, className = "", children, delay 
   );
 };
 
-// --- Custom Internal Components for specific cards ---
+// --- Custom Internal Components ---
 
 const TaskItem = ({ icon: Icon, text, delay }: { icon: any, text: string, delay: number }) => (
   <div 
@@ -94,20 +94,10 @@ const TaskItem = ({ icon: Icon, text, delay }: { icon: any, text: string, delay:
 // --- FIXED AI GRAPH COMPONENT ---
 const AIGraph = () => {
   return (
-    // Container positioned absolutely on the right side of the card
     <div className="absolute right-0 top-0 bottom-0 w-full sm:w-[55%] h-full pointer-events-none">
       <div className="relative w-full h-full">
-        
-        {/* SVG Layer: 
-            viewBox="0 0 100 100" establishes a 100x100 coordinate system.
-            preserveAspectRatio="none" stretches the SVG to fill the container exactly,
-            matching the percentage-based positioning of the HTML nodes.
-        */}
-        <svg 
-          className="absolute inset-0 w-full h-full" 
-          viewBox="0 0 100 100" 
-          preserveAspectRatio="none"
-        >
+
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <defs>
              <linearGradient id="trace-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="rgba(167, 151, 247, 0)" />
@@ -115,73 +105,26 @@ const AIGraph = () => {
                 <stop offset="100%" stopColor="rgba(167, 151, 247, 0)" />
              </linearGradient>
           </defs>
-          
-          {/* Path 1: Trigger (15, 50) -> AI Core (50, 50) */}
-          <path 
-            d="M 15 50 C 35 50, 35 50, 50 50" 
-            fill="none" 
-            stroke="rgba(167, 151, 247, 0.2)" 
-            strokeWidth="0.5" 
-            vectorEffect="non-scaling-stroke"
-          />
-          <path 
-            d="M 15 50 C 35 50, 35 50, 50 50" 
-            fill="none" 
-            stroke="url(#trace-gradient)" 
-            strokeWidth="0.5" 
-            vectorEffect="non-scaling-stroke"
-            className="animate-trace"
-          />
 
-          {/* Path 2: AI Core (50, 50) -> Store (85, 25) */}
-          <path 
-            d="M 50 50 C 65 50, 65 25, 85 25" 
-            fill="none" 
-            stroke="rgba(167, 151, 247, 0.2)" 
-            strokeWidth="0.5" 
-            vectorEffect="non-scaling-stroke"
-          />
-           <path 
-            d="M 50 50 C 65 50, 65 25, 85 25" 
-            fill="none" 
-            stroke="url(#trace-gradient)" 
-            strokeWidth="0.5" 
-            vectorEffect="non-scaling-stroke"
-            className="animate-trace-delayed-1"
-          />
+          {/* Paths */}
+          <path d="M 15 50 C 35 50, 35 50, 50 50" fill="none" stroke="rgba(167,151,247,0.2)" strokeWidth="0.5" vectorEffect="non-scaling-stroke" />
+          <path d="M 15 50 C 35 50, 35 50, 50 50" fill="none" stroke="url(#trace-gradient)" strokeWidth="0.5" vectorEffect="non-scaling-stroke" className="animate-trace" />
 
-          {/* Path 3: AI Core (50, 50) -> Notify (85, 75) */}
-          <path 
-            d="M 50 50 C 65 50, 65 75, 85 75" 
-            fill="none" 
-            stroke="rgba(167, 151, 247, 0.2)" 
-            strokeWidth="0.5" 
-            vectorEffect="non-scaling-stroke"
-          />
-           <path 
-            d="M 50 50 C 65 50, 65 75, 85 75" 
-            fill="none" 
-            stroke="url(#trace-gradient)" 
-            strokeWidth="0.5" 
-            vectorEffect="non-scaling-stroke"
-            className="animate-trace-delayed-2"
-          />
+          <path d="M 50 50 C 65 50, 65 25, 85 25" fill="none" stroke="rgba(167,151,247,0.2)" strokeWidth="0.5" vectorEffect="non-scaling-stroke" />
+          <path d="M 50 50 C 65 50, 65 25, 85 25" fill="none" stroke="url(#trace-gradient)" strokeWidth="0.5" vectorEffect="non-scaling-stroke" className="animate-trace-delayed-1" />
+
+          <path d="M 50 50 C 65 50, 65 75, 85 75" fill="none" stroke="rgba(167,151,247,0.2)" strokeWidth="0.5" vectorEffect="non-scaling-stroke" />
+          <path d="M 50 50 C 65 50, 65 75, 85 75" fill="none" stroke="url(#trace-gradient)" strokeWidth="0.5" vectorEffect="non-scaling-stroke" className="animate-trace-delayed-2" />
         </svg>
 
-        {/* HTML Nodes Layer:
-            Positioned using left/top percentages that EXACTLY match the SVG coordinates above.
-            transform: translate(-50%, -50%) centers the div on that coordinate point.
-        */}
-        
-        {/* Trigger Node: (15%, 50%) */}
+        {/* Nodes */}
         <div className="absolute left-[15%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center gap-2">
-           <div className="w-10 h-10 bg-neutral-900 rounded-xl border border-neutral-700 flex items-center justify-center shadow-lg group-hover:border-[#A797F7]/50 transition-colors">
+           <div className="w-10 h-10 bg-neutral-900 rounded-xl border border-neutral-700 flex items-center justify-center shadow-lg">
               <Zap size={18} className="text-yellow-400" />
            </div>
            <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider">Trigger</span>
         </div>
 
-        {/* AI Core Node: (50%, 50%) */}
         <div className="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-2">
            <div className="w-16 h-16 bg-neutral-900 rounded-2xl border border-[#A797F7]/40 flex items-center justify-center shadow-[0_0_30px_rgba(167,151,247,0.15)] animate-pulse-slow">
               <Cpu className="text-[#A797F7] w-8 h-8" />
@@ -189,20 +132,18 @@ const AIGraph = () => {
            <span className="text-[10px] text-[#A797F7] font-mono font-bold uppercase tracking-wider">AI Core</span>
         </div>
 
-        {/* Store Node: (85%, 25%) */}
         <div className="absolute left-[85%] top-[25%] -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center gap-2">
-           <div className="w-10 h-10 bg-neutral-900 rounded-xl border border-neutral-700 flex items-center justify-center shadow-lg group-hover:border-[#A797F7]/50 transition-colors">
+           <div className="w-10 h-10 bg-neutral-900 rounded-xl border border-neutral-700 flex items-center justify-center shadow-lg">
               <Database size={18} className="text-blue-400" />
            </div>
-           <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider">Store</span>
+           <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider">Archivio</span>
         </div>
 
-        {/* Notify Node: (85%, 75%) */}
         <div className="absolute left-[85%] top-[75%] -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center gap-2">
-           <div className="w-10 h-10 bg-neutral-900 rounded-xl border border-neutral-700 flex items-center justify-center shadow-lg group-hover:border-[#A797F7]/50 transition-colors">
+           <div className="w-10 h-10 bg-neutral-900 rounded-xl border border-neutral-700 flex items-center justify-center shadow-lg">
               <Bell size={18} className="text-pink-400" />
            </div>
-           <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider">Notify</span>
+           <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider">Notifica</span>
         </div>
 
       </div>
@@ -216,34 +157,11 @@ const AIGraph = () => {
 export default function App() {
   return (
     <div className="min-h-screen bg-black text-neutral-100 p-6 md:p-12 selection:bg-[#A797F7]/30">
-      {/* Inline Styles for Animations */}
+
       <style>{`
         @keyframes slideIn {
           from { opacity: 0; transform: translateY(10px); }
           to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes trace {
-          0% { stroke-dasharray: 0, 100; stroke-dashoffset: 0; opacity: 0; }
-          20% { opacity: 1; }
-          100% { stroke-dasharray: 100, 0; stroke-dashoffset: -100; opacity: 0; }
-        }
-        .animate-trace {
-          animation: trace 3s linear infinite;
-        }
-        .animate-trace-delayed-1 {
-          animation: trace 3s linear infinite;
-          animation-delay: 1s;
-        }
-        .animate-trace-delayed-2 {
-          animation: trace 3s linear infinite;
-          animation-delay: 1.5s;
-        }
-        .animate-pulse-slow {
-          animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes width {
-          from { width: 0; }
-          to { width: 85%; }
         }
       `}</style>
 
@@ -251,22 +169,22 @@ export default function App() {
         
         {/* Header Section */}
         <div className="text-center space-y-4 max-w-2xl mx-auto">
-          <Badge>Our Expertise</Badge>
+          <Badge>La Nostra Expertise</Badge>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-            Digital Solutions for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A797F7] to-white">Modern Growth</span>
+            Soluzioni Digitali per la <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A797F7] to-white">Crescita Moderna</span>
           </h1>
           <p className="text-neutral-400 text-lg">
-            We transform businesses through cutting-edge technology, blending creativity with technical excellence to scale your vision.
+            Trasformiamo i business attraverso tecnologie all’avanguardia, unendo creatività ed eccellenza tecnica per far crescere la tua visione.
           </p>
         </div>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
+
           {/* 1. Website Development */}
           <Card 
-            title="Website Development" 
-            description="Blazing fast, SEO-optimized websites built with Next.js and React. We create digital experiences that convert visitors into customers."
+            title="Sviluppo Siti Web" 
+            description="Siti rapidissimi, ottimizzati per la SEO e costruiti con Next.js e React. Creiamo esperienze digitali che trasformano visitatori in clienti."
             icon={Globe}
             delay={0}
           >
@@ -280,8 +198,8 @@ export default function App() {
 
           {/* 2. App Development */}
           <Card 
-            title="App Development" 
-            description="Native and cross-platform mobile applications that provide seamless user experiences across iOS and Android devices."
+            title="Sviluppo App" 
+            description="Applicazioni mobili native e cross-platform che offrono esperienze fluide su dispositivi iOS e Android."
             icon={Smartphone}
             delay={100}
           >
@@ -296,8 +214,8 @@ export default function App() {
 
           {/* 3. Social Media Management */}
           <Card 
-            title="Social Media Management" 
-            description="Strategic content creation and community management to amplify your brand voice and engage your target audience."
+            title="Gestione Social Media" 
+            description="Creazione di contenuti strategici e gestione della community per amplificare la voce del tuo brand e coinvolgere il pubblico giusto."
             icon={Share2}
             delay={200}
           >
@@ -313,33 +231,32 @@ export default function App() {
             </div>
           </Card>
 
-          {/* 4. Integrated Strategy (Visual: List of tasks) */}
+          {/* 4. Strategic Operations */}
           <div className="md:col-span-1 min-h-[300px] md:h-auto">
             <Card 
-              title="Strategic Operations" 
-              description="We streamline your digital presence with a comprehensive management workflow."
+              title="Operazioni Strategiche" 
+              description="Ottimizziamo la tua presenza digitale con un workflow completo di gestione e performance."
               icon={BarChart3}
               className="h-full"
               delay={300}
             >
               <div className="mt-4 flex flex-col gap-1">
-                <TaskItem icon={MessageSquare} text="Community Engagement" delay={100} />
-                <TaskItem icon={BarChart3} text="Performance Analytics" delay={200} />
-                <TaskItem icon={CheckCircle2} text="SEO & Content Audit" delay={300} />
+                <TaskItem icon={MessageSquare} text="Coinvolgimento Community" delay={100} />
+                <TaskItem icon={BarChart3} text="Analisi delle Performance" delay={200} />
+                <TaskItem icon={CheckCircle2} text="SEO & Audit dei Contenuti" delay={300} />
               </div>
             </Card>
           </div>
 
-          {/* 5. AI Solutions (Visual: Node Graph) */}
+          {/* 5. AI Solutions */}
           <div className="md:col-span-2 min-h-[300px]">
             <Card 
-              title="AI Solutions & Automation" 
-              description="Leverage the power of Artificial Intelligence to automate workflows, analyze data, and create personalized user experiences."
+              title="Soluzioni & Automazione AI" 
+              description="Sfrutta la potenza dell’Intelligenza Artificiale per automatizzare processi, analizzare dati e creare esperienze personalizzate."
               icon={Bot}
               className="h-full relative group"
               delay={400}
             >
-              {/* Using the new fixed AIGraph component */}
               <div className="hidden sm:block">
                  <AIGraph />
               </div>
@@ -350,15 +267,15 @@ export default function App() {
 
         {/* CTA Section */}
         <div className="flex justify-center pt-8">
-                            <a 
-                href="https://cal.northstargroup.ch/nsg/book"   // ← change to your URL
-                className="group relative px-8 py-4 bg-white text-black font-semibold rounded-full 
-                          flex items-center gap-2 hover:bg-[#A797F7] hover:text-white transition-all 
-                          hover:pr-10 hover:shadow-[0_0_40px_rgba(167,151,247,0.4)]"
-              >
-                Start Your Project
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
+          <a 
+            href="https://cal.northstargroup.ch/nsg/book"
+            className="group relative px-8 py-4 bg-white text-black font-semibold rounded-full 
+                      flex items-center gap-2 hover:bg-[#A797F7] hover:text-white transition-all 
+                      hover:pr-10 hover:shadow-[0_0_40px_rgba(167,151,247,0.4)]"
+          >
+            Inizia il Tuo Progetto
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </a>
         </div>
       </div>
     </div>
