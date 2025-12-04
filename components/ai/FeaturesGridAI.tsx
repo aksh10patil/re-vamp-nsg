@@ -19,24 +19,24 @@ const TOOLS = [
     icon: 
     (
       <Image 
-        src="/images/icons/notion.png" // Path to your image in public folder
-        alt="Notion Logo"
+        src="/images/icons/notion.png"
+        alt="Logo Notion"
         width={40} 
         height={40}
-        className="w-full h-full object-contain" // Ensures it fits perfectly
+        className="w-full h-full object-contain"
       />
-    )// <--- Replace this line with your icon
+    )
   },
   { 
     name: "Slack", 
     glowColor: "#E01E5A", 
     icon: (
       <Image 
-        src="/images/icons/slack2.png" // Path to your image in public folder
-        alt="Slack Logo"
+        src="/images/icons/slack2.png"
+        alt="Logo Slack"
         width={40} 
         height={40}
-        className="w-full h-full object-contain" // Ensures it fits perfectly
+        className="w-full h-full object-contain"
       />
     )
   },
@@ -45,11 +45,11 @@ const TOOLS = [
     glowColor: "#3B82F6", 
     icon: (
       <Image 
-        src="/images/icons/pinecone.webp" // Path to your image in public folder
-        alt="Slack Logo"
+        src="/images/icons/pinecone.webp"
+        alt="Logo Pinecone"
         width={40} 
         height={40}
-        className="w-full h-full object-contain" // Ensures it fits perfectly
+        className="w-full h-full object-contain"
       />
     )
   },
@@ -58,39 +58,37 @@ const TOOLS = [
     glowColor: "#EA4335", 
     icon: (
       <Image 
-        src="/images/icons/gmail.png" // Path to your image in public folder
-        alt="Gmail Logo"
+        src="/images/icons/gmail.png"
+        alt="Logo Gmail"
         width={40} 
         height={40}
-        className="w-full h-full object-contain" // Ensures it fits perfectly
+        className="w-full h-full object-contain"
       />
     )
   },
   { 
     name: "OpenAI", 
     glowColor: "#10A37F", 
-    // 2. Add the Image component here
     icon: (
       <Image 
-        src="/images/icons/openai2.png" // Path to your image in public folder
-        alt="OpenAI Logo"
+        src="/images/icons/openai2.png"
+        alt="Logo OpenAI"
         width={40} 
         height={40}
-        className="w-full h-full object-contain" // Ensures it fits perfectly
+        className="w-full h-full object-contain"
       />
     )
-    // <--- Replace this line with your icon
   },
   { 
     name: "Zapier", 
     glowColor: "#FF4F00", 
     icon: (
       <Image 
-        src="/images/icons/zapier.png" // Path to your image in public folder
-        alt="Zapier Logo"
+        src="/images/icons/zapier.png"
+        alt="Logo Zapier"
         width={40} 
         height={40}
-        className="w-full h-full object-contain" // Ensures it fits perfectly
+        className="w-full h-full object-contain"
       />
     )
   },
@@ -99,11 +97,11 @@ const TOOLS = [
     glowColor: "#FFD43B", 
     icon: (
       <Image 
-        src="/images/icons/python.png" // Path to your image in public folder
-        alt="Python Logo"
+        src="/images/icons/python.png"
+        alt="Logo Python"
         width={40} 
         height={40}
-        className="w-full h-full object-contain" // Ensures it fits perfectly
+        className="w-full h-full object-contain"
       />
     )
   },
@@ -126,25 +124,21 @@ export default function FeaturesGridAI() {
           className="mb-20"
         >
           <span className="inline-block px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm font-medium mb-6">
-            Our Expertise
+            La nostra esperienza
           </span>
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Smart AI tools for <br className="hidden md:block" />
+            Strumenti di IA intelligenti per <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">
-              growing your business
+              far crescere il tuo business
             </span>
           </h2>
           <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-            We seamlessly integrate with your existing stack.
+            Ci integriamo perfettamente con il tuo stack esistente.
           </p>
         </motion.div>
 
         {/* --- FLOATING ICONS ROW --- */}
         <div className="relative w-full">
-            {/* This container handles the row layout.
-              - On Mobile: Horizontal Scroll (overflow-x-auto)
-              - On Desktop: Centered Row (justify-center)
-            */}
             <div className="flex items-center justify-start md:justify-center gap-6 md:gap-10 overflow-x-auto pb-12 px-4 scrollbar-hide">
                 {TOOLS.map((tool, i) => (
                     <FloatingIcon key={tool.name} tool={tool} index={i} />
@@ -172,7 +166,6 @@ export default function FeaturesGridAI() {
 
 function FloatingIcon({ tool, index }: { tool: any, index: number }) {
     
-    // Generate random float values so icons don't move in sync
     const randomDuration = 3 + Math.random() * 2; 
     const randomY = 12 + Math.random() * 8; 
 
@@ -183,7 +176,7 @@ function FloatingIcon({ tool, index }: { tool: any, index: number }) {
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
             animate={{ 
-                y: [0, -randomY, 0], // The up/down float animation
+                y: [0, -randomY, 0],
             }}
             // @ts-ignore
             transition={{
@@ -202,15 +195,11 @@ function FloatingIcon({ tool, index }: { tool: any, index: number }) {
                     borderColor: "rgba(255,255,255,0.1)",
                 }}
             >
-                {/* Glow Effect:
-                   Uses the 'glowColor' from your config to light up behind the icon on hover.
-                */}
                 <div 
                     className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-500 blur-xl"
                     style={{ backgroundColor: tool.glowColor }}
                 />
 
-                {/* The Icon Slot */}
                 <div className="w-8 h-8 md:w-10 md:h-10 relative z-10 transition-transform duration-300 group-hover:scale-110 text-white">
                     {tool.icon}
                 </div>

@@ -67,25 +67,21 @@ export default function Navbar() {
   const menuLinks = [
     { name: "Home", href: "/home" },
     { 
-      name: "Services", 
+      name: "Servizi", 
       href: "/services", 
       subItems: [
-        { name: "AI Solutions", href: "/services/ai" },
-        { name: "Web Development", href: "/services/web" },
-        { name: "App Development", href: "/services/app" },
+        { name: "Soluzioni AI", href: "/services/ai" },
+        { name: "Sviluppo Web", href: "/services/web" },
+        { name: "Sviluppo App", href: "/services/app" },
         { name: "Social Media", href: "/services/social" },
       ]
     },
-    { name: "Contact", href: "/contact" },
-     { name: "About Us", href: "/about" },
+    { name: "Contatti", href: "/contact" },
+    { name: "Chi Siamo", href: "/about" },
   ];
 
   return (
     <>
-      {/* 1. Removed 'border-2' to remove the line.
-        2. Kept 'fixed' so it floats over the hero. 
-        3. Added 'w-full' to ensure it stretches.
-      */}
       <nav className="fixed top-0 left-0 right-0 z-50 w-full px-6 py-5 pointer-events-none">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="pointer-events-auto">
@@ -163,7 +159,7 @@ export default function Navbar() {
                   </div>
                   <div>
                     <div className="text-sm font-semibold leading-none">Menu</div>
-                    <div className="text-xs text-black/60">Quick links</div>
+                    <div className="text-xs text-black/60">Collegamenti rapidi</div>
                   </div>
                 </div>
 
@@ -179,7 +175,7 @@ export default function Navbar() {
 
               <div className="mt-4 flex flex-col gap-3">
                 {menuLinks.map((link, i) => {
-                  const isServices = link.name === "Services";
+                  const isServices = link.name === "Servizi";
                   return (
                     <motion.div
                       key={link.name}
@@ -198,6 +194,7 @@ export default function Navbar() {
                         >
                           {link.name}
                         </Link>
+
                         {isServices && (
                           <button
                             onClick={(e) => {
@@ -216,6 +213,7 @@ export default function Navbar() {
                           </button>
                         )}
                       </div>
+
                       {isServices && link.subItems && (
                         <AnimatePresence>
                           {ServicesHover && (

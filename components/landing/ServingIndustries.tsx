@@ -23,51 +23,51 @@ interface Industry {
 const industries: Industry[] = [
   { 
     id: 'ecom',
-    name: 'Ecommerce', 
+    name: 'E-commerce', 
     icon: ShoppingCart, 
-    description: 'Scalable storefronts and seamless checkout experiences.' 
+    description: 'Vetrine scalabili e processi di checkout senza interruzioni.' 
   },
   { 
     id: 'ind',
-    name: 'Industry', 
+    name: 'Industria', 
     icon: Factory, 
-    description: 'IoT integration and smart automation for manufacturing.' 
+    description: 'Integrazione IoT e automazione intelligente per la produzione.' 
   },
   { 
     id: 'serv',
-    name: 'Services', 
+    name: 'Servizi', 
     icon: Briefcase, 
-    description: 'Streamlined booking and CRM solutions for professionals.' 
+    description: 'Sistemi di prenotazione e CRM ottimizzati per professionisti.' 
   },
   { 
     id: 'tour',
-    name: 'Tourism', 
+    name: 'Turismo', 
     icon: Plane, 
-    description: 'Immersive booking platforms and travel guides.' 
+    description: 'Piattaforme di prenotazione immersive e guide di viaggio.' 
   },
   { 
     id: 'real',
-    name: 'Real Estate', 
+    name: 'Immobiliare', 
     icon: Building2, 
-    description: 'Virtual tours and dynamic property listing engines.' 
+    description: 'Tour virtuali e motori dinamici per annunci immobiliari.' 
   },
   { 
     id: 'cat',
-    name: 'Catering', 
+    name: 'Ristorazione', 
     icon: Utensils, 
-    description: 'Online ordering and inventory management systems.' 
+    description: 'Ordini online e sistemi avanzati di gestione inventario.' 
   },
   { 
     id: 'health',
-    name: 'Health', 
+    name: 'Sanità', 
     icon: HeartPulse, 
-    description: 'Telemedicine apps and secure patient data portals.' 
+    description: 'App di telemedicina e portali sicuri per i dati dei pazienti.' 
   },
   { 
     id: 'edu',
-    name: 'Education', 
+    name: 'Educazione', 
     icon: GraduationCap, 
-    description: 'LMS platforms and interactive e-learning tools.' 
+    description: 'Piattaforme LMS e strumenti e-learning interattivi.' 
   },
 ];
 
@@ -76,7 +76,6 @@ const industries: Industry[] = [
 const BackgroundParticles = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-       {/* Generating random floating particles */}
        {[...Array(20)].map((_, i) => (
          <div 
             key={i}
@@ -105,13 +104,10 @@ const IndustryCard = ({ item, index }: { item: Industry; index: number }) => {
         transform: 'translateY(20px)'
       }}
     >
-      {/* Hover Background overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#A797F7]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
-      {/* Content Container */}
       <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
         
-        {/* Top: Icon & Arrow */}
         <div className="flex justify-between items-start">
           <div className="p-3 bg-neutral-800 rounded-xl group-hover:bg-[#A797F7] group-hover:text-white transition-colors duration-300 text-[#A797F7]">
             <item.icon size={28} />
@@ -122,7 +118,6 @@ const IndustryCard = ({ item, index }: { item: Industry; index: number }) => {
           />
         </div>
 
-        {/* Bottom: Title & Description */}
         <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
           <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#C4BBF9]">
             {item.name}
@@ -133,7 +128,6 @@ const IndustryCard = ({ item, index }: { item: Industry; index: number }) => {
         </div>
       </div>
 
-      {/* Decorative Circle (Bottom Right) */}
       <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-[#A797F7]/5 rounded-full blur-2xl group-hover:bg-[#A797F7]/20 transition-all duration-500 group-hover:scale-150" />
     </div>
   );
@@ -145,7 +139,6 @@ export default function ServingIndustries() {
   return (
     <div className="min-h-screen bg-black text-white py-20 px-6 relative selection:bg-[#A797F7]/30">
       
-      {/* --- Animations CSS --- */}
       <style>{`
         @keyframes fadeInUp {
           to {
@@ -165,7 +158,6 @@ export default function ServingIndustries() {
         }
       `}</style>
 
-      {/* Background Ambience */}
       <BackgroundParticles />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[#A797F7]/5 blur-[100px] rounded-full pointer-events-none" />
 
@@ -174,13 +166,13 @@ export default function ServingIndustries() {
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
           <span className="inline-block py-1 px-3 rounded-full bg-[#A797F7]/10 border border-[#A797F7]/20 text-[#A797F7] text-xs font-bold tracking-widest uppercase">
-            Industries
+            Settori
           </span>
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-            We Build for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A797F7] to-white">Every Sector</span>
+            Costruiamo per <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A797F7] to-white">Ogni Settore</span>
           </h2>
           <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-            From seamless ecommerce flows to complex industrial automation, our solutions adapt to your specific market needs.
+            Dai flussi e-commerce alle automazioni industriali più complesse, le nostre soluzioni si adattano al tuo mercato.
           </p>
         </div>
 
@@ -198,13 +190,13 @@ export default function ServingIndustries() {
         {/* Bottom Call to Action */}
         <div className="mt-20 text-center">
             <div className="inline-flex items-center gap-2 text-neutral-400 text-sm">
-                <span>Don't see your industry?</span>
-                                <a
-                  href="https://cal.northstargroup.ch/nsg/book"  // ← change to your route
+                <span>Non vedi il tuo settore?</span>
+                <a
+                  href="https://cal.northstargroup.ch/nsg/book"
                   className="text-[#A797F7] font-semibold hover:text-white transition-colors 
                             border-b border-[#A797F7] hover:border-white pb-0.5"
                 >
-                  Let's talk custom solutions
+                  Parliamo di soluzioni su misura
                 </a>
             </div>
         </div>

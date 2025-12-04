@@ -9,17 +9,13 @@ export default function ProductSalesCard() {
   const [mode, setMode] = useState<"last" | "this">("this");
   const data = mode === "this" ? thisYear : lastYear;
   
-  // Hydration Fix: Start with a default multiplier and update on client
   const [heightMultiplier, setHeightMultiplier] = useState(3.6);
 
   useEffect(() => {
     const handleResize = () => {
       setHeightMultiplier(window.innerWidth < 640 ? 2.4 : 3.6);
     };
-    
-    // Set initial value
     handleResize();
-    
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -40,22 +36,26 @@ export default function ProductSalesCard() {
     <div className="p-6 rounded-[22px] border border-white/10 bg-white/5 backdrop-blur-md w-full">
       <div className="flex flex-col sm:flex-row justify-between gap-4 sm:items-center">
         <div>
-          <div className="text-sm text-neutral-300">Product sales</div>
+          <div className="text-sm text-neutral-300">Vendite del prodotto</div>
           <div className="text-3xl font-semibold text-white">{displayTotal}</div>
         </div>
 
         <div className="rounded-full bg-white/10 p-[4px] flex items-center w-fit">
           <button
             onClick={() => setMode("last")}
-            className={`px-3 py-1.5 rounded-full text-xs font-medium transition ${mode === "last" ? "bg-white/20 text-white" : "text-neutral-400 hover:text-white"}`}
+            className={`px-3 py-1.5 rounded-full text-xs font-medium transition ${
+              mode === "last" ? "bg-white/20 text-white" : "text-neutral-400 hover:text-white"
+            }`}
           >
-            Last year
+            Anno scorso
           </button>
           <button
             onClick={() => setMode("this")}
-            className={`px-3 py-1.5 rounded-full text-xs font-medium transition ${mode === "this" ? "bg-white/20 text-white" : "text-neutral-400 hover:text-white"}`}
+            className={`px-3 py-1.5 rounded-full text-xs font-medium transition ${
+              mode === "this" ? "bg-white/20 text-white" : "text-neutral-400 hover:text-white"
+            }`}
           >
-            This year
+            Quest'anno
           </button>
         </div>
       </div>
@@ -73,7 +73,7 @@ export default function ProductSalesCard() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.05 }}
               className="rounded-t-sm bg-gradient-to-b from-purple-300 to-purple-600 shadow-[0_10px_30px_rgba(255,200,80,0.12)]"
               style={{
-                width: "100%", // Fluid width within flex container
+                width: "100%",
                 maxWidth: "24px",
                 minWidth: "8px"
               }}
@@ -83,10 +83,10 @@ export default function ProductSalesCard() {
 
         {/* Right side text */}
         <div className="flex flex-col justify-between flex-1 min-w-[120px]">
-          <div className="text-sm text-neutral-300 font-medium">Insights</div>
+          <div className="text-sm text-neutral-300 font-medium">Approfondimenti</div>
           <div className="text-xs text-neutral-400 leading-relaxed mt-2">
-            Comparison between <span className="text-purple-300">2023</span> and <span className="text-purple-300">2024</span>. 
-            Growth has been consistent across Q3 and Q4.
+            Confronto tra <span className="text-purple-300">2023</span> e <span className="text-purple-300">2024</span>. 
+            La crescita è stata costante nel Q3 e Q4.
           </div>
         </div>
       </div>

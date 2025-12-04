@@ -23,14 +23,14 @@ function StatCard({ title, value, change }: { title: string; value: string; chan
 function TopAnalytics() {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full">
-      <StatCard title="Revenue" value="$38K" change="+5%" />
-      <StatCard title="Users" value="850" change="+12%" />
-      <StatCard title="Conversions" value="2.5%" change="+3%" />
+      <StatCard title="Entrate" value="$38K" change="+5%" />
+      <StatCard title="Utenti" value="850" change="+12%" />
+      <StatCard title="Conversioni" value="2.5%" change="+3%" />
     </div>
   );
 }
 
-// --- COMPONENT 2: Product Sales Card (Auto-Looping Graph) ---
+// --- COMPONENT 2: Product Sales Card ---
 
 const lastYearData = [11, 12, 15, 12, 9, 14, 11, 13];
 const thisYearData = [20, 18, 22, 18, 17, 22, 24, 28];
@@ -39,7 +39,6 @@ function ProductSalesCard() {
   const [mode, setMode] = useState<"last" | "this">("this");
   const data = mode === "this" ? thisYearData : lastYearData;
   
-  // Hydration safety
   const [heightMultiplier, setHeightMultiplier] = useState(3.6);
 
   useEffect(() => {
@@ -51,15 +50,14 @@ function ProductSalesCard() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // --- AUTO LOOP LOGIC ---
   useEffect(() => {
     const interval = setInterval(() => {
       setMode((prev) => (prev === "this" ? "last" : "this"));
-    }, 4000); // Switch every 4 seconds
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
-  // Animated Total Calculation
+  // Animated Total
   const total = data.reduce((a, b) => a + b, 0);
   const mv = useMotionValue(total);
   const spring = useSpring(mv, { stiffness: 100, damping: 20 });
@@ -71,11 +69,12 @@ function ProductSalesCard() {
     return () => unsub();
   }, [total, mv, spring]);
 
+
   return (
     <div className="p-6 rounded-[22px] border border-white/10 bg-white/5 backdrop-blur-md w-full h-full flex flex-col justify-between">
       <div className="flex flex-col sm:flex-row justify-between gap-4 sm:items-center">
         <div>
-          <div className="text-sm text-neutral-300">Product sales</div>
+          <div className="text-sm text-neutral-300">Vendite prodotto</div>
           <div className="text-3xl font-semibold text-white">{displayTotal}</div>
         </div>
 
@@ -87,7 +86,7 @@ function ProductSalesCard() {
               mode === "last" ? "bg-white/20 text-white shadow-sm" : "text-neutral-400 hover:text-white"
             }`}
           >
-            Last year
+            Anno scorso
           </button>
           <button
             onClick={() => setMode("this")}
@@ -95,14 +94,13 @@ function ProductSalesCard() {
               mode === "this" ? "bg-white/20 text-white shadow-sm" : "text-neutral-400 hover:text-white"
             }`}
           >
-            This year
+            Quest’anno
           </button>
         </div>
       </div>
 
       {/* CHART */}
       <div className="mt-8 flex flex-col sm:flex-row gap-6 flex-1 items-end">
-        {/* Bars */}
         <div className="h-48 flex items-end gap-2 sm:gap-3 flex-1 w-full">
           {data.map((val, i) => (
             <motion.div
@@ -122,9 +120,9 @@ function ProductSalesCard() {
                 minWidth: "8px"
               }}
             >
-                {/* Tooltip on hover */}
+                {/* Tooltip */}
                 <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-                    {val} units
+                    {val} unità
                 </div>
             </motion.div>
           ))}
@@ -132,22 +130,25 @@ function ProductSalesCard() {
 
         {/* Legend / Info */}
         <div className="flex flex-col justify-end flex-1 min-w-[120px] pb-2">
-          <div className="text-sm text-neutral-300 font-medium">Insights</div>
+          <div className="text-sm text-neutral-300 font-medium">Approfondimenti</div>
           <div className="text-xs text-neutral-400 leading-relaxed mt-2">
             <span className="block mb-1">
-                Currently viewing: <span className="text-purple-300 font-semibold">{mode === 'this' ? '2024 Data' : '2023 Data'}</span>
+              Stai visualizzando:{" "}
+              <span className="text-purple-300 font-semibold">
+                {mode === "this" ? "Dati 2024" : "Dati 2023"}
+              </span>
             </span>
             <span className="opacity-70">
-                Live updates enabled. Data refreshes automatically.
+              Aggiornamenti in tempo reale. I dati si aggiornano automaticamente.
             </span>
-            
+
             {/* Live Indicator */}
             <div className="mt-3 flex items-center gap-2">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                </span>
-                <span className="text-[10px] uppercase tracking-wider text-green-400">Live</span>
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              <span className="text-[10px] uppercase tracking-wider text-green-400">Live</span>
             </div>
           </div>
         </div>
@@ -181,15 +182,14 @@ function Avatar({ name, color }: { name: string; color: string }) {
 function NewClients() {
   return (
     <div className="p-6 rounded-[22px] border border-white/10 bg-white/5 backdrop-blur-md w-full h-full flex flex-col">
-      {/* Top row */}
+      
       <div className="flex items-center justify-between mb-4">
-        <div className="text-sm text-neutral-300 font-medium">New clients</div>
+        <div className="text-sm text-neutral-300 font-medium">Nuovi clienti</div>
         <a href="#" className="text-xs text-purple-300 hover:text-purple-200 transition-colors">
-          View all
+          Vedi tutti
         </a>
       </div>
 
-      {/* Client list */}
       <div className="flex flex-col gap-4 flex-1 justify-center">
         {clients.map((client, index) => (
           <motion.div
@@ -200,7 +200,7 @@ function NewClients() {
             transition={{ duration: 0.45, delay: index * 0.1 }}
             className="flex items-center justify-between gap-3 group cursor-default"
           >
-            {/* Left: Avatar + Name */}
+            {/* Left */}
             <div className="flex items-center gap-3">
               <Avatar name={client.name} color={client.color} />
               <div className="flex flex-col">
@@ -208,12 +208,12 @@ function NewClients() {
                   {client.name}
                 </span>
                 <span className="text-[10px] text-neutral-400 mt-1 uppercase tracking-wide">
-                  Verified
+                  Verificato
                 </span>
               </div>
             </div>
 
-            {/* Right: Small indicator or progress */}
+            {/* Right */}
             <div className="hidden sm:block w-16 h-1.5 bg-white/10 rounded-full overflow-hidden">
               <motion.div
                 className="h-full rounded-full bg-white/80"
@@ -235,18 +235,13 @@ export default function DashboardSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
       
-      {/* --- ATMOSPHERIC BACKGROUND --- */}
       <div className="absolute inset-0 -z-10 bg-[#050505]">
-        {/* Deep purple depth glow */}
         <div className="absolute top-0 left-0 w-full h-full" />
-        
-        {/* Secondary accent glow */}
         <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(50,20,100,0.3),transparent_70%)] blur-[100px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
-        {/* Optional Heading */}
         <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -254,11 +249,12 @@ export default function DashboardSection() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-white mb-4"
           >
-            Total control over your <br/>
+            Controllo totale sulle tue <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-300">
-              business analytics.
+              analisi aziendali.
             </span>
           </motion.h2>
+
           <motion.p 
              initial={{ opacity: 0, y: 20 }}
              whileInView={{ opacity: 1, y: 0 }}
@@ -266,11 +262,11 @@ export default function DashboardSection() {
              transition={{ delay: 0.1 }}
              className="text-neutral-400 max-w-2xl mx-auto"
           >
-            Real-time data processing with advanced visualization tools designed to help you make decisions faster.
+            Elaborazione dati in tempo reale con strumenti avanzati di visualizzazione progettati per aiutarti a prendere decisioni più velocemente.
           </motion.p>
         </div>
 
-        {/* DASHBOARD GRID */}
+        {/* Dashboard Grid */}
         <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -278,10 +274,8 @@ export default function DashboardSection() {
             transition={{ duration: 0.8 }}
             className="flex flex-col gap-6"
         >
-          {/* Row 1: Top Stats */}
           <TopAnalytics />
 
-          {/* Row 2: Charts */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 h-full min-h-[400px]">
               <ProductSalesCard />

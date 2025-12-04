@@ -17,26 +17,26 @@ export default function ProcessWorkflow() {
   const steps = [
     {
       id: "01",
-      title: "Choose Your Workflow",
-      description: "Select from our library of pre-built defense mechanisms or create a custom rule set tailored to your specific needs.",
+      title: "Scegli il tuo Workflow",
+      description: "Seleziona dalla nostra libreria di meccanismi di difesa preconfigurati oppure crea un set di regole personalizzato in base alle tue esigenze specifiche.",
       icon: <FileText size={24} />,
     },
     {
       id: "02",
-      title: "Integrate API",
-      description: "Copy your unique API key and drop it into your env file. We auto-detect your framework and configure the rest.",
+      title: "Integra l'API",
+      description: "Copia la tua API key unica e inseriscila nel tuo file env. Rileviamo automaticamente il tuo framework e configuriamo tutto il resto.",
       icon: <Zap size={24} />,
     },
     {
       id: "03",
-      title: "Test Connection",
-      description: "Run a quick diagnostic. Our system creates a sandbox environment to ensure your rules are firing correctly.",
+      title: "Testa la Connessione",
+      description: "Esegui una diagnostica rapida. Il nostro sistema crea un ambiente sandbox per assicurarsi che le tue regole vengano eseguite correttamente.",
       icon: <Box size={24} />,
     },
     {
       id: "04",
-      title: "Go Live",
-      description: "Deploy to production with confidence. Real-time monitoring and threat alerts are automatically enabled.",
+      title: "Vai Live",
+      description: "Distribuisci in produzione con sicurezza. Il monitoraggio in tempo reale e gli avvisi sulle minacce vengono attivati automaticamente.",
       icon: <Rocket size={24} />,
     },
   ];
@@ -79,10 +79,10 @@ export default function ProcessWorkflow() {
           viewport={{ once: true }}
           className="text-4xl md:text-6xl font-semibold tracking-tight mb-4"
         >
-          How We Make It <span style={{ color: THEME.accent }}>Happen</span>
+          Come lo <span style={{ color: THEME.accent }}>Realizziamo</span>
         </motion.h2>
         <p style={{ color: THEME.textMuted }} className="text-lg">
-           From simple integration to full-scale deployment in four simple steps.
+          Dalla semplice integrazione alla distribuzione completa in quattro passaggi.
         </p>
       </div>
 

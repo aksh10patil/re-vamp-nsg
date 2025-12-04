@@ -32,57 +32,55 @@ interface ServiceCardProps {
   textGradient: string;
   borderColor: string;
   features: string[];
-  // Specific reaction icon for this card's theme
-  reactionIcon: React.ElementType; 
+  reactionIcon: React.ElementType;
 }
 
-// --- Data: Social Media Services ---
+// --- Data: Social Media Services (TRANSLATED) ---
 const socialServices: ServiceCardProps[] = [
   {
-    title: "Viral Content Creation",
-    description: "High-impact Reels, TikToks, and visuals designed to stop the scroll and capture attention.",
+    title: "Creazione di Contenuti Virali",
+    description: "Reel, TikTok e visual d’impatto progettati per catturare l’attenzione e fermare lo scroll.",
     icon: Video,
     reactionIcon: Heart,
     gradient: "from-pink-500/20 to-rose-500/20 hover:from-pink-500/30 hover:to-rose-500/30",
     textGradient: "from-pink-400 to-rose-300",
     borderColor: "group-hover:border-pink-500/50",
-    features: ["Short-form Video", "Motion Graphics", "Copywriting"],
+    features: ["Video Brevi", "Motion Graphics", "Copywriting"],
   },
   {
-    title: "Community Growth",
-    description: "Building loyal tribes through active engagement, moderation, and authentic conversation.",
+    title: "Crescita della Community",
+    description: "Costruire tribù fedeli grazie a coinvolgimento attivo, moderazione e conversazioni autentiche.",
     icon: Users,
     reactionIcon: ThumbsUp,
     gradient: "from-violet-500/20 to-purple-500/20 hover:from-violet-500/30 hover:to-purple-500/30",
     textGradient: "from-violet-400 to-purple-300",
     borderColor: "group-hover:border-violet-500/50",
-    features: ["24/7 Moderation", "Influencer Outreach", "Crisis Management"],
+    features: ["Moderazione 24/7", "Collaborazioni con Influencer", "Crisis Management"],
   },
   {
-    title: "Brand Strategy",
-    description: "Data-backed positioning to ensure your brand voice resonates across every channel.",
+    title: "Strategia di Brand",
+    description: "Posizionamento basato sui dati per assicurare che la voce del tuo brand risuoni su ogni canale.",
     icon: Megaphone,
     reactionIcon: MessageCircle,
     gradient: "from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30",
     textGradient: "from-amber-400 to-orange-300",
     borderColor: "group-hover:border-amber-500/50",
-    features: ["Content Calendar", "Competitor Audit", "Voice & Tone"],
+    features: ["Content Calendar", "Analisi Competitor", "Tone of Voice"],
   },
   {
     title: "Analytics & ROI",
-    description: "Turning vanity metrics into actionable insights to drive conversions and sales.",
+    description: "Trasformiamo vanity metrics in insight utili per incrementare conversioni e vendite.",
     icon: TrendingUp,
     reactionIcon: Share2,
     gradient: "from-blue-500/20 to-cyan-500/20 hover:from-blue-500/30 hover:to-cyan-500/30",
     textGradient: "from-blue-400 to-cyan-300",
     borderColor: "group-hover:border-blue-500/50",
-    features: ["Monthly Reporting", "A/B Testing", "Ad Performance"],
+    features: ["Report Mensili", "A/B Testing", "Performance Ads"],
   },
 ];
 
-// --- Sub-Component: Floating Background Reactions ---
+// --- Floating Reactions ---
 const FloatingReactions = ({ icon: Icon, colorClass }: { icon: any, colorClass: string }) => {
-  // Generate random positions for subtle background elements
   const items = Array.from({ length: 6 });
   
   return (
@@ -91,7 +89,7 @@ const FloatingReactions = ({ icon: Icon, colorClass }: { icon: any, colorClass: 
         <motion.div
           key={i}
           initial={{ opacity: 0, y: 20, scale: 0.5 }}
-          whileHover={{ opacity: 0.2, y: -50, scale: 1.2 }} // Animate on parent hover
+          whileHover={{ opacity: 0.2, y: -50, scale: 1.2 }}
           transition={{ 
             duration: 2 + Math.random() * 2, 
             repeat: Infinity, 
@@ -111,7 +109,7 @@ const FloatingReactions = ({ icon: Icon, colorClass }: { icon: any, colorClass: 
   );
 };
 
-// --- Sub-Component: The Card ---
+// --- Card Component ---
 const Card = ({ item, index }: { item: ServiceCardProps; index: number }) => {
   const Icon = item.icon;
   const ReactionIcon = item.reactionIcon;
@@ -127,13 +125,11 @@ const Card = ({ item, index }: { item: ServiceCardProps; index: number }) => {
         item.borderColor
       )}
     >
-      {/* Subtle Floating Hearts/Likes Background */}
       <FloatingReactions 
         icon={ReactionIcon} 
         colorClass={item.textGradient.split(" ")[0].replace("from-", "text-")} 
       />
 
-      {/* Background Gradient Blob Effect */}
       <div
         className={cn(
           "absolute -right-20 -top-20 h-64 w-64 rounded-full blur-3xl transition-all duration-500 group-hover:opacity-100 opacity-0 bg-gradient-to-br",
@@ -141,7 +137,6 @@ const Card = ({ item, index }: { item: ServiceCardProps; index: number }) => {
         )}
       />
 
-      {/* Header Section */}
       <div className="relative z-10">
         <div className="mb-6 flex items-start justify-between">
           <div className={cn("rounded-2xl bg-neutral-800 p-3 ring-1 ring-inset ring-white/10")}>
@@ -155,7 +150,6 @@ const Card = ({ item, index }: { item: ServiceCardProps; index: number }) => {
           </motion.div>
         </div>
 
-        {/* Title with Gradient Text */}
         <h3 className="mb-3 text-2xl font-bold text-white">
           <span className={cn("bg-gradient-to-r bg-clip-text text-transparent", item.textGradient)}>
             {item.title}
@@ -167,7 +161,6 @@ const Card = ({ item, index }: { item: ServiceCardProps; index: number }) => {
         </p>
       </div>
 
-      {/* Detailed Deliverables Section */}
       <div className="relative z-10 mt-8">
         <div className="space-y-3 border-t border-white/5 pt-6">
             <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500 flex items-center gap-1">
@@ -179,7 +172,6 @@ const Card = ({ item, index }: { item: ServiceCardProps; index: number }) => {
                     key={i} 
                     className="inline-flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs font-medium text-neutral-300 ring-1 ring-inset ring-white/10 transition-colors group-hover:bg-white/10"
                 >
-                    {/* Tiny heart/check hybrid for the bullet point */}
                     {i === 0 ? (
                        <item.reactionIcon className={cn("h-3 w-3", item.textGradient.split(" ")[1].replace("text-", "text-"))} />
                     ) : (
@@ -195,12 +187,13 @@ const Card = ({ item, index }: { item: ServiceCardProps; index: number }) => {
   );
 };
 
-// --- Main Section Component ---
+// --- Main Section Component (TRANSLATED) ---
 export default function TailoredSolutionsSocial() {
   return (
     <section className="py-24 min-h-screen flex items-center">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        
+        {/* Header */}
         <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-2">
@@ -209,11 +202,14 @@ export default function TailoredSolutionsSocial() {
                   Social Media
                 </span>
             </div>
+
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Elevate Your Brand
+              Eleva il Tuo Brand
             </h2>
+
             <p className="mt-4 text-lg text-neutral-400">
-              Strategic storytelling and community management that turns passive followers into active brand advocates.
+              Storytelling strategico e gestione della community  
+              che trasforma follower passivi in veri sostenitori del brand.
             </p>
           </div>
           
@@ -222,13 +218,13 @@ export default function TailoredSolutionsSocial() {
                 href="https://cal.northstargroup.ch/nsg/book"
                 className="group flex items-center gap-2 text-sm font-semibold text-pink-400 transition-colors hover:text-pink-300"
             >
-                Start your campaign
+                Avvia la tua campagna
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
           </div>
         </div>
 
-        {/* Grid Layout */}
+        {/* Cards Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {socialServices.map((service, index) => (
             <Card key={service.title} item={service} index={index} />

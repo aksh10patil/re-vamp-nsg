@@ -29,9 +29,9 @@ export default function NewClients() {
     <div className="p-6 rounded-[22px] border border-white/10 bg-white/5 backdrop-blur-md w-full h-full flex flex-col">
       {/* Top row */}
       <div className="flex items-center justify-between mb-4">
-        <div className="text-sm text-neutral-300 font-medium">New clients</div>
+        <div className="text-sm text-neutral-300 font-medium">Nuovi clienti</div>
         <a href="#" className="text-xs text-purple-300 hover:text-purple-200 transition-colors">
-          View all
+          Vedi tutto
         </a>
       </div>
 
@@ -54,7 +54,7 @@ export default function NewClients() {
                   {client.name}
                 </span>
                 <span className="text-[10px] text-neutral-400 mt-1 uppercase tracking-wide">
-                  Verified
+                  Verificato
                 </span>
               </div>
             </div>

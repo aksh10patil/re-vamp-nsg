@@ -30,22 +30,22 @@ const challenges = [
   {
     id: 1,
     icon: MessageSquare,
-    title: "Always answering the same questions",
-    solution: "An assistant that learns from your responses and automatically handles recurring requests.",
+    title: "Rispondere sempre alle stesse domande",
+    solution: "Un assistente che apprende dalle tue risposte e gestisce automaticamente le richieste ricorrenti.",
     delay: 0.1
   },
   {
     id: 2,
     icon: BarChart3,
-    title: "Analyzing mountains of data",
-    solution: "Insights that emerge naturally, presented exactly when and how you need them.",
+    title: "Analizzare montagne di dati",
+    solution: "Intuizioni che emergono naturalmente, presentate esattamente quando e come ti servono.",
     delay: 0.2
   },
   {
     id: 3,
     icon: Users,
-    title: "Coordinate teams and processes",
-    solution: "Flows that adapt to your way of working, not the other way around.",
+    title: "Coordinare team e processi",
+    solution: "Flussi che si adattano al tuo modo di lavorare, non il contrario.",
     delay: 0.3
   }
 ];
@@ -55,32 +55,32 @@ const adaptationFeatures = [
   {
     id: "decisions",
     icon: Brain,
-    title: "Clearer Decisions",
-    description: "When you need to make an important decision, you have all the right information at the right time. No noise, just what matters.",
+    title: "Decisioni più chiare",
+    description: "Quando devi prendere una decisione importante, hai tutte le informazioni giuste al momento giusto. Nessun rumore, solo ciò che conta davvero.",
     highlight: false,
     delay: 0.1
   },
   {
     id: "assistant",
     icon: Bot,
-    title: "Always by Your Side",
-    description: "An assistant that never sleeps, always ready when you need it. It learns from your style and anticipates your needs.",
+    title: "Sempre al tuo fianco",
+    description: "Un assistente che non dorme mai, sempre pronto quando ne hai bisogno. Apprende dal tuo stile e anticipa le tue necessità.",
     highlight: true,
     delay: 0.2
   },
   {
     id: "dialogue",
     icon: MessageSquare,
-    title: "Natural Dialogue",
-    description: "Communicate as you would with an experienced colleague. No technical jargon, just productive conversations that get results.",
+    title: "Dialogo naturale",
+    description: "Comunica come faresti con un collega esperto. Niente gergo tecnico, solo conversazioni produttive che portano risultati.",
     highlight: false,
     delay: 0.3
   },
   {
     id: "overview",
     icon: LineChart,
-    title: "Overview",
-    description: "Patterns emerge naturally from your data. Discover opportunities that were previously hidden in the complexity of everyday life.",
+    title: "Panoramica",
+    description: "I pattern emergono naturalmente dai tuoi dati. Scopri opportunità che prima erano nascoste nella complessità della vita quotidiana.",
     highlight: false,
     delay: 0.4
   }
@@ -91,85 +91,85 @@ const transformations = [
   {
     id: 1,
     icon: Building2,
-    title: "Your Team, Empowered",
-    subtitle: "Turn routine into growth opportunities",
+    title: "Il tuo team, potenziato",
+    subtitle: "Trasforma la routine in opportunità di crescita",
     items: [
-      "Before: Hours spent on repetitive tasks → Now: Focus on strategies and innovation",
-      "Before: Unavoidable human errors → Now: Consistent accuracy with human supervision",
-      "Before: Isolated systems → Now: Everything connected, everything fluid",
-      "Before: Month-end reporting → Now: Real-time insights when you need them"
+      "Prima: Ore spese in compiti ripetitivi → Ora: Focus su strategie e innovazione",
+      "Prima: Errori umani inevitabili → Ora: Accuratezza costante con supervisione umana",
+      "Prima: Sistemi isolati → Ora: Tutto connesso, tutto fluido",
+      "Prima: Report di fine mese → Ora: Insight in tempo reale quando ti servono"
     ],
-    footer: "AI that works with you, not instead of you",
+    footer: "Un’AI che lavora con te, non al posto tuo",
     color: "bg-purple-500"
   },
   {
     id: 2,
     icon: Users,
-    title: "Relationships that Grow",
-    subtitle: "Connect with your audience authentically",
+    title: "Relazioni che crescono",
+    subtitle: "Connettiti con il tuo pubblico in modo autentico",
     items: [
-      "Content that resonates with your unique voice",
-      "Perfect timing based on the rhythms of your community",
-      "Genuine conversations, amplified by intelligence",
-      "Deep understanding of what works and why"
+      "Contenuti che risuonano con la tua voce unica",
+      "Tempismo perfetto basato sui ritmi della tua community",
+      "Conversazioni autentiche, amplificate dall’intelligenza",
+      "Comprensione profonda di ciò che funziona e perché"
     ],
-    footer: "Authenticity amplified, not automated",
+    footer: "Autenticità amplificata, non automatizzata",
     color: "bg-pink-500"
   },
   {
     id: 3,
     icon: ShoppingCart,
-    title: "Memorable Experiences",
-    subtitle: "Every customer feels truly listened to",
+    title: "Esperienze memorabili",
+    subtitle: "Ogni cliente si sente davvero ascoltato",
     items: [
-      "Instant responses that feel personal because they are",
-      "Suggestions that anticipate unexpressed wishes",
-      "Purchasing journeys as fluid as a conversation",
-      "Trust built through genuine understanding"
+      "Risposte istantanee che sembrano personali perché lo sono",
+      "Suggerimenti che anticipano desideri inespressi",
+      "Percorsi d’acquisto fluidi come una conversazione",
+      "Fiducia costruita attraverso una comprensione autentica"
     ],
-    footer: "Invisible technology, unforgettable experience",
+    footer: "Tecnologia invisibile, esperienza indimenticabile",
     color: "bg-blue-500"
   },
   {
     id: 4,
     icon: FileText,
-    title: "Stories that Inspire",
-    subtitle: "Your expertise transformed into valuable content",
+    title: "Storie che ispirano",
+    subtitle: "La tua esperienza trasformata in contenuti di valore",
     items: [
-      "Your ideas expressed with crystal clarity",
-      "Content that educates and engages naturally",
-      "Your voice, in every language of the world",
-      "Messages that get to the heart of the problem"
+      "Le tue idee espresse con chiarezza cristallina",
+      "Contenuti che educano e coinvolgono naturalmente",
+      "La tua voce, in ogni lingua del mondo",
+      "Messaggi che arrivano al cuore del problema"
     ],
-    footer: "Your wisdom, amplified",
+    footer: "La tua saggezza, amplificata",
     color: "bg-orange-500"
   },
   {
     id: 5,
     icon: BarChart3,
-    title: "Insights that Guide",
-    subtitle: "See beyond the numbers to understand why",
+    title: "Insight che guidano",
+    subtitle: "Vedi oltre i numeri per capire il perché",
     items: [
-      "Dashboards that tell stories, not just data",
-      "Trends that emerge before they become obvious",
-      "Anomalies explained in the right context",
-      "Decisions informed by deep understanding"
+      "Dashboard che raccontano storie, non solo dati",
+      "Trend che emergono prima che diventino ovvi",
+      "Anomalie spiegate nel contesto corretto",
+      "Decisioni guidate da una comprensione profonda"
     ],
-    footer: "Data with meaning, not just statistics",
+    footer: "Dati con significato, non solo statistiche",
     color: "bg-emerald-500"
   },
   {
     id: 6,
     icon: Headphones,
-    title: "Conversations that Matter",
-    subtitle: "Every call becomes an opportunity",
+    title: "Conversazioni che contano",
+    subtitle: "Ogni chiamata diventa un’opportunità",
     items: [
-      "Warm welcome in every language, every moment",
-      "Appointments managed with personal care",
-      "Natural qualification through dialogue",
-      "Your free team for strategic conversations"
+      "Accoglienza calorosa in ogni lingua, in ogni momento",
+      "Appuntamenti gestiti con cura personale",
+      "Qualificazione naturale attraverso il dialogo",
+      "Il tuo team libero per conversazioni strategiche"
     ],
-    footer: "Perfect first impression, always",
+    footer: "Perfetta prima impressione, sempre",
     color: "bg-indigo-500"
   }
 ];
@@ -257,7 +257,6 @@ const TransformationCard = ({ item, index }: { item: typeof transformations[0], 
         "w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110",
         "bg-neutral-800 border border-white/5 group-hover:border-[#A797F7]/30"
       )}>
-        {/* We use the brand color for all icons to maintain consistency as requested */}
         <item.icon className="w-6 h-6 text-[#A797F7]" />
       </div>
 
@@ -310,15 +309,15 @@ export default function FutureAi() {
               whileInView={{ opacity: 1 }}
               className="text-neutral-400 text-lg font-medium tracking-wide"
             >
-              Start with a simple question:
+              Inizia con una domanda semplice:
             </motion.p>
             <motion.h2 
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]"
             >
-              What takes up the most time <br className="hidden md:block" />
-              from you <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A797F7] to-white/80">every day?</span>
+              Cosa ti porta via più tempo <br className="hidden md:block" />
+              ogni <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A797F7] to-white/80">giorno?</span>
             </motion.h2>
           </div>
 
@@ -335,14 +334,14 @@ export default function FutureAi() {
           >
              <button className="group inline-flex items-center gap-2 text-[#A797F7] font-semibold hover:text-white transition-colors relative text-lg">
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#A797F7] transition-all duration-300 group-hover:w-full"></span>
-              Tell us about your challenge
+              Raccontaci la tua sfida
               <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
           </motion.div>
         </div>
       </section>
       
-      {/* SECTION 3: TRANSFORMATIONS (New) */}
+      {/* SECTION 3: TRANSFORMATIONS */}
       <section className="py-32 px-6 border-t border-white/5 relative">
         <div className="max-w-7xl mx-auto w-full relative z-10">
           
@@ -352,7 +351,7 @@ export default function FutureAi() {
                whileInView={{ opacity: 1, y: 0 }}
              >
                 <Badge className="bg-[#A797F7]/10 border-[#A797F7]/20 text-[#A797F7]">
-                  Real Transformations
+                  Trasformazioni reali
                 </Badge>
              </motion.div>
 
@@ -362,7 +361,7 @@ export default function FutureAi() {
                 transition={{ delay: 0.1 }}
                 className="text-4xl md:text-6xl font-bold tracking-tight text-white"
              >
-                The Future is <span className="text-[#A797F7]">Collaborative</span>
+                Il futuro è <span className="text-[#A797F7]">Collaborativo</span>
              </motion.h2>
 
              <motion.p 
@@ -371,7 +370,7 @@ export default function FutureAi() {
                transition={{ delay: 0.2 }}
                className="text-neutral-400 text-lg max-w-2xl mx-auto"
              >
-               Discover how the union of human and artificial intelligence creates extraordinary results.
+               Scopri come l’unione tra intelligenza umana e artificiale crea risultati straordinari.
              </motion.p>
           </div>
 

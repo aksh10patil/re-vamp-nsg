@@ -147,7 +147,7 @@ const Section = ({
 const ComplianceBadge = () => (
   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#A797F7]/10 border border-[#A797F7]/20 text-[#A797F7] text-xs font-medium">
     <div className="w-1.5 h-1.5 rounded-full bg-[#A797F7] animate-pulse" />
-    GDPR / ePrivacy Compliant
+    Conforme a GDPR / ePrivacy
   </div>
 );
 
@@ -169,53 +169,53 @@ export default function CookiePolicy() {
         <div className="text-center space-y-6 pt-12">
            <ComplianceBadge />
            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-             Cookie <span className="text-[#A797F7]">Policy</span>
+             Informativa <span className="text-[#A797F7]">Cookie</span>
            </h1>
            <p className="max-w-2xl mx-auto text-neutral-400 text-lg">
-             Complete information on the use of cookies and similar technologies.
-             <br/>Transparent, secure, and respectful of your choices.
+             Informazioni complete sull’uso di cookie e tecnologie simili.
+             <br/>Trasparente, sicuro e rispettoso delle tue scelte.
            </p>
            <div className="text-xs text-neutral-500 font-mono">
-             Last updated: November 29, 2025 • Version 2.0
+             Ultimo aggiornamento: 29 Novembre 2025 • Versione 2.0
            </div>
         </div>
 
         {/* Quick Info Grid */}
         <div className="grid md:grid-cols-2 gap-4">
            <InfoCard 
-             title="Our Commitment"
-             subtitle="Privacy First"
+             title="Il nostro impegno"
+             subtitle="Privacy Prima di Tutto"
              icon={ShieldCheck}
              accent={true}
              content={
                <div className="space-y-2">
-                 <p>We only use strictly necessary cookies by default.</p>
+                 <p>Utilizziamo solo cookie strettamente necessari per impostazione predefinita.</p>
                  <div className="flex flex-wrap gap-2 mt-2">
                    <span className="flex items-center gap-1 px-2 py-1 rounded bg-[#A797F7]/20 border border-[#A797F7]/30 text-xs text-[#A797F7]">
-                     <CheckCircle2 size={12} /> No Profiling
+                     <CheckCircle2 size={12} /> Nessun Profiling
                    </span>
                    <span className="flex items-center gap-1 px-2 py-1 rounded bg-[#A797F7]/20 border border-[#A797F7]/30 text-xs text-[#A797F7]">
-                     <CheckCircle2 size={12} /> No Marketing
+                     <CheckCircle2 size={12} /> Nessun Marketing
                    </span>
                  </div>
                </div>
              }
            />
            <InfoCard 
-             title="What are Cookies?"
-             subtitle="Definitions"
+             title="Cosa sono i Cookie?"
+             subtitle="Definizioni"
              icon={Cookie}
              content={
                <div className="space-y-2">
-                 <p>Small text files saved on your device to remember preferences.</p>
+                 <p>Piccoli file salvati sul tuo dispositivo per ricordare preferenze e impostazioni.</p>
                  <div className="grid grid-cols-2 gap-2 mt-2">
                    <div className="p-2 rounded bg-neutral-800 border border-neutral-700 text-xs">
-                     <span className="block text-white font-bold">Technical</span>
-                     Essential functioning
+                     <span className="block text-white font-bold">Tecnici</span>
+                     Funzionamento essenziale
                    </div>
                    <div className="p-2 rounded bg-neutral-800 border border-neutral-700 text-xs">
-                     <span className="block text-white font-bold">Non-Technical</span>
-                     Analytics & Extras
+                     <span className="block text-white font-bold">Non Tecnici</span>
+                     Analisi & Funzionalità Extra
                    </div>
                  </div>
                </div>
@@ -228,74 +228,74 @@ export default function CookiePolicy() {
           
           {/* Section 1: General Info */}
           <Section 
-            number="01" title="General Information" icon={Info}
+            number="01" title="Informazioni Generali" icon={Info}
             isOpen={openSection === "general"} toggle={() => toggleSection("general")}
           >
             <p className="mb-4">
-              Cookies allow the site to remember your preferences and improve your experience. We categorize them strictly:
+              I cookie permettono al sito di ricordare le tue preferenze e migliorare l’esperienza. Li classifichiamo rigorosamente:
             </p>
             <div className="grid md:grid-cols-2 gap-4">
                <div className="p-4 rounded-xl bg-neutral-900 border border-neutral-800">
-                  <h4 className="text-white font-bold mb-2 flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500"/> Technical</h4>
-                  <p className="text-xs">Essential for the functioning of the site (e.g., security, session).</p>
+                  <h4 className="text-white font-bold mb-2 flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500"/> Tecnici</h4>
+                  <p className="text-xs">Essenziali per il funzionamento del sito (es. sicurezza, sessioni).</p>
                </div>
                <div className="p-4 rounded-xl bg-neutral-900 border border-neutral-800">
-                  <h4 className="text-white font-bold mb-2 flex items-center gap-2"><Fingerprint size={16} className="text-[#A797F7]"/> Non-Technical</h4>
-                  <p className="text-xs">For analytics, personalization, and marketing (Only with consent).</p>
+                  <h4 className="text-white font-bold mb-2 flex items-center gap-2"><Fingerprint size={16} className="text-[#A797F7]"/> Non Tecnici</h4>
+                  <p className="text-xs">Per analisi, personalizzazione e marketing (solo con consenso).</p>
                </div>
             </div>
           </Section>
 
           {/* Section 2: Legal Basis */}
           <Section 
-            number="02" title="Legal Basis & Consent" icon={ToggleLeft}
+            number="02" title="Base Legale & Consenso" icon={ToggleLeft}
             isOpen={openSection === "legal"} toggle={() => toggleSection("legal")}
           >
             <div className="space-y-6">
               <div className="flex flex-col md:flex-row gap-4">
                  <div className="flex-1 p-4 rounded-xl border border-green-500/20 bg-green-500/5">
-                    <h4 className="text-green-400 font-bold mb-2 text-sm uppercase">Consent NOT Required</h4>
+                    <h4 className="text-green-400 font-bold mb-2 text-sm uppercase">Consenso NON Richiesto</h4>
                     <ul className="space-y-1 text-sm text-neutral-300">
-                      <li>• Strictly Necessary Cookies</li>
-                      <li>• Technical session cookies</li>
-                      <li>• Security Cookies</li>
+                      <li>• Cookie Strettamente Necessari</li>
+                      <li>• Cookie tecnici di sessione</li>
+                      <li>• Cookie di sicurezza</li>
                     </ul>
                  </div>
                  <div className="flex-1 p-4 rounded-xl border border-[#A797F7]/20 bg-[#A797F7]/5">
-                    <h4 className="text-[#A797F7] font-bold mb-2 text-sm uppercase">Consent REQUIRED</h4>
+                    <h4 className="text-[#A797F7] font-bold mb-2 text-sm uppercase">Consenso RICHIESTO</h4>
                     <ul className="space-y-1 text-sm text-neutral-300">
-                      <li>• Analytical cookies</li>
-                      <li>• Preference cookies</li>
-                      <li>• Third-party cookies</li>
+                      <li>• Cookie analitici</li>
+                      <li>• Cookie di preferenza</li>
+                      <li>• Cookie di terze parti</li>
                     </ul>
                  </div>
               </div>
               <p className="text-sm bg-neutral-900 p-4 rounded-xl border border-neutral-800">
-                <span className="text-white font-bold">Your Choice:</span> When you first access the site, we present a banner. You can Accept All, Refuse Non-Essential, or Customize. You can change this at any time.
+                <span className="text-white font-bold">La tua scelta:</span> Al primo accesso mostriamo un banner. Puoi Accettare Tutto, Rifiutare i Non Essenziali oppure Personalizzare. Puoi modificare tutto in qualsiasi momento.
               </p>
             </div>
           </Section>
 
           {/* Section 3: Cookie Details */}
           <Section 
-            number="03" title="Cookies Used in Detail" icon={Database}
+            number="03" title="Cookie Utilizzati in Dettaglio" icon={Database}
             isOpen={openSection === "details"} toggle={() => toggleSection("details")}
           >
              <div className="space-y-8">
                 {/* Essential Table */}
                 <div>
                    <h4 className="text-white font-medium mb-3 flex items-center gap-2">
-                     <div className="w-2 h-2 rounded-full bg-green-500" /> Strictly Necessary
+                     <div className="w-2 h-2 rounded-full bg-green-500" /> Strettamente Necessari
                    </h4>
                    <div className="overflow-x-auto rounded-xl border border-neutral-800">
                       <table className="w-full text-left text-sm text-neutral-400">
                         <thead className="bg-neutral-900 text-white text-xs uppercase">
-                          <tr><th className="p-3">Name</th><th className="p-3">Purpose</th><th className="p-3">Duration</th></tr>
+                          <tr><th className="p-3">Nome</th><th className="p-3">Scopo</th><th className="p-3">Durata</th></tr>
                         </thead>
                         <tbody className="divide-y divide-neutral-800 bg-neutral-950">
-                          <tr><td className="p-3 font-mono text-[#A797F7]">PHPSESSID</td><td className="p-3">Maintains user session</td><td className="p-3">Session</td></tr>
-                          <tr><td className="p-3 font-mono text-[#A797F7]">csrf_token</td><td className="p-3">Security protection</td><td className="p-3">Session</td></tr>
-                          <tr><td className="p-3 font-mono text-[#A797F7]">cookie_consent</td><td className="p-3">Stores preferences</td><td className="p-3">1 Year</td></tr>
+                          <tr><td className="p-3 font-mono text-[#A797F7]">PHPSESSID</td><td className="p-3">Mantiene la sessione utente</td><td className="p-3">Sessione</td></tr>
+                          <tr><td className="p-3 font-mono text-[#A797F7]">csrf_token</td><td className="p-3">Protezione di sicurezza</td><td className="p-3">Sessione</td></tr>
+                          <tr><td className="p-3 font-mono text-[#A797F7]">cookie_consent</td><td className="p-3">Memorizza preferenze</td><td className="p-3">1 Anno</td></tr>
                         </tbody>
                       </table>
                    </div>
@@ -304,79 +304,79 @@ export default function CookiePolicy() {
                 {/* Analytical Table */}
                 <div>
                    <h4 className="text-white font-medium mb-3 flex items-center gap-2">
-                     <div className="w-2 h-2 rounded-full bg-[#A797F7]" /> Analytical (With Consent)
+                     <div className="w-2 h-2 rounded-full bg-[#A797F7]" /> Analitici (Con Consenso)
                    </h4>
                    <div className="overflow-x-auto rounded-xl border border-neutral-800">
                       <table className="w-full text-left text-sm text-neutral-400">
                         <thead className="bg-neutral-900 text-white text-xs uppercase">
-                          <tr><th className="p-3">Name</th><th className="p-3">Provider</th><th className="p-3">Duration</th></tr>
+                          <tr><th className="p-3">Nome</th><th className="p-3">Provider</th><th className="p-3">Durata</th></tr>
                         </thead>
                         <tbody className="divide-y divide-neutral-800 bg-neutral-950">
-                          <tr><td className="p-3 font-mono text-[#A797F7]">_ga</td><td className="p-3">Google Analytics</td><td className="p-3">2 Years</td></tr>
-                          <tr><td className="p-3 font-mono text-[#A797F7]">_gid</td><td className="p-3">Google Analytics</td><td className="p-3">24 Hours</td></tr>
+                          <tr><td className="p-3 font-mono text-[#A797F7]">_ga</td><td className="p-3">Google Analytics</td><td className="p-3">2 Anni</td></tr>
+                          <tr><td className="p-3 font-mono text-[#A797F7]">_gid</td><td className="p-3">Google Analytics</td><td className="p-3">24 Ore</td></tr>
                         </tbody>
                       </table>
                    </div>
-                   <p className="mt-2 text-xs text-neutral-500">Note: Google Analytics is configured in anonymized mode (anonymizeIp: true).</p>
+                   <p className="mt-2 text-xs text-neutral-500">Nota: Google Analytics è configurato in modalità anonima (anonymizeIp: true).</p>
                 </div>
              </div>
           </Section>
 
           {/* Section 4: Third Party */}
           <Section 
-            number="04" title="Third Party & Opt-Out" icon={Globe}
+            number="04" title="Terze Parti & Opt-Out" icon={Globe}
             isOpen={openSection === "thirdparty"} toggle={() => toggleSection("thirdparty")}
           >
              <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-4 rounded-xl bg-neutral-900 border border-neutral-800">
                    <h4 className="text-white font-bold mb-2">Google Analytics</h4>
                    <ul className="space-y-1 text-sm text-neutral-400 mb-4">
-                     <li>• Anonymized IP</li>
-                     <li>• No personal profiling</li>
-                     <li>• Aggregated data only</li>
+                     <li>• IP anonimizzato</li>
+                     <li>• Nessun profiling personale</li>
+                     <li>• Dati aggregati</li>
                    </ul>
-                   <button className="text-xs text-[#A797F7] hover:text-white border border-[#A797F7]/30 px-2 py-1 rounded">Opt-out of GA</button>
+                   <button className="text-xs text-[#A797F7] hover:text-white border border-[#A797F7]/30 px-2 py-1 rounded">Disattiva GA</button>
                 </div>
                 <div className="p-4 rounded-xl bg-neutral-900 border border-neutral-800">
                    <h4 className="text-white font-bold mb-2">Google Fonts</h4>
                    <ul className="space-y-1 text-sm text-neutral-400">
-                     <li>• Served locally from our server</li>
-                     <li>• No requests to Google servers</li>
-                     <li>• Privacy protected</li>
+                     <li>• Serviti localmente dal nostro server</li>
+                     <li>• Nessuna richiesta ai server Google</li>
+                     <li>• Privacy garantita</li>
                    </ul>
                 </div>
              </div>
              <div className="mt-4 p-4 border-t border-neutral-800">
-               <h4 className="text-white text-sm font-bold mb-1">International Transfers</h4>
-               <p className="text-xs text-neutral-400">Services like GA may transfer data to the US under Standard Contractual Clauses (SCCs) approved by the EU Commission.</p>
+               <h4 className="text-white text-sm font-bold mb-1">Trasferimenti Internazionali</h4>
+               <p className="text-xs text-neutral-400">Servizi come GA possono trasferire dati negli USA sotto Clausole Contrattuali Standard (SCC) approvate dalla Commissione UE.</p>
              </div>
           </Section>
 
           {/* Section 5: Manage */}
           <Section 
-            number="05" title="Manage Preferences" icon={Settings}
+            number="05" title="Gestisci Preferenze" icon={Settings}
             isOpen={openSection === "manage"} toggle={() => toggleSection("manage")}
           >
              <div className="flex flex-col gap-4">
                <div className="flex items-center justify-between p-4 bg-[#A797F7]/10 rounded-xl border border-[#A797F7]/20">
                   <div>
-                    <h4 className="text-[#A797F7] font-bold text-sm">Open Cookie Banner</h4>
-                    <p className="text-xs text-neutral-400">Change your consent choices anytime.</p>
+                    <h4 className="text-[#A797F7] font-bold text-sm">Apri Banner Cookie</h4>
+                    <p className="text-xs text-neutral-400">Modifica il consenso quando vuoi.</p>
                   </div>
                   <button className="px-4 py-2 bg-[#A797F7] text-white rounded-lg text-sm font-bold hover:bg-[#9585e5] transition-colors">
-                    Manage Cookies
+                    Gestisci Cookie
                   </button>
                </div>
                
                <div className="p-4 bg-neutral-900 rounded-xl border border-neutral-800">
-                  <h4 className="text-white font-bold text-sm mb-2">Browser Settings</h4>
+                  <h4 className="text-white font-bold text-sm mb-2">Impostazioni Browser</h4>
                   <div className="flex flex-wrap gap-2">
                     {["Chrome", "Firefox", "Safari", "Edge"].map(b => (
                       <span key={b} className="px-2 py-1 bg-neutral-800 border border-neutral-700 text-neutral-300 text-xs rounded">{b}</span>
                     ))}
                   </div>
                   <p className="mt-2 text-xs text-neutral-500">
-                    ⚠️ Disabling cookies may limit functionality (forms, preferences, etc).
+                    ⚠️ Disattivare i cookie può limitare funzionalità (moduli, preferenze, ecc.).
                   </p>
                </div>
              </div>
@@ -389,16 +389,16 @@ export default function CookiePolicy() {
           >
              <div className="p-5 rounded-2xl border border-green-500/20 bg-green-500/5">
                 <h4 className="text-green-400 font-bold mb-2 flex items-center gap-2">
-                  <ShieldCheck size={18} /> We respect privacy signals
+                  <ShieldCheck size={18} /> Rispettiamo i segnali di privacy
                 </h4>
                 <div className="grid md:grid-cols-2 gap-4 mt-4">
                   <div>
                      <strong className="text-white text-sm">Do Not Track (DNT)</strong>
-                     <p className="text-xs text-neutral-400">If enabled, we do not activate analytical cookies without consent.</p>
+                     <p className="text-xs text-neutral-400">Se attivo, non usiamo cookie analitici senza consenso.</p>
                   </div>
                   <div>
                      <strong className="text-white text-sm">Global Privacy Control (GPC)</strong>
-                     <p className="text-xs text-neutral-400">We interpret GPC as a refusal of non-essential cookies.</p>
+                     <p className="text-xs text-neutral-400">Interpretiamo GPC come rifiuto dei cookie non essenziali.</p>
                   </div>
                 </div>
              </div>
@@ -406,37 +406,43 @@ export default function CookiePolicy() {
 
            {/* Section 7: Rights */}
            <Section 
-            number="07" title="Your Cookie Rights" icon={MousePointerClick}
+            number="07" title="I Tuoi Diritti sui Cookie" icon={MousePointerClick}
             isOpen={openSection === "rights"} toggle={() => toggleSection("rights")}
           >
-             <p className="mb-4">Under GDPR/ePrivacy, you have the right to:</p>
+             <p className="mb-4">Ai sensi del GDPR/ePrivacy, hai il diritto di:</p>
              <div className="grid grid-cols-2 gap-2 mb-6">
-               {["Be informed", "Give/Deny consent", "Withdraw consent", "Access collected data", "Request deletion", "Object to processing"].map(r => (
+               {[
+                 "Essere informato",
+                 "Dare/Negare consenso",
+                 "Revocare consenso",
+                 "Accedere ai dati raccolti",
+                 "Richiedere cancellazione",
+                 "Opporsi al trattamento"
+               ].map(r => (
                  <div key={r} className="flex items-center gap-2 text-sm text-neutral-300">
                    <div className="w-1.5 h-1.5 bg-[#A797F7] rounded-full" /> {r}
                  </div>
                ))}
              </div>
              <div className="text-sm text-neutral-400">
-               To exercise these rights, contact our DPO: <a href="mailto:privacy@northstargroup.ch" className="text-[#A797F7] hover:underline">privacy@northstargroup.ch</a>
+               Per esercitare i diritti, contatta il nostro DPO: <a href="mailto:privacy@northstargroup.ch" className="text-[#A797F7] hover:underline">privacy@northstargroup.ch</a>
              </div>
           </Section>
 
            {/* Section 8: Changes */}
            <Section 
-            number="08" title="Changes to Policy" icon={RefreshCcw}
+            number="08" title="Modifiche all’Informativa" icon={RefreshCcw}
             isOpen={openSection === "changes"} toggle={() => toggleSection("changes")}
           >
-             <p className="mb-2">Updates may occur due to new services or regulations.</p>
+             <p className="mb-2">Aggiornamenti possono essere effettuati per nuovi servizi o normative.</p>
              <ul className="space-y-1 text-sm text-neutral-400">
-               <li>• Substantial changes require new consent.</li>
-               <li>• Information banner will be shown for 30 days.</li>
-               <li>• Version history is available upon request.</li>
+               <li>• Le modifiche sostanziali richiedono nuovo consenso.</li>
+               <li>• Viene mostrato un banner informativo per 30 giorni.</li>
+               <li>• La cronologia versioni è disponibile su richiesta.</li>
              </ul>
           </Section>
 
         </div>
-
 
       </div>
     </div>

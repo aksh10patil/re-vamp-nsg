@@ -25,22 +25,22 @@ const challenges = [
   {
     id: 1,
     icon: MessageSquare,
-    title: "Always answering the same questions",
-    solution: "An assistant that learns from your responses and automatically handles recurring requests.",
+    title: "Rispondere sempre alle stesse domande",
+    solution: "Un assistente che apprende dalle tue risposte e gestisce automaticamente le richieste ricorrenti.",
     delay: 0.1
   },
   {
     id: 2,
     icon: BarChart3,
-    title: "Analyzing mountains of data",
-    solution: "Insights that emerge naturally, presented exactly when and how you need them.",
+    title: "Analizzare montagne di dati",
+    solution: "Intuizioni che emergono naturalmente, presentate esattamente quando e come ti servono.",
     delay: 0.2
   },
   {
     id: 3,
     icon: Users,
-    title: "Coordinate teams and processes",
-    solution: "Flows that adapt to your way of working, not the other way around.",
+    title: "Coordinare team e processi",
+    solution: "Flussi che si adattano al tuo modo di lavorare, non il contrario.",
     delay: 0.3
   }
 ];
@@ -50,32 +50,32 @@ const adaptationFeatures = [
   {
     id: "decisions",
     icon: Brain,
-    title: "Clearer Decisions",
-    description: "When you need to make an important decision, you have all the right information at the right time. No noise, just what matters.",
+    title: "Decisioni più chiare",
+    description: "Quando devi prendere una decisione importante, hai tutte le informazioni giuste al momento giusto. Niente rumore, solo ciò che conta.",
     highlight: false,
     delay: 0.1
   },
   {
     id: "assistant",
     icon: Bot,
-    title: "Always by Your Side",
-    description: "An assistant that never sleeps, always ready when you need it. It learns from your style and anticipates your needs.",
-    highlight: true, // Special styling for this card
+    title: "Sempre al tuo fianco",
+    description: "Un assistente che non dorme mai, sempre pronto quando ne hai bisogno. Apprende dal tuo stile e anticipa le tue necessità.",
+    highlight: true,
     delay: 0.2
   },
   {
     id: "dialogue",
     icon: MessageSquare,
-    title: "Natural Dialogue",
-    description: "Communicate as you would with an experienced colleague. No technical jargon, just productive conversations that get results.",
+    title: "Dialogo naturale",
+    description: "Comunica come faresti con un collega esperto. Niente gergo tecnico, solo conversazioni produttive che portano risultati.",
     highlight: false,
     delay: 0.3
   },
   {
     id: "overview",
     icon: LineChart,
-    title: "Overview",
-    description: "Patterns emerge naturally from your data. Discover opportunities that were previously hidden in the complexity of everyday life.",
+    title: "Panoramica",
+    description: "I pattern emergono naturalmente dai tuoi dati. Scopri opportunità che prima erano nascoste nella complessità della vita quotidiana.",
     highlight: false,
     delay: 0.4
   }
@@ -165,15 +165,15 @@ export default function ChallengeAi() {
               whileInView={{ opacity: 1 }}
               className="text-neutral-400 text-lg font-medium tracking-wide"
             >
-              Start with a simple question:
+              Inizia con una domanda semplice:
             </motion.p>
             <motion.h2 
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]"
             >
-              What takes up the most time <br className="hidden md:block" />
-              from you <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A797F7] to-white/80">every day?</span>
+              Cosa ti porta via più tempo <br className="hidden md:block" />
+              ogni <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A797F7] to-white/80">giorno?</span>
             </motion.h2>
           </div>
 
@@ -190,7 +190,7 @@ export default function ChallengeAi() {
           >
              <button className="group inline-flex items-center gap-2 text-[#A797F7] font-semibold hover:text-white transition-colors relative text-lg">
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#A797F7] transition-all duration-300 group-hover:w-full"></span>
-              Tell us about your challenge
+              Raccontaci la tua sfida
               <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
           </motion.div>
@@ -211,7 +211,7 @@ export default function ChallengeAi() {
                whileInView={{ opacity: 1, y: 0 }}
             >
                <Badge className="bg-[#A797F7]/10 border-[#A797F7]/20 text-[#A797F7]">
-                 How we work together
+                 Come lavoriamo insieme
                </Badge>
             </motion.div>
             
@@ -221,7 +221,7 @@ export default function ChallengeAi() {
               transition={{ delay: 0.1 }}
               className="text-5xl md:text-7xl font-bold tracking-tighter"
             >
-              AI that <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-[#A797F7] to-purple-400">adapts to you</span>
+              Un'AI che <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-[#A797F7] to-purple-400">si adatta a te</span>
             </motion.h2>
             
             <motion.p 
@@ -230,7 +230,7 @@ export default function ChallengeAi() {
               transition={{ delay: 0.2 }}
               className="text-neutral-400 text-lg max-w-2xl mx-auto"
             >
-              Not another tool to learn, but a natural extension of the way you work.
+              Non un altro strumento da imparare, ma un'estensione naturale del tuo modo di lavorare.
             </motion.p>
           </div>
 

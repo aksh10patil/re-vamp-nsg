@@ -27,40 +27,26 @@ const WorkflowCard = () => {
         mx-auto
       "
     >
-      {/* --- Background Glows --- */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 bg-purple-500/20 blur-[80px] rounded-full pointer-events-none" />
       
-      {/* --- Workflow Animation Container --- */}
       <div className="relative flex-grow w-full flex items-center justify-center py-10">
         
-        {/* SVG Layer for Connecting Lines */}
-        {/* We use a viewBox to define a coordinate system for our nodes */}
         <svg 
           className="absolute inset-0 w-full h-full pointer-events-none"
           viewBox="0 0 400 300"
           fill="none"
           stroke="currentColor"
         >
-          {/* 1. Input to AI (Left to Center) */}
           <AnimatedBeam d="M 60 150 C 100 150, 120 150, 180 150" delay={0} />
-          
-          {/* 2. AI to Top Output (Center to Top Right) */}
           <AnimatedBeam d="M 220 150 C 270 150, 280 80, 340 80" delay={1.5} />
-          
-          {/* 3. AI to Middle Output (Center to Right) */}
           <AnimatedBeam d="M 220 150 C 270 150, 280 150, 340 150" delay={1.6} />
-          
-          {/* 4. AI to Bottom Output (Center to Bottom Right) */}
           <AnimatedBeam d="M 220 150 C 270 150, 280 220, 340 220" delay={1.7} />
         </svg>
 
-        {/* --- Nodes Layer (HTML/React) --- */}
-        {/* We position these absolutely to match the SVG coordinates above */}
-        
-        {/* 1. Trigger Node (Left) */}
-        <Node icon={<FaBolt />} label="Trigger" x="15%" y="50%" color="text-yellow-400" delay={0} />
+        {/* Trigger Node */}
+        <Node icon={<FaBolt />} label="Avvio" x="15%" y="50%" color="text-yellow-400" delay={0} />
 
-        {/* 2. AI Agent Node (Center) - The "Brain" */}
+        {/* AI Agent Node */}
         <motion.div 
            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10"
         >
@@ -74,33 +60,30 @@ const WorkflowCard = () => {
           >
             <FaBrain className="text-nsg text-2xl" />
           </motion.div>
-          <span className="text-xs text-neutral-400 mt-2 font-medium tracking-wide">AI Agent</span>
+          <span className="text-xs text-neutral-400 mt-2 font-medium tracking-wide">Agente AI</span>
         </motion.div>
 
-        {/* 3. Action Nodes (Right Side) */}
-        <Node icon={<FaSlack />} label="Notify" x="85%" y="26%" color="text-emerald-400" delay={2} />
-        <Node icon={<FaDatabase />} label="Store" x="85%" y="50%" color="text-blue-400" delay={2.1} />
+        {/* Action Nodes */}
+        <Node icon={<FaSlack />} label="Notifica" x="85%" y="26%" color="text-emerald-400" delay={2} />
+        <Node icon={<FaDatabase />} label="Archivia" x="85%" y="50%" color="text-blue-400" delay={2.1} />
         <Node icon={<FaEnvelope />} label="Email" x="85%" y="74%" color="text-pink-400" delay={2.2} />
         
       </div>
 
-      {/* --- Text Content --- */}
       <div className="mt-auto pt-6 text-center z-20 relative">
         <h3 className="text-white text-2xl font-semibold">
-          Automated Workflows
+          Flussi di lavoro automatizzati
         </h3>
         <p className="text-neutral-400 mt-2 leading-relaxed text-sm">
-          Visualize and automate complex logic. Connect your AI agents 
-          to real-world actions seamlessly.
+          Visualizza e automatizza logiche complesse. Collega i tuoi agenti AI 
+          ad azioni reali in modo semplice.
         </p>
       </div>
     </div>
   );
 };
 
-// --- Subcomponents for cleanliness ---
-
-// A Node in the workflow (Icon + Box)
+// Node Component
 const Node = ({ icon, label, x, y, color, delay }: any) => {
   return (
     <div 
@@ -135,11 +118,10 @@ const Node = ({ icon, label, x, y, color, delay }: any) => {
   );
 };
 
-// The animating wire connecting nodes
+// Beam Component
 const AnimatedBeam = ({ d, delay }: { d: string, delay: number }) => {
   return (
     <>
-      {/* 1. The Static Background Path (Dim) */}
       <path 
         d={d} 
         stroke="rgba(255,255,255,0.1)" 
@@ -148,7 +130,6 @@ const AnimatedBeam = ({ d, delay }: { d: string, delay: number }) => {
         strokeLinecap="round"
       />
       
-      {/* 2. The Moving "Packet" (Bright) */}
       <motion.path
         d={d}
         stroke="url(#gradient-beam)"
@@ -157,20 +138,19 @@ const AnimatedBeam = ({ d, delay }: { d: string, delay: number }) => {
         strokeLinecap="round"
         initial={{ pathLength: 0, opacity: 0 }}
         animate={{ 
-          pathLength: [0, 1], // Grow the line
-          opacity: [0, 1, 0], // Fade in/out
-          strokeDashoffset: [0, -10] // Slight movement
+          pathLength: [0, 1],
+          opacity: [0, 1, 0],
+          strokeDashoffset: [0, -10]
         }}
         transition={{
           duration: 1.5,
           repeat: Infinity,
-          repeatDelay: 1, // Wait before sending next packet
+          repeatDelay: 1,
           delay: delay,
           ease: [0.42, 0, 0.58, 1]
         }}
       />
-      
-      {/* Define the gradient for the beam */}
+
       <defs>
         <linearGradient id="gradient-beam" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="rgba(168,85,247,0)" />

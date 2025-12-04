@@ -6,10 +6,10 @@ import { Mail, Phone, Headset, ArrowRight, User, MessageCircle, Send } from "luc
 
 // --- 🎨 THEME CONFIGURATION ---
 const THEME = {
-  accent: "#A797F7", // Your Company Color
-  accentHover: "#9685eb", // Slightly darker for hover states
+  accent: "#A797F7",
+  accentHover: "#9685eb",
   accentGlow: "rgba(167, 151, 247, 0.4)", 
-  bgDark: "#000000", 
+  bgDark: "#000000",
   cardBg: "#0a0a0a", 
   textMuted: "#a1a1aa", 
 };
@@ -34,13 +34,13 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs tracking-wider font-semibold uppercase"
           style={{ 
-            backgroundColor: `${THEME.accent}15`, // 15% opacity
-            border: `1px solid ${THEME.accent}30`, // 30% opacity
+            backgroundColor: `${THEME.accent}15`,
+            border: `1px solid ${THEME.accent}30`,
             color: THEME.accent
           }}
         >
           <Phone size={12} fill="currentColor" />
-          <span>Contact Us</span>
+          <span>Contattaci</span>
         </motion.div>
 
         <motion.h2 
@@ -50,7 +50,7 @@ export default function ContactSection() {
           transition={{ delay: 0.1 }}
           className="text-4xl md:text-6xl font-medium tracking-tight"
         >
-          Reach Us <span className="font-serif italic text-white/60">Anytime</span>
+          Raggiungici <span className="font-serif italic text-white/60">In qualunque momento</span>
         </motion.h2>
 
         <motion.p 
@@ -61,7 +61,7 @@ export default function ContactSection() {
           className="text-lg max-w-xl mx-auto"
           style={{ color: THEME.textMuted }}
         >
-          Have questions or need help? We're here for you.
+          Hai domande o hai bisogno di aiuto? Siamo qui per te.
         </motion.p>
       </div>
 
@@ -74,8 +74,8 @@ export default function ContactSection() {
             {/* Card 1: Email */}
             <InfoCard 
                 icon={<Mail size={22} />}
-                title="Email Us"
-                description="Facing technical challenges or product concerns? We're here to assist."
+                title="Scrivici via Email"
+                description="Hai problemi tecnici o dubbi sul prodotto? Siamo qui per aiutarti."
                 delay={0.3}
                 theme={THEME}
                 footer={
@@ -91,8 +91,8 @@ export default function ContactSection() {
             {/* Card 2: Sales */}
             <InfoCard 
                 icon={<User size={22} />}
-                title="Contact Sales"
-                description="Let's collaborate on custom solutions or discuss product insights."
+                title="Contatta il reparto vendite"
+                description="Collaboriamo insieme su soluzioni personalizzate o approfondiamo i tuoi bisogni."
                 delay={0.4}
                 theme={THEME}
                 footer={
@@ -100,7 +100,7 @@ export default function ContactSection() {
                      className="inline-flex items-center gap-2 text-sm font-medium transition-opacity underline decoration-white/20 underline-offset-4 hover:decoration-[#A797F7]"
                      style={{ color: THEME.accent }}
                   >
-                    Book a consultation call
+                    Prenota una consulenza
                   </a>
                 }
             />
@@ -108,8 +108,8 @@ export default function ContactSection() {
             {/* Card 3: Instant Chat */}
             <InfoCard 
                 icon={<MessageCircle size={22} />}
-                title="Instant Chat"
-                description="Need a quick answer? Chat with our team directly on your favorite app."
+                title="Chat Istantanea"
+                description="Hai bisogno di una risposta veloce? Chatta direttamente con il nostro team."
                 delay={0.5}
                 theme={THEME}
                 footer={
@@ -150,37 +150,33 @@ export default function ContactSection() {
                 >
                     <Headset size={32} />
                 </div>
-                <h3 className="text-2xl font-medium">We'd love to help! Let us know how.</h3>
+                <h3 className="text-2xl font-medium">Siamo qui per aiutarti! Dicci come.</h3>
             </div>
 
             <form className="space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div className="space-y-1.5">
-                        <Label>Full Name</Label>
-                        <Input placeholder="Jane Doe" theme={THEME} />
+                        <Label>Nome completo</Label>
+                        <Input placeholder="Mario Rossi" theme={THEME} />
                     </div>
                     <div className="space-y-1.5">
-                        <Label>Email Address</Label>
-                        <Input placeholder="jane@company.com" theme={THEME} />
+                        <Label>Indirizzo Email</Label>
+                        <Input placeholder="mario@azienda.com" theme={THEME} />
                     </div>
                 </div>
 
                 <div className="space-y-1.5">
-                    <Label>Subject</Label>
-                    <Input placeholder="Project inquiry..." theme={THEME} />
+                    <Label>Oggetto</Label>
+                    <Input placeholder="Richiesta progetto..." theme={THEME} />
                 </div>
 
                 <div className="space-y-1.5">
-                    <Label>Message</Label>
+                    <Label>Messaggio</Label>
                     <textarea 
                         rows={4}
-                        placeholder="Tell us about your needs..."
+                        placeholder="Parlaci delle tue esigenze..."
                         className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none transition-all resize-none"
-                        style={{ 
-                            // Dynamic focus style applied via style prop for ease, usually done in CSS
-                            outlineColor: THEME.accent 
-                        }}
-                        // Tailwind specific focus utility to use CSS variable or arbitrary value
+                        style={{ outlineColor: THEME.accent }}
                         onFocus={(e) => e.target.style.borderColor = THEME.accent}
                         onBlur={(e) => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
                     />
@@ -192,7 +188,7 @@ export default function ContactSection() {
                     className="w-full py-4 rounded-xl font-bold text-black flex items-center justify-center gap-2 mt-4 transition-all shadow-[0_0_20px_-5px_rgba(167,151,247,0.3)] hover:shadow-[0_0_30px_-5px_rgba(167,151,247,0.5)]"
                     style={{ backgroundColor: THEME.accent }}
                 >
-                    <span>Send Message</span>
+                    <span>Invia Messaggio</span>
                     <ArrowRight size={18} />
                 </motion.button>
             </form>

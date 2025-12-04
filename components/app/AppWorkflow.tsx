@@ -14,7 +14,7 @@ import {
 
 // --- 🎨 THEME CONFIG ---
 const THEME = {
-  accent: "#A797F7", // Brand Color
+  accent: "#A797F7",
   bgDark: "#050505", 
   cardBg: "#0F0F0F",
   textMuted: "#a1a1aa",
@@ -23,45 +23,42 @@ const THEME = {
 export default function AppDevelopmentWorkflow() {
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // Track scroll progress within this specific section
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"]
   });
 
-  // Smooth out the scroll value for a fluid "tracing" effect
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
   });
 
-  // Map progress to height for the purple line
   const lineHeight = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
 
   const steps = [
     {
       id: "01",
       title: "Blueprint & UI/UX",
-      description: "We start with high-fidelity wireframes and interactive prototypes to ensure the user journey feels native and intuitive.",
+      description: "Partiamo da wireframe ad alta fedeltà e prototipi interattivi per garantire un'esperienza utente nativa e intuitiva.",
       icon: <Layers size={24} />,
     },
     {
       id: "02",
-      title: "Native Engineering",
-      description: "Whether it's Swift, Kotlin, or React Native, we write clean, performant code optimized for specific device hardware.",
+      title: "Ingegneria Nativa",
+      description: "Che si tratti di Swift, Kotlin o React Native, scriviamo codice pulito e performante ottimizzato per l’hardware del dispositivo.",
       icon: <Code2 size={24} />,
     },
     {
       id: "03",
       title: "Beta Testing & QA",
-      description: "Rigorous stress testing across multiple devices. We squash bugs and optimize battery usage before the public sees it.",
+      description: "Stress test rigorosi su più dispositivi. Risolviamo bug e ottimizziamo il consumo energetico prima del lancio pubblico.",
       icon: <Bug size={24} />,
     },
     {
       id: "04",
-      title: "App Store Launch",
-      description: "We handle the complex submission process, ASO metadata, and release management for both Apple and Google stores.",
+      title: "Pubblicazione negli Store",
+      description: "Gestiamo l'intero processo di pubblicazione, i metadati ASO e il rilascio su Apple Store e Google Play.",
       icon: <Rocket size={24} />,
     },
   ];
@@ -107,7 +104,7 @@ export default function AppDevelopmentWorkflow() {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#A797F7]/30 bg-[#A797F7]/10 text-[#A797F7] text-sm font-medium mb-6"
         >
             <Smartphone size={14} className="fill-[#A797F7]" />
-            <span>The Mobile Lifecycle</span>
+            <span>Il ciclo di vita mobile</span>
         </motion.div>
         
         <motion.h2 
@@ -116,28 +113,25 @@ export default function AppDevelopmentWorkflow() {
           viewport={{ once: true }}
           className="text-4xl md:text-6xl font-semibold tracking-tight mb-4"
         >
-          From Concept to <br />
-          <span style={{ color: THEME.accent }}>App Store</span>
+          Dal Concetto allo <br />
+          <span style={{ color: THEME.accent }}>Store</span>
         </motion.h2>
         <p style={{ color: THEME.textMuted }} className="text-lg">
-           We architect scalable mobile solutions that users love to touch.
+           Progettiamo soluzioni mobile scalabili che gli utenti amano utilizzare.
         </p>
       </div>
 
       {/* TIMELINE CONTAINER */}
       <div className="relative z-10 max-w-4xl w-full flex flex-col gap-0">
         
-        {/* --- THE TRACING LINE (Absolute Center) --- */}
+        {/* --- THE TRACING LINE --- */}
         <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 h-full z-0">
-            {/* Background Track (Dark Gray) */}
             <div className="absolute inset-0 bg-white/5 rounded-full" />
 
-            {/* Active Trace Line (Purple) */}
             <motion.div 
                 style={{ height: lineHeight }}
                 className="absolute top-0 left-0 w-full bg-gradient-to-b from-[#A797F7] via-[#A797F7] to-[#8b7be0] rounded-full shadow-[0_0_15px_#A797F7]"
             >
-                {/* THE TRACING SMARTPHONE ICON (Stays at the tip of the line) */}
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20">
                     <div className="relative w-10 h-10 flex items-center justify-center">
                         <motion.div 
@@ -166,7 +160,7 @@ export default function AppDevelopmentWorkflow() {
   );
 }
 
-// --- SUB-COMPONENT: INDIVIDUAL STEP ---
+// --- SUB-COMPONENT: STEP CARD ---
 function WorkflowStep({ step, index }: any) {
     const isEven = index % 2 === 0;
 
@@ -175,16 +169,14 @@ function WorkflowStep({ step, index }: any) {
             className={`flex flex-col md:flex-row items-start md:items-center w-full mb-24 relative ${isEven ? 'md:flex-row-reverse' : ''}`}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }} // Triggers when step enters view
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
         >
-            {/* 1. CONTENT CARD */}
             <div className={`w-full md:w-[45%] pl-20 md:pl-0 ${isEven ? 'md:pl-16' : 'md:pr-16 text-left md:text-right'}`}>
                 <div 
                     className="p-8 rounded-3xl border border-white/10 relative group hover:border-[#A797F7]/50 transition-colors duration-500 overflow-hidden"
                     style={{ backgroundColor: THEME.cardBg }}
                 >
-                    {/* Glow Effect on Hover */}
                     <div 
                         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none"
                         style={{
@@ -192,7 +184,6 @@ function WorkflowStep({ step, index }: any) {
                         }}
                     />
 
-                    {/* Step Badge */}
                     <div className={`inline-flex items-center justify-center px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-mono mb-6 text-white/70 group-hover:text-[#A797F7] group-hover:border-[#A797F7]/30 transition-colors ${isEven ? '' : 'md:ml-auto'}`}>
                         Step {step.id}
                     </div>
@@ -204,16 +195,10 @@ function WorkflowStep({ step, index }: any) {
                 </div>
             </div>
 
-            {/* 2. CENTER ICON NODE (Static targets on the line) */}
             <div className="absolute left-8 md:left-1/2 -translate-x-1/2 flex flex-col items-center justify-center">
-                
-                {/* The Circle on the track */}
-                <div 
-                    className="w-4 h-4 rounded-full bg-[#0a0a0a] border-2 border-white/20 z-10"
-                />
+                <div className="w-4 h-4 rounded-full bg-[#0a0a0a] border-2 border-white/20 z-10" />
             </div>
 
-            {/* 3. EMPTY SPACER (For Flex Balance) */}
             <div className="w-full md:w-[45%]" />
 
         </motion.div>
