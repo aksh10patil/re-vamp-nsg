@@ -48,11 +48,11 @@ export default function Hero() {
         className="relative z-10 text-white font-semibold leading-[1.1] text-[40px] md:text-[72px] lg:text-[86px] flex flex-col items-center gap-2"
       >
         <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
-          Turn leads
+          More Time 
         </span>
 
         <span className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
-          <span className="text-white">into</span>
+          <span className="text-white">for</span>
           <span className="
             px-5 md:px-7 py-2 md:py-3 
             rounded-full 
@@ -63,7 +63,7 @@ export default function Hero() {
             font-semibold
             shadow-[0_0_30px_-5px_rgba(167,151,247,0.3)]
           ">
-            clients
+            Matters 
           </span>
         </span>
       </motion.h1>
