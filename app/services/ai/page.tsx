@@ -7,6 +7,9 @@ import Footer from "@/components/contact/Footer";
 import FAQSection from "@/components/landing/FAQSection";
 import Navbar from "@/components/landing/Navbar";
 import TestimonialSection from "@/components/landing/TestimonialSection";
+import AddOnsSection from "@/components/web/AddOnSection";
+import PricingSection from "@/components/web/PricingSection";
+import WebMasterAI from "@/components/web/WebMasterAI";
 
 export default function Page() {
     return (
@@ -17,7 +20,10 @@ export default function Page() {
                 <FeaturesGridAI/>
                 <ChallengeAi />
                 <FutureAi />
+                <WebMasterAI />
+                <PricingSection />
                 <ProcessWorkflow />
+                <AddOnsSection />
                 <TestimonialSection />
                 <FAQSection />
                 <Footer />

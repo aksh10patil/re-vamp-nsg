@@ -450,10 +450,7 @@ export default function TermsAndConditionsItalian() {
                <p className="text-sm">Si applica il Diritto Svizzero. Foro esclusivo: <strong>Tribunali di Bellinzona, Ticino</strong>.</p>
              </div>
           </Section>
-
         </div>
-
-
       </div>
     </div>
   );

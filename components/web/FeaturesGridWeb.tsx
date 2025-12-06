@@ -10,6 +10,8 @@ import {
   Globe, 
   Database,
   Code,
+  ShieldCheck, 
+  Rocket,      
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
@@ -295,10 +297,10 @@ export default function WebDevFeatures() {
           </motion.div>
 
 
-          {/* GLOBAL DEPLOYMENT */}
+          {/* GLOBAL DEPLOYMENT - ALIGNED LEFT */}
           <motion.div 
             variants={itemVariants}
-            className="col-span-1 md:col-span-2 group row-span-1 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 flex flex-col justify-center items-center text-center hover:border-[#A797F7]/30 transition-colors"
+            className="col-span-1 md:col-span-2 group row-span-1 relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 overflow-hidden hover:border-[#A797F7]/30 transition-colors"
           >
              <motion.div
                animate={{ backgroundPosition: ["0% 0%", "100% 100%"], opacity: [0.1, 0.3, 0.1] }}
@@ -310,7 +312,7 @@ export default function WebDevFeatures() {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="p-3 bg-[#A797F7]/20 rounded-full inline-block mb-4"
+                  className="p-3 w-fit bg-[#A797F7]/20 rounded-full mb-4"
                 >
                   <Globe className="text-[#A797F7] w-6 h-6" />
                 </motion.div>
@@ -323,6 +325,40 @@ export default function WebDevFeatures() {
                    Deployment istantaneo in oltre 100 regioni nel mondo.
                 </p>
              </div>
+          </motion.div>
+
+          {/* 1. ACTIVATION (Updated Layout) */}
+          <motion.div 
+            variants={itemVariants}
+            className="col-span-1 md:col-span-3 group row-span-1 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-[#A797F7]/30 transition-colors"
+          >
+             <div className="p-3 w-fit bg-amber-500/20 rounded-xl text-amber-300 mb-4">
+                <Rocket size={24} />
+             </div>
+
+             <h3 className="text-xl font-semibold text-white mb-2">
+                Attivazione in 48-72 Ore
+             </h3>
+             <p className="text-sm text-neutral-400">
+                Processo di sviluppo accelerato. Dall'approvazione del design al live in tempi record, per non perdere opportunità di mercato.
+             </p>
+          </motion.div>
+
+          {/* 2. PROTECTION (Updated Layout) */}
+          <motion.div 
+            variants={itemVariants}
+            className="col-span-1 md:col-span-3 group row-span-1 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:border-[#A797F7]/30 transition-colors"
+          >
+             <div className="p-3 w-fit bg-cyan-500/20 rounded-xl text-cyan-300 mb-4">
+                <ShieldCheck size={24} />
+             </div>
+
+             <h3 className="text-xl font-semibold text-white mb-2">
+                Protezione Sito e Dominio
+             </h3>
+             <p className="text-sm text-neutral-400">
+                Sicurezza enterprise inclusa. Certificati SSL automatici, protezione DDoS globale e backup giornalieri per la massima tranquillità.
+             </p>
           </motion.div>
 
         </motion.div>
