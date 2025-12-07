@@ -77,6 +77,7 @@ export default function Navbar() {
       ]
     },
     { name: "Contatti", href: "/contact" },
+     { name: "Portfolio", href: "/portfolio" },
     { name: "Chi Siamo", href: "/about" },
   ];
 
