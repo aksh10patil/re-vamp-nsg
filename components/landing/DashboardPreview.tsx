@@ -160,24 +160,26 @@ function ProductSalesCard() {
 // --- COMPONENT 3: New Clients ---
 
 const clients = [
-  { name: "Eliza Thornton", color: "#E07A5F" },
-  { name: "Javier Ramirez", color: "#3AAFA9" },
-  { name: "Zara Mahmood", color: "#FFD166" },
-  { name: "Freya Lindholm", color: "#8ECAE6" },
-  { name: "Marcus Blackwood", color: "#C77DFF" }
+  { name: "Eliza Thornton", image: "/images/people/Eliza.jpg" },
+  { name: "Javier Ramirez", image: "/images/people/Javier.jpg" },
+  { name: "Zara Mahmood", image: "/images/people/Zara.jpg" },
+  { name: "Freya Lindholm", image: "/images/people/Freya.jpg" },
+  { name: "Marcus Blackwood", image: "/images/people/Marcus.jpg" }
 ];
 
-function Avatar({ name, color }: { name: string; color: string }) {
-  const initials = name.split(" ").map((n) => n[0]).slice(0, 2).join("");
+
+function Avatar({ name, image }: { name: string; image: string }) {
   return (
-    <div
-      className="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold shadow-inner"
-      style={{ background: color, color: "rgba(0,0,0,0.7)" }}
-    >
-      {initials}
+    <div className="w-10 h-10 rounded-full overflow-hidden shadow-inner border border-white/20">
+      <img
+        src={image}
+        alt={name}
+        className="w-full h-full object-cover"
+      />
     </div>
   );
 }
+
 
 function NewClients() {
   return (
@@ -202,7 +204,7 @@ function NewClients() {
           >
             {/* Left */}
             <div className="flex items-center gap-3">
-              <Avatar name={client.name} color={client.color} />
+              <Avatar name={client.name} image={client.image} />
               <div className="flex flex-col">
                 <span className="text-white font-medium text-sm leading-none group-hover:text-purple-300 transition-colors">
                   {client.name}
@@ -214,14 +216,14 @@ function NewClients() {
             </div>
 
             {/* Right */}
-            <div className="hidden sm:block w-16 h-1.5 bg-white/10 rounded-full overflow-hidden">
-              <motion.div
-                className="h-full rounded-full bg-white/80"
-                initial={{ width: 0 }}
-                whileInView={{ width: `${Math.random() * 40 + 40}%` }}
-                transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
-              />
-            </div>
+                    <div className="hidden sm:block w-16 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                        <motion.div
+                          className="h-full rounded-full bg-green-500"
+                          initial={{ width: 0 }}
+                          whileInView={{ width: "100%" }}
+                          transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
+                        />
+                      </div>
           </motion.div>
         ))}
       </div>

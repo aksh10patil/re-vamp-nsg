@@ -152,6 +152,14 @@ const AIGraph = () => {
 };
 
 
+const pfps = [
+  "/images/people/Zara.jpg",
+  "/images/people/Freya.jpg",
+  "/images/people/Eliza.jpg",
+  "/images/people/Javier.jpg",
+];
+
+
 // --- Main App Component ---
 
 export default function App() {
@@ -220,11 +228,18 @@ export default function App() {
             delay={200}
           >
             <div className="mt-auto flex -space-x-3 pt-4">
-              {[1,2,3,4].map((i) => (
-                <div key={i} className="w-8 h-8 rounded-full border-2 border-neutral-900 bg-neutral-800 flex items-center justify-center text-[10px] text-neutral-400 font-bold">
-                   U{i}
-                </div>
-              ))}
+                                {pfps.map((src, i) => (
+                    <div
+                      key={i}
+                      className="w-8 h-8 rounded-full border-2 border-neutral-900 overflow-hidden bg-neutral-800"
+                    >
+                      <img
+                        src={src}
+                        alt={`user-${i}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
               <div className="w-8 h-8 rounded-full border-2 border-neutral-900 bg-[#A797F7] flex items-center justify-center text-[10px] text-white font-bold">
                 +1k
               </div>
