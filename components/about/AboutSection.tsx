@@ -19,12 +19,15 @@ function cn(...inputs: ClassValue[]) {
 }
 
 // --- Team Data ---
+// REGOLAZIONE IMMAGINI: Usa 'imagePosition' per centrare il volto se l'immagine viene tagliata.
+// Valori accettati: "top", "bottom", "center", "left", "right" o percentuali "50% 20%".
 const team = [
   {
     name: "Elia Szpiro",
     role: "Founder",
     description: "Da sempre appassionato del web, guida l'azienda nell'integrazione tra sviluppo tradizionale e le più innovative soluzioni AI.",
-    imageSrc: "/images/team/elia.jpg", // Assicurati di avere queste immagini o usa i placeholder
+    imageSrc: "/images/people/elia.jpeg",
+    imagePosition: "center top", // Esempio: sposta il focus verso l'alto
     gradient: "from-purple-500/20 to-indigo-500/20",
     socials: { linkedin: "#", email: "mailto:elia@northstargroup.ch" }
   },
@@ -32,7 +35,8 @@ const team = [
     name: "Tomas Emini",
     role: "Marketing & Sales Manager",
     description: "Con empatia e professionalità, accompagna ogni cliente nel percorso di trasformazione digitale, assicurando un'esperienza personalizzata.",
-    imageSrc: "/images/team/tomas.jpg",
+    imageSrc: "/images/people/tomas.jpeg",
+    imagePosition: "center", 
     gradient: "from-blue-500/20 to-cyan-500/20",
     socials: { linkedin: "#", email: "mailto:tomas@northstargroup.ch" }
   },
@@ -40,7 +44,8 @@ const team = [
     name: "Nicolò Bacchi",
     role: "Head Salesman & Customer Care",
     description: "Il punto di riferimento per i clienti. Cura ogni dettaglio e relazione, garantendo una comunicazione sempre chiara ed efficace.",
-    imageSrc: "/images/team/nicolo.jpg",
+    imageSrc: "/images/people/nicolo.jpeg",
+    imagePosition: "center top",
     gradient: "from-emerald-500/20 to-teal-500/20",
     socials: { linkedin: "#", email: "mailto:nicolo@northstargroup.ch" }
   },
@@ -48,7 +53,8 @@ const team = [
     name: "Marco Castellari",
     role: "Lead Developer",
     description: "Esperto in programmazione e sistemi AI, docente e relatore, guida lo sviluppo tecnico integrando le tecnologie più avanzate.",
-    imageSrc: "/images/team/marco.jpg",
+    imageSrc: "/images/people/marco.jpg",
+    imagePosition: "center",
     gradient: "from-amber-500/20 to-orange-500/20",
     socials: { linkedin: "#", email: "mailto:marco@northstargroup.ch" }
   }
@@ -68,7 +74,7 @@ export default function AboutSection() {
 
       <div className="relative mx-auto max-w-7xl z-10">
         
-        {/* --- COMPANY STORY SECTION --- */}
+        {/* --- COMPANY STORY SECTION (Standard Size) --- */}
         <div className="mb-32">
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <motion.div
@@ -139,7 +145,6 @@ export default function AboutSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative h-[400px] lg:h-[500px] rounded-3xl overflow-hidden border border-white/10"
             >
-              {/* Placeholder Gradient Image - Sostituisci con una foto del team o dell'ufficio */}
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
                 alt="North Star Team Working" 
@@ -157,24 +162,24 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* --- TEAM SECTION --- */}
+        {/* --- TEAM SECTION (Expanded / Improved) --- */}
         <div>
-          <div className="text-center mb-16">
+          <div className="text-center mb-24">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-3 py-1 text-sm font-medium text-[#a797f7] mb-6"
+              className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-1.5 text-sm font-medium text-[#a797f7] mb-8"
             >
               <Users className="w-4 h-4" />
               <span>Il Nostro Team</span>
             </motion.div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="text-4xl md:text-5xl font-bold text-white">
               Incontra gli <span className="text-[#a797f7]">Esperti</span>
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -182,7 +187,7 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative rounded-3xl border border-white/10 bg-white/5 overflow-hidden backdrop-blur-md hover:border-[#a797f7]/30 transition-all duration-300 hover:-translate-y-1"
+                className="group relative rounded-[2rem] border border-white/10 bg-white/5 overflow-hidden backdrop-blur-md hover:border-[#a797f7]/30 transition-all duration-300 hover:-translate-y-2 h-full flex flex-col"
               >
                 {/* Hover Gradient Overlay */}
                 <div className={cn(
@@ -190,12 +195,13 @@ export default function AboutSection() {
                   member.gradient
                 )} />
 
-                {/* Image Area */}
-                <div className="h-64 w-full relative overflow-hidden bg-neutral-900 grayscale group-hover:grayscale-0 transition-all duration-500">
+                {/* Image Area - Expanded Height */}
+                <div className="h-80 w-full relative overflow-hidden bg-neutral-900 grayscale group-hover:grayscale-0 transition-all duration-500 flex-shrink-0">
                   <img
                     src={member.imageSrc}
                     alt={member.name}
-                    className="w-full h-full object-cover object-center"
+                    style={{ objectPosition: member.imagePosition || 'center' }}
+                    className="w-full h-full object-cover"
                     // Placeholder fallback
                     onError={(e) => {
                       e.currentTarget.src = `https://ui-avatars.com/api/?name=${member.name.replace(" ", "+")}&background=1a1a1a&color=fff&size=512`;
@@ -205,24 +211,24 @@ export default function AboutSection() {
                   
                   {/* Social Icons (appear on hover) */}
                   <div className="absolute bottom-4 right-4 flex gap-2 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                    <a href={member.socials.linkedin} className="p-2 rounded-full bg-white text-black hover:bg-[#a797f7] transition-colors">
+                    <a href={member.socials.linkedin} className="p-2.5 rounded-full bg-white text-black hover:bg-[#a797f7] transition-colors shadow-lg">
                       <Linkedin className="w-4 h-4" />
                     </a>
-                    <a href={member.socials.email} className="p-2 rounded-full bg-white text-black hover:bg-[#a797f7] transition-colors">
+                    <a href={member.socials.email} className="p-2.5 rounded-full bg-white text-black hover:bg-[#a797f7] transition-colors shadow-lg">
                       <Mail className="w-4 h-4" />
                     </a>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 relative z-10">
-                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-[#a797f7] transition-colors">
+                <div className="p-8 relative z-10 flex flex-col flex-grow">
+                  <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-[#a797f7] transition-colors">
                     {member.name}
                   </h3>
-                  <div className="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">
+                  <div className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-6">
                     {member.role}
                   </div>
-                  <p className="text-sm text-neutral-400 leading-relaxed border-t border-white/10 pt-4">
+                  <p className="text-sm text-neutral-400 leading-relaxed border-t border-white/10 pt-6 mt-auto">
                     {member.description}
                   </p>
                 </div>
